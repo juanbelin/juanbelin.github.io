@@ -389,5 +389,5 @@ Cuando este instalado, lo que habrá hecho es crear un usuario llamado **dirty_s
 ![](/assets/img/Anexos/Pasted%20image%2020250319091514-1.png)
 
 Por ello, simplemente me cambio a **root** y ni siquiera es necesario proporcionar contraseña:
-![](/assets/img/Anexos/Pasted%20image%2020250319091557-1.png)
+![|651](/assets/img/Anexos/Pasted%20image%2020250319091557-1.png)
 Y somos root!. 
