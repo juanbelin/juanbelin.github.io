@@ -4,7 +4,6 @@ image: /assets/img/Anexos/Pasted%20image%2020250329195808-1.png
 categories: [CTF]
 tags: [dockerlabs,hacking]
 ---
-![](/assets/img/Anexos/Pasted%20image%2020250329195808-1.png)
 
 ## Reconocimiento
 Comenzamos con un escaneo completo de `nmap` para sacar los puertos y versiones:
