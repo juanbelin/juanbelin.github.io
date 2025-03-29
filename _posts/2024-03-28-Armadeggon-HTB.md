@@ -8,7 +8,6 @@ image: /assets/img/Anexos/Pasted%20image%2020250318104150-1.png
 comments: true
 ---
 
-![](/assets/img/Anexos/Pasted%20image%2020250318104150-1.png)
 
 ## Reconocimiento
 Empiezo el reconocimiento con un escaneo de `nmap` bastante completo: 
