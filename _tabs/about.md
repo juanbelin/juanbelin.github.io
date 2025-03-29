@@ -4,8 +4,6 @@ icon: fas fa-info-circle
 order: 4
 ---
 
-
-## About me 
 Im **Juan Belinchón** I studied software development but I found my pasion in the cybersecurity along time ago. Im currently studying to improve my pentesting skills, I practise very often in CTF plataforms such as HTB, Dockerlabs, Hackmyvm... . Feel free to contact me if you need some help!.
 
 - - -
@@ -21,47 +19,24 @@ My purpose of this blog is to post my owns tools and write ups to have a cheatsh
 - - -
 ## Knowledge  
 
-#### Programming Languages  
-- PHP  
-- Java  
-- Python  
-- HTML  
-- Bash  
-- C++  
+### Programming Languages  
+PHP, Java, Python, HTML, Bash, C++  
 
-#### Databases  
-- SQL  
-- SQLite  
-- PostgreSQL  
-- Oracle  
-- MongoDB  
+### Databases  
+SQL, SQLite, PostgreSQL, Oracle, MongoDB  
 
-#### Operating Systems  
-- Advanced Linux  
-- Windows  
-- Server OS: FreeBSD, Pfsense  
-- Security-focused OS: Kali, Parrot, BlackArch  
+### Operating Systems  
+Advanced Linux, Windows, FreeBSD, Pfsense, Kali, Parrot, BlackArch  
 
-#### Cybersecurity & Networking  
-- Digital Forensics  
-- Network Security & Management  
-- Pentesting & Security Testing  
-- OWASP  
-- Hardening Tools (IDS/IPS, EDR, SOAR, DLP, Firewall, Proxy)  
-- Risk Management & Mitigation  
-- Incident Response  
+### Cybersecurity & Networking  
+Digital Forensics, Network Security & Management, Pentesting & Security Testing, OWASP, Hardening Tools (IDS/IPS, EDR, SOAR, DLP, Firewall, Proxy), Risk Management & Mitigation, Incident Response  
 
-#### DevOps & Development Tools  
-- Git | GitLab | GitHub  
-- Virtual Environment Management  
+### DevOps & Development Tools  
+Git, GitLab, GitHub, Virtual Environment Management  
 
-#### Compliance & Documentation  
-- ISO Standards  
-- GDPR  
-- Report Writing  
+### Compliance & Documentation  
+ISO Standards, GDPR, Report Writing  
 
-#### Additional Skills  
-- Hardware Knowledge  
-- Responsibility & Strong Communication Skills  
-- Driver's License  
-- - -
+### Additional Skills  
+Hardware Knowledge, Responsibility, Strong Communication Skills, Driver's License  
+
