@@ -1,42 +1,56 @@
 ---
-# the default layout is 'page'
 icon: fas fa-info-circle
 order: 4
 ---
 
-Im **Juan Belinchón** I studied software development but I found my pasion in the cybersecurity along time ago. Im currently studying to improve my pentesting skills, I practise very often in CTF plataforms such as HTB, Dockerlabs, Hackmyvm... . Feel free to contact me if you need some help!.
+# 👨‍💻 About Me
 
-- - -
-My purpose of this blog is to post my owns tools and write ups to have a cheatsheet and helping people with his progress.
-- - -
+**Juan Belinchón**  
 
-### You can find me here!
-- [Hack The Box](https://app.hackthebox.com/profile/1728358)
-- [HackMyVm](https://hackmyvm.eu/public/?u=belin)
-- [Github](https://github.com/juanbelin)
-- Discord - juanbelin
+I studied software development, but I found my true passion in **cybersecurity** a long time ago. Currently, I'm sharpening my **penetration testing** skills and frequently practicing on CTF platforms like **Hack The Box, Dockerlabs, and HackMyVM**.  
 
-- - -
-## Knowledge  
+🚀 Always learning, always hacking! If you need help, feel free to reach out.  
 
-### Programming Languages  
-PHP, Java, Python, HTML, Bash, C++  
+---
 
-### Databases  
-SQL, SQLite, PostgreSQL, Oracle, MongoDB  
+## 🎯 Purpose of This Blog  
 
-### Operating Systems  
-Advanced Linux, Windows, FreeBSD, Pfsense, Kali, Parrot, BlackArch  
+This blog serves as a **personal cheatsheet** where I document my own **tools** and **write-ups** to help both myself and others progress in the cybersecurity field.  
 
-### Cybersecurity & Networking  
-Digital Forensics, Network Security & Management, Pentesting & Security Testing, OWASP, Hardening Tools (IDS/IPS, EDR, SOAR, DLP, Firewall, Proxy), Risk Management & Mitigation, Incident Response  
+---
 
-### DevOps & Development Tools  
-Git, GitLab, GitHub, Virtual Environment Management  
+## 📍 Where to Find Me  
 
-### Compliance & Documentation  
-ISO Standards, GDPR, Report Writing  
+🔹 [Hack The Box](https://app.hackthebox.com/profile/1728358)  
+🔹 [HackMyVm](https://hackmyvm.eu/public/?u=belin)  
+🔹 [GitHub](https://github.com/juanbelin)  
+🔹 **Discord:** juanbelin  
 
-### Additional Skills  
-Hardware Knowledge, Responsibility, Strong Communication Skills, Driver's License  
+---
 
+## 🛠 Knowledge  
+
+### 💻 Programming Languages  
+`PHP` · `Java` · `Python` · `HTML` · `Bash` · `C++`  
+
+### 🗄 Databases  
+`SQL` · `SQLite` · `PostgreSQL` · `Oracle` · `MongoDB`  
+
+### 🖥 Operating Systems  
+`Linux (Advanced)` · `Windows` · `FreeBSD` · `PfSense` · `Kali` · `Parrot` · `BlackArch`  
+
+### 🔐 Cybersecurity & Networking  
+`Digital Forensics` · `Network Security` · `Pentesting` · `OWASP` · `Hardening (IDS/IPS, EDR, SOAR, DLP, Firewall, Proxy)` · `Risk Management` · `Incident Response`  
+
+### 🚀 DevOps & Development Tools  
+`Git` · `GitLab` · `GitHub` · `Virtual Environments`  
+
+### 📜 Compliance & Documentation  
+`ISO Standards` · `GDPR` · `Report Writing`  
+
+### 🔧 Additional Skills  
+`Hardware Knowledge` · `Responsibility` · `Strong Communication` · `Driver’s License`  
+
+---
+
+💡 *Hacking is not just a skill, it's a mindset.*  
