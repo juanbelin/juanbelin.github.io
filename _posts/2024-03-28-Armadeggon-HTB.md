@@ -1,10 +1,10 @@
 ---
-title: Como instalar BlackArch en USB! 
-description: Tutorial para instalar BlackArch en USB con persisntencia
-categories: [tutorial,hacking]
-tags: [archlinux]
-pin: true
-image: /assets/img/Anexos/IMG_0439.png
+title: Armadeggon HTB
+description: Armadeggon Machine HTB
+categories: [ctf,hacking]
+tags: [HackTheBox]
+pin: false
+image: /assets/img/Anexos/Pasted%20image%2020250318104150-1.png
 comments: true
 ---
 
@@ -389,5 +389,5 @@ Cuando este instalado, lo que habrá hecho es crear un usuario llamado **dirty_s
 ![](/assets/img/Anexos/Pasted%20image%2020250319091514-1.png)
 
 Por ello, simplemente me cambio a **root** y ni siquiera es necesario proporcionar contraseña:
-![|6](/assets/img/Anexos/Pasted%20image%2020250319091557-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250319091557-1.png)
 Y somos root!. 
