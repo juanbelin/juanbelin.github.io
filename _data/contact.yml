@@ -3,7 +3,7 @@
 - type: github
   icon: "fab fa-github"
 
-- type: rss
+- type: github
   icon: "fa-regular fa-cube"
   url: 'https://app.hackthebox.com/home'
 
