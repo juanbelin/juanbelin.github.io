@@ -3,6 +3,10 @@
 - type: github
   icon: "fab fa-github"
 
+- type: 
+  icon: fa-regular fa-cube"
+  url: 'https://app.hackthebox.com/home'
+
 # - type: twitter
 #  icon: "fa-brands fa-x-twitter"
 
