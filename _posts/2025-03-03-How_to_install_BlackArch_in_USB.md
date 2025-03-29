@@ -4,7 +4,7 @@ description: Tutorial para instalar BlackArch en USB con persisntencia
 categories: [tutorial,hacking]
 tags: [archlinux]
 pin: true
-image: assets/images/Anexos/IMG_0441.png
+image: assets/img/Anexos/IMG_0441.png
 ---
 ## Requirements
 
