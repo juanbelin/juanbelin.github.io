@@ -23,7 +23,7 @@ First, download the **ISO** from the following link:
 
 > [Install BlackArch iso](https://www.blackarch.org/downloads.html)
 
-![|680](assets/img/Anexos/Pasted%20image%2020250313090731-1.png)
+![](assets/img/Anexos/Pasted%20image%2020250313090731-1.png)
 
 To install it on the USB, we need to use software like _BalenaEtcher_ or _Rufus_. Preferably Rufus, as that is what I will use during the installation:
 
