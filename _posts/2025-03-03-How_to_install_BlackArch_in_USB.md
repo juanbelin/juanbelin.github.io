@@ -8,7 +8,7 @@ comments: true
 
 
 ## Requirements
-
+test
 To install BlackArch on a USB with persistence, we need the following:
 
 >[!Note] Requirements 
