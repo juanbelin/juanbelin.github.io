@@ -14,7 +14,7 @@ To install BlackArch on a USB with persistence, we need the following:
 >- We need **2 USB drives**, one to install the ISO and another to install BlackArch with persistence, meaning it will boot BlackArch every time we plug it into the corresponding laptop/PC. 
 >    - Minimum 8GB USB to install the [slim ISO](https://ftp.halifax.rwth-aachen.de/blackarch/iso/blackarch-linux-slim-2023.05.01-x86_64.iso)
 >    - USB **+100 GB**, **essential**; otherwise, the installation will fail. It's recommended that the USB be 3.0 for optimal performance.
->    ![|680](assets/img/Anexos/IMG_0441.png)
+>    ![](assets/img/Anexos/IMG_0441.png)
 
 
 
