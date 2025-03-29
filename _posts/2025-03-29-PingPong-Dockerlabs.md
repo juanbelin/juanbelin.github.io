@@ -1,8 +1,9 @@
 ---
 title: PingPong Dockerlabs
 image: /assets/img/Anexos/Pasted%20image%2020250329195808-1.png
-categories: [CTF]
-tags: [dockerlabs,hacking]
+description: Máquina PingPong de DockerLabs [Dificultad Media]
+categories: [CTF,Dockerlabs]
+tags: [hacking]
 ---
 
 ## Reconocimiento
