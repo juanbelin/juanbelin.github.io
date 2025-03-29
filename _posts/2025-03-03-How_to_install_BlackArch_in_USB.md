@@ -5,6 +5,7 @@ categories: [tutorial,hacking]
 tags: [archlinux]
 pin: true
 image: /assets/img/Anexos/IMG_0439.png
+comments: true
 ---
 ## Requirements
 
