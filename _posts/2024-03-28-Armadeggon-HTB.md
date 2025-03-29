@@ -50,6 +50,7 @@ Usando `whatweb` nos reporta que estamos ante un drupal:
 http://10.10.10.233/ [200 OK] Apache[2.4.6], Content-Language[en], Country[RESERVED][ZZ], Drupal, HTTPServer[CentOS][Apache/2.4.6 (CentOS) PHP/5.4.16], IP[10.10.10.233], JQuery, MetaGenerator[Drupal 7 (http://drupal.org)], PHP[5.4.16], PasswordField[pass], PoweredBy[Arnageddon], Script[text/javascript], Title[Welcome to  Armageddon |  Armageddon], UncommonHeaders[x-content-type-options,x-generator], X-Frame-Options[SAMEORIGIN], X-Powered-By[PHP/5.4.16]
 
 ```
+## Explotación
 
 > En mi caso, droopscan estaba deprecated debido a la versión de python que tenía, por ello usé la herramienta `drupwn` 
 
@@ -155,6 +156,7 @@ whoami
 uid=48(apache) gid=48(apache) groups=48(apache) context=system_u:system_r:httpd_t:s0
 apache
 ```
+## Escalada
 
 Dentro, a través del _/etc/passwd_ veo que hay un usuario llamado **brucetherealadmin**
 ```shell
