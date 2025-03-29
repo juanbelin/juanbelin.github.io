@@ -16,7 +16,7 @@ timezone: Europe/Madrid
 
 title: JuanBelin # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the subtitle
+tagline: Ciberseguridad | Pentesting | Desarrollo de Software | Linux # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   Blog sobre ciberseguridad y hacking.
@@ -28,8 +28,8 @@ url: "https://juanbelin.github.io"
 github:
   username: juanbelin # change to your GitHub username
 
-twitter:
-  username: twitter_username # change to your Twitter username
+#twitter:
+#  username: twitter_username # change to your Twitter username
 
 social:
   # Change to your full name.
@@ -98,7 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar:  ./assets/imges/avatar.png
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
