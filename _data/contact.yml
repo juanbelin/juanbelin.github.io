@@ -9,11 +9,7 @@
   url: 'https://app.hackthebox.com/profile/1728358' # Replace with your HTB profile URL
   title: 'HackTheBox' # Optional: Add a title for the link
 
-- type: hackmyvm # Use a custom type
-  icon: "fa-light fa-diamond" # Or any other suitable icon
-  url: 'https://hackmyvm.eu/public/?u=belin' # Replace with your HTB profile URL
-  title: 'HackMyVm' # Optional: Add a title for the link
-
+  
 # - type: twitter
 #  icon: "fa-brands fa-x-twitter"
 
