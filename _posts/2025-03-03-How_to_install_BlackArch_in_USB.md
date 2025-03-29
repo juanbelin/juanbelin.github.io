@@ -3,6 +3,7 @@ title: How to install BlackArch in USB
 #date: YYYY-MM-DD HH:MM:SS +/-TTTT
 categories: [Tutorial, Hacking]
 tags: [Arch]     # TAG names should always be lowercase
+comments: true
 ---
 
 
