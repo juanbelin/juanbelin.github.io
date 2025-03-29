@@ -1,5 +1,5 @@
 ---
-tittle: Como instalar BlackArch en USB! 
+title: Como instalar BlackArch en USB! 
 description: Tutorial para instalar BlackArch en USB con persisntencia
 categories: [tutorial,hacking]
 tags: [archlinux]
