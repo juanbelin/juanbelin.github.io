@@ -11,14 +11,22 @@
 # - type: twitter
 #  icon: "fa-brands fa-x-twitter"
 
-- type: email
-  icon: "fas fa-envelope"
-  noblank: true # open link in current tab
-
 - type: hackmyvm # Use a custom type
   icon: "fas fa-server" # Or any other suitable icon
   url: 'https://hackmyvm.eu/public/?u=belin' # Replace with your HackMyVM profile URL
   title: 'HackMyVM'
+
+- type: linkedin
+  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.linkedin.com/in/juan-belinch%C3%B3n-s%C3%A1nchez-47a735244/'       
+ # Fill with your Linkedin homepage
+
+
+- type: email
+  icon: "fas fa-envelope"
+  noblank: true # open link in current tab
+
+
 
 # - type: rss
 #  icon: "fas fa-rss"
@@ -30,9 +38,6 @@
 #   icon: 'fab fa-mastodon'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Mastodon account page, rel="me" will be applied for verification
 #
-- type: linkedin
-  icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.linkedin.com/in/juan-belinch%C3%B3n-s%C3%A1nchez-47a735244/'                  # Fill with your Linkedin homepage
 #
 # - type: stack-overflow
 #   icon: 'fab fa-stack-overflow'
