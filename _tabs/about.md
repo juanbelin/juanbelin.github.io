@@ -15,11 +15,7 @@ I studied software development, but I found my true passion in **cybersecurity**
 
 🚀 Always learning, always hacking! If you need help, feel free to reach out.  
 
----
 
-## 🎯 Purpose of This Blog  
-
-This blog serves as a **personal cheatsheet** where I document my own **tools** and **write-ups** to help both myself and others progress in the cybersecurity field.  
 
 ---
 
@@ -57,4 +53,6 @@ This blog serves as a **personal cheatsheet** where I document my own **tools** 
 
 ---
 
-💡 *Hacking is not just a skill, it's a mindset.*  
+## 🎯 Purpose of This Blog  
+
+This blog serves as a **personal cheatsheet** where I document my own **tools** and **write-ups** to help both myself and others progress in the cybersecurity field.  
