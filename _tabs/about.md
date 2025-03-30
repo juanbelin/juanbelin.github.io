@@ -3,9 +3,11 @@ icon: fas fa-info-circle
 order: 4
 ---
 
+![](https://media.giphy.com/media/6KirhLJyR7oMcwgJQk/giphy.gif?cid=ecf05e47b2diol1ml8fiw59u92tzh76xhp3x7cdpj7by5uqx&ep=v1_stickers_search&rid=giphy.gif&ct=s)
+
+
 # 👨‍💻 About Me
 
-![](https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif)
 **Juan Belinchón**  
 
 I studied software development, but I found my true passion in **cybersecurity** a long time ago. Currently, I'm sharpening my **penetration testing** skills and frequently practicing on CTF platforms like **Hack The Box, Dockerlabs, and HackMyVM**.  
