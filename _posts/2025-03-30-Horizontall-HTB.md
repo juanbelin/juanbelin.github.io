@@ -2,7 +2,7 @@
 title: Horizontall HTB
 image: /assets/img/Anexos/Pasted%20image%2020250330152608.png
 description: Máquina Horizonrtall de HackTheBox [Dificultad facíl]
-categories: [CTF,HacktheBox]
+categories: [CTF,HackTheBox]
 tags: [hacking,easy]
 ---
 
