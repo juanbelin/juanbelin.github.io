@@ -5,9 +5,7 @@ order: 4
 
 # 👨‍💻 About Me
 
-<img height="150" src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif"  />
-
-
+![](https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif)
 **Juan Belinchón**  
 
 I studied software development, but I found my true passion in **cybersecurity** a long time ago. Currently, I'm sharpening my **penetration testing** skills and frequently practicing on CTF platforms like **Hack The Box, Dockerlabs, and HackMyVM**.  
