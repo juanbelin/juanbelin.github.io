@@ -11,7 +11,7 @@
 
 - type: hackmyvm # Use a custom type
   icon: "fas fa-server" # Or any other suitable icon
-  url: 'https://hackmyvm.eu/profile/tu_usuario_hmv' # Replace with your HackMyVM profile URL
+  url: 'https://hackmyvm.eu/public/?u=belin' # Replace with your HackMyVM profile URL
   title: 'HackMyVM'
 
 - type: linkedin
@@ -25,7 +25,6 @@
 
 # - type: twitter
 #  icon: "fa-brands fa-x-twitter"
-
 
 
 # - type: rss
