@@ -4,7 +4,7 @@ description: Tutorial para instalar BlackArch en USB con persisntencia
 categories: [Tutorial]
 tags: [linux]
 pin: true
-image: https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGdxcW1pczgyb2x3bHNkb2JjeDRneHg3ajF3NDBjem5xYzYwaHBmNSZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/GP1TJJSV4Ys1r64q2A/giphy.gif
+image: https://media.giphy.com/media/TyNiKSSbpMcoveJ75f/giphy.gif?cid=790b76110gqqmis82olwlsdobcx4gxx7j1w40cznqc60hpf5&ep=v1_stickers_search&rid=giphy.gif&ct=s
 comments: true
 ---
 ## Requirements
