@@ -10,7 +10,7 @@ tags: [hacking,easy]
 
 ## Reconocimiento
 Comenzamos con un escaneo completo de `nmap` para sacar los puertos corriendo y las versiones de estos:
-```
+```shell
 nmap -sSCV --min-rate=5000 -Pn -n -p- 10.10.11.105 -oN nmap.txt
 Starting Nmap 7.95 ( https://nmap.org ) at 2025-03-30 15:26 CEST
 Warning: 10.10.11.105 giving up on port because retransmission cap hit (10).
