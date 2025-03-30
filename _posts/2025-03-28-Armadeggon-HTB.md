@@ -2,7 +2,7 @@
 title: Armadeggon HTB
 description: Armadeggon Machine HTB
 categories: [CTF,HackTheBox]
-tags: [hacking]
+tags: [hacking,easy]
 pin: false
 image: /assets/img/Anexos/Pasted%20image%2020250318104150-1.png
 comments: true
