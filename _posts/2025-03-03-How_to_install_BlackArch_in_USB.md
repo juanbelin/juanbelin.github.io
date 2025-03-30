@@ -1,6 +1,6 @@
 ---
-title: Como instalar BlackArch en USB! 
-description: Tutorial para instalar BlackArch en USB con persisntencia
+title: How to install BlackArch in USB with persistanve! 
+description: Best Guide, avoid problems
 categories: [Tutorial]
 tags: [linux]
 pin: true
