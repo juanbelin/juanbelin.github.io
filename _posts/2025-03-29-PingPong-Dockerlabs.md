@@ -72,7 +72,7 @@ Rápidamente `gobuster` me reporta esta web donde poco podemos hacer.
 
 En cambio, por el puerto _5000_ tenemos esta web que parece que hace un `ping`:
 
-![|896](/assets/img/Anexos/Pasted%20image%2020250329200410-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250329200410-1.png)
 
 
 ![](/assets/img/Anexos/Pasted%20image%2020250329200447-1.png)
