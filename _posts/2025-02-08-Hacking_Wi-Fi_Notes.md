@@ -1,5 +1,5 @@
 ---
-title: Apuntes Hacking WI-FI 
+title: Apuntes Hacking WI-FI (Spanish)
 description: Apuntes de Hacking WI-FI 
 categories: [Tutorial]
 tags: [hacking,notes]
