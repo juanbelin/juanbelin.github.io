@@ -109,24 +109,24 @@ toc: true
 
 comments:
   # Global switch for the post-comment system. Keeping it empty means disabled.
-  provider: utterances # [disqus | utterances | giscus]
+  provider: giscus #utterances # [disqus | utterances | giscus]
   # The provider options are as follows:
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: juanbelin/juanbelin.github.io # <gh-username>/<repo>
-    issue_term: pathname # < url | pathname | title | ...>
+    repo: #juanbelin/juanbelin.github.io # <gh-username>/<repo>
+    issue_term: #pathname # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: juanbelin/juanbelin.github.io # <gh-username>/<repo>
+    repo_id: R_kgDOOQnZsg
+    category: General
+    category_id: DIC_kwDOOQnZss4CooOO
     mapping: # optional, default to 'pathname'
     strict: # optional, default to '0'
     input_position: # optional, default to 'bottom'
-    lang: # optional, default to the value of `site.lang`
+    lang: en # optional, default to the value of `site.lang`
     reactions_enabled: # optional, default to the value of `1`
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
