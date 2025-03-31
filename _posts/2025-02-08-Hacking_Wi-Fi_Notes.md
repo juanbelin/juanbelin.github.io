@@ -2,7 +2,7 @@
 title: Apuntes Hacking WI-FI 
 description: Apuntes de Hacking WI-FI 
 categories: [Tutorial]
-tags: [hacking]
+tags: [hacking,notes]
 pin: true
 image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-0O6b-BaoV_hj9IJHYMEpiHjVRbdDKmUIVQ&s
 ---
