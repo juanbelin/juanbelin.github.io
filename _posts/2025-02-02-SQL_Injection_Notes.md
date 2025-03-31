@@ -1,5 +1,5 @@
 ---
-title: Apuntes SQL Injection
+title: Apuntes SQL Injection (Spanish)
 description: Apuntes de SQL Injection de S4vitar, Hack4u y Rinku.
 categories: [Tutorial]
 tags: [notes]
