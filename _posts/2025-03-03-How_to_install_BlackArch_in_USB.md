@@ -29,7 +29,7 @@ First, download the **ISO** from the following link:
 
 To install it on the USB, we need to use software like _BalenaEtcher_ or _Rufus_. Preferably Rufus, as that is what I will use during the installation:
 
-### test
+
 
 > [Install Rufus](https://rufus.ie/en/)
 
