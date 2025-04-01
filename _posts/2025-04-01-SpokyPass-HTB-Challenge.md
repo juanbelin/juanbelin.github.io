@@ -2,7 +2,7 @@
 title: SpookyPass HTB Challenge (English)
 image: /assets/img/Anexos/Pasted%20image%2020250401091447.png
 description: SpookyPass Challenge from HTB [Dificult very asy]
-categories: [Challenge,HTB]
+categories: [Challenge,HackTheBox]
 tags: [reversing,very easy]
 ---
 
