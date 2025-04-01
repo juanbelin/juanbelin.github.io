@@ -7,7 +7,7 @@ order: 4
 
 # 👨‍💻 About Me
 
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDhoY2FuaWZmZnYyaXV6MTZ4MW5va25yMXE0bGRtb2F3ZWF4ZTQwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Y0uU6oq3hJ1Gu2Er1q/giphy.gif){: width="300" height="300" } 
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDhoY2FuaWZmZnYyaXV6MTZ4MW5va25yMXE0bGRtb2F3ZWF4ZTQwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Y0uU6oq3hJ1Gu2Er1q/giphy.gif){: width="250" height="250" } 
 
 **Juan Belinchón**  
 
