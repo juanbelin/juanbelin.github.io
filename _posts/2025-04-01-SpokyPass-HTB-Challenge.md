@@ -6,7 +6,7 @@ categories: [Challenge,HTB]
 tags: [reversing,very easy]
 ---
 
-#
+
 
 Once I install the file, I have got the next executable file: 
 ```shell
@@ -50,6 +50,7 @@ You're not a real ghost; clear off!
 Trying I still get this. Perhaps ltrace did not show the full password string beceuse it's too long so let use **strings** to check it:
 
 ![](/assets/img/Anexos/Pasted%20image%2020250331133456.png)
+
 We have it!
 
 ```shell
