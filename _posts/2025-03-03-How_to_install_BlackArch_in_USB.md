@@ -4,8 +4,8 @@ description: Best Guide, avoid problems
 categories: [Tutorial]
 tags: [linux]
 pin: true
-image: /assets/img/Anexos/IMG_0439.png
-# image: https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExa3Vla3NheWJycmI5ZGk2MzRlNXBjOHRxMnRqd3BkbWF4MDY1YzFocyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TyNiKSSbpMcoveJ75f/giphy.gif
+#image: /assets/img/Anexos/IMG_0439.png
+image: https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2014/12/blackarch-linux.jpg?fit=1200%2C675&quality=70&strip=all&ssl=1
 comments: true
 ---
 ## Requirements
