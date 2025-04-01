@@ -6,7 +6,7 @@ categories: [Challenge,HTB]
 tags: [reversing,very easy]
 ---
 
-
+#
 
 Once I install the file, I have got the next executable file: 
 ```shell
