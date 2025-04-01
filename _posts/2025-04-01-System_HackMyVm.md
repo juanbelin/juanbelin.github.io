@@ -1,6 +1,6 @@
 ---
 title: System HackMyVm (English)
-image: /assets/img/Anexos/Pasted%20image%2020250401124226.png
+image: /assets/img/Anexos/Pasted%20image%2020250401125207.png
 description: System Machine from HackMyVm [Dificult easy]
 categories: [CTF,HackMyVm]
 tags: [hacking,easy]
