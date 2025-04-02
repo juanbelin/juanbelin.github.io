@@ -1,6 +1,13 @@
 --- 
 ---
 
+
+@import 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
 em {
     color: #ff6b6b; /* Rojo suave */
     font-style: italic;
