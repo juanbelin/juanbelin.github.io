@@ -1,5 +1,5 @@
 ---
-layout: about-me
+layout: about me
 icon: fas fa-info-circle
 order: 4
 ---
