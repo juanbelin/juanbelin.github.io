@@ -8,15 +8,12 @@
 ';
 
 em {
-    color: #ff6b6b; /* Rojo suave */
-    font-style: italic;
-  }
-  
-  /* Cambiar el color de bold */
-  strong {
-    color: #1f7a8c; /* Azul oscuro */
-    font-weight: bold;
-  }
-  
-  /* Cambiar el color de code inline */
- 
+  font-style: italic;
+  color: #ff5733; // Rojo anaranjado
+}
+
+// Cambiar el color y grosor de la negrita
+strong {
+  font-weight: bold;
+  color: #0077cc; // Azul fuerte
+}
