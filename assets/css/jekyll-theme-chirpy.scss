@@ -7,7 +7,7 @@
 {%- endif -%}
 ';
 
-.hackthebox { 
+.hackthebox a { 
   color: #00ff00 !important; 
 }
 
@@ -19,4 +19,9 @@ em {
 strong {
   font-weight: bold;
   color: #276fab; 
+}
+
+.navbar {
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(5px); // Efecto de vidrio esmerilado
 }
