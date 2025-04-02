@@ -2,11 +2,6 @@
 ---
 
 
-@import 'main
-{%- if jekyll.environment == 'production' -%}
-  .bundle
-{%- endif -%}
-';
 
 .hackthebox-icon{
     color: green;
