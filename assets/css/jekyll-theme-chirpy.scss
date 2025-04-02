@@ -3,9 +3,16 @@
 
 
 
-.hackthebox-icon{
-    color: green;
+/* Cambiar el color del link de HackTheBox a verde */
+.hackthebox-icon a {
+  color: #00ff00 !important; 
 }
+
+.hackthebox-icon a:hover {
+  color: #00cc00 !important; 
+  text-decoration: underline; 
+}
+
 
 /* Cambiar el color de italic */
 em {
@@ -19,11 +26,4 @@ em {
     font-weight: bold;
   }
   
-  /* Cambiar el color de code inline */
-  code {
-    background-color: #282c34; /* Fondo oscuro */
-    color: #f8c555; /* Amarillo */
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-family: "Fira Code", monospace; /* O cualquier fuente que prefieras */
-  } 
+ 
