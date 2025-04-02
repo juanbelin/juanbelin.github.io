@@ -8,6 +8,7 @@
   icon: "fas fa-cube" # Or any other suitable icon
   url: 'https://app.hackthebox.com/profile/1728358' # Replace with your HTB profile URL
   title: 'HackTheBox' # Optional: Add a title for the link
+  class: hackthebox-icon
 
 - type: hackmyvm # Use a custom type
   icon: "fas fa-server" # Or any other suitable icon
