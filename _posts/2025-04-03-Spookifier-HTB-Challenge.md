@@ -15,13 +15,9 @@ N/A
 ### Machine Description
 
 - Name: Spookifier
-
 - Goal: Get the flag
-
 - Difficulty: very easy
-
 - Operating System: N/A
-
 - link: [Spookifier](https://app.hackthebox.com/challenges/413)
 
   
