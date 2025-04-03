@@ -7,10 +7,6 @@
 {%- endif -%}
 ';
 
-.hackthebox a { 
-  color: #00ff00 !important; 
-}
-
 em {
   font-style: italic;
   color: #ff5733; 
@@ -24,4 +20,20 @@ strong {
 .navbar {
     background: rgba(0, 0, 0, 0.8) !important;
     backdrop-filter: blur(5px); // Efecto de vidrio esmerilado
+}
+
+h1 {
+  color: #0033cc; // Azul fuerte
+}
+
+h2 {
+  color: #0055ff; // Azul intermedio
+}
+
+h3 {
+  color: #3399ff; // Azul claro
+}
+
+h4 {
+  color: #66b3ff; // Azul más suave
 }
