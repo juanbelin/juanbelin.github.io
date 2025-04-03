@@ -24,6 +24,9 @@ N/A
 
 ### PDF Link
 
+
+## Explotation
+
 - PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/Challenges/Challenge%20Spookifier.pdf)
 
 
