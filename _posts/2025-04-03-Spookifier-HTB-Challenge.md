@@ -23,11 +23,11 @@ N/A
   
 
 ### PDF Link
+- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/Challenges/Challenge%20Spookifier.pdf)
 
 
 ## Explotation
 
-- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/Challenges/Challenge%20Spookifier.pdf)
 
 
 We have this input where whatever we introduce we get their differents font styles:
