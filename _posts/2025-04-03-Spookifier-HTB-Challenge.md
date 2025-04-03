@@ -2,7 +2,7 @@
 title: Spookifier HTB Challenge (English)
 image: https://tse1.mm.bing.net/th?id=OIG1.iKzTRYDeUwZgb8AvNvbH&pid=ImgGn
 description: Challenge Spookifier HTB [Difuculty very easy]
-categories: [Challenge,HackTheBox]
+categories: [Challenge,HTB]
 tags: [web,very easy]
 ---
 
