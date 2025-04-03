@@ -1,5 +1,5 @@
 ---
-title: Reverse Dockerlabs (English)
+title: Reverse Dockerlabs
 image: /assets/img/Anexos/Pasted%20image%2020250402092936.png
 description: Máquina Reverse de Dockerlabs [Dificultad media]
 categories: [CTF,Dockerlabs]
@@ -16,10 +16,10 @@ N/A
 - Goal: Get two flags
 - Difficulty: Medium
 - Operating System: Linux
-- link: [Shenron-3](https://download.vulnhub.com/shenron/shenron-3.ova)
+- link: [Reverse](https://mega.nz/file/XYswTACa#7HR7EZlUXRIITV5eisEVvegFiCi-biVi0tYR5VD1uDQ)
 
 ### PDF Link
-- PDF: <https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/Dockerlabs/M%C3%A1quina%20Reverse.pdf>
+- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/Dockerlabs/M%C3%A1quina%20Reverse.pdf)
 
 
 ## Reconocimiento 
