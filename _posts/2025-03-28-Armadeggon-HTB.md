@@ -96,7 +96,6 @@ http://10.10.10.233/ [200 OK] Apache[2.4.6], Content-Language[en], Country[RESER
 ```
 `drupwn` nos reporta la versión de Drupal, por ello busco en `searchsploit` y me encuentro con una vulnerabilidad por versiones debajo de la _8.6.9_ que permite RCE usando `metaesploit`:
 
-![](/assets/img/Anexos/Pasted%20image%2020250318150827-1.png)
 
 Por ello, ejecuto `metaesploit` y la busco con `search`:
 ```
