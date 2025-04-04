@@ -13,13 +13,13 @@ tags: [web,very easy]
 Blocky is fairly simple overall, and was based on a real-world machine. It demonstrates the risks of bad password practices as well as exposing internal files on a public facing system. On top of this, it exposes a massive potential attack vector: Minecraft. Tens of thousands of servers exist that are publicly accessible, with the vast majority being set up and configured by young and inexperienced system administrators.
 
 ### Machine Description
-![](Pasted%20image%2020250404135814-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404135814-1.png)
 
 - Name: Bloky
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Linux
-- link: [Bloky](https://app.hackthebox.com/machines/48)
+- link: [Bloky](/assets/img/Anexos/https://app.hackthebox.com/machines/48)
 
 
 ### PDF Link
@@ -55,11 +55,11 @@ Nmap report me the ports _21_,_22_ ,_80_, _8182_ and _25565_.
 
 Firtsly I set the virtual hosting in _/etc/passwd_
 
-![](Pasted%20image%2020250404090358-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404090358-1.png)
 
 The machines contains this web:
 
-![](Pasted%20image%2020250404090502-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404090502-1.png)
 
 
 I start fuzzing using `gobuster`, it's kinda obvious the web is using wordpress:
@@ -98,30 +98,30 @@ Starting gobuster in directory enumeration mode
 
 It's using and old version but not exploitable  for now.
 
-![](Pasted%20image%2020250404091218-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404091218-1.png)
 
 
 2 _jar_ files exists in the plugins direcotory:
 
-![](Pasted%20image%2020250404091415-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404091415-1.png)
 
 I decompile those using this online tool:
 
-![](Pasted%20image%2020250404091848-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404091848-1.png)
 
 In _BlockyCore.java_ I find the mysql credentials. As `gobuster` reported about **phpmyadmin** we can try:  
 
-![](Pasted%20image%2020250404091908-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404091908-1.png)
 
 ## Explotation 
 
-![](Pasted%20image%2020250404094213-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404094213-1.png)
 
 We are in. 
 
 I find a user and password.
 
-![](Pasted%20image%2020250404094654-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250404094654-1.png)
 
 Let's try to crack it using `hashcat`
 ```shell
