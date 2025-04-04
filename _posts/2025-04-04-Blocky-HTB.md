@@ -96,7 +96,7 @@ Starting gobuster in directory enumeration mode
 /phpmyadmin           (Status: 301) [Size: 313] [--> http://blocky.htb/phpmyadmin/]
 ```
 
-It's using and old version but not exploitable  for now.
+It's using  old version but not exploitable  for now.
 
 ![](/assets/img/Anexos/Pasted%20image%2020250404091218-1.png)
 
