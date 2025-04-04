@@ -19,7 +19,7 @@ Blocky is fairly simple overall, and was based on a real-world machine. It demon
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Linux
-- link: [Bloky](/assets/img/Anexos/https://app.hackthebox.com/machines/48)
+- link: [Bloky](https://app.hackthebox.com/machines/48)
 
 
 ### PDF Link
