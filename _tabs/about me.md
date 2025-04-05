@@ -55,3 +55,5 @@ I studied software development, but I found my true passion in **cybersecurity**
 ## 🎯 Purpose of This Blog  
 
 This blog serves as a **personal cheatsheet** where I document my own **tools** and **write-ups** to help both myself and others progress in the cybersecurity field.  
+
+<meta name="google-site-verification" content="Z1TAm9m7QnkDhRl05X8iDyAKvEA7qppBDGJXv3hA3QE" />
