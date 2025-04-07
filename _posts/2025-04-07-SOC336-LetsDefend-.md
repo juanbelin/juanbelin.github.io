@@ -1,4 +1,3 @@
-
 ---
 title: Let’s Defend SOC336
 image: /assets/img/Anexos/Pasted%20image%2020250407101344-1.png
