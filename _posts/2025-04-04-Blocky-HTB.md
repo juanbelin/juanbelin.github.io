@@ -23,7 +23,7 @@ Blocky is fairly simple overall, and was based on a real-world machine. It demon
 
 
 ### PDF Link
-- PDF: <https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/M%C3%A1quina%20Blocky.pdf>
+- PDF: [PDF Link](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/M%C3%A1quina%20Blocky.pdf)
 
 ## Reconnaissance
 We start executing a full scan using `nmap` in order to know the ports and services running at the machine:
