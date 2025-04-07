@@ -9,7 +9,7 @@ tags: [soc]
 
 
 ## Introduction
-Estamos dentro de un SOC y nos llega una alerta de un incidente de nivel **crírico** y tenemos que actuar.
+Estamos dentro de un SOC y nos llega una alerta de un incidente de nivel **crítico** y tenemos que actuar.
 
 ### Description
 
