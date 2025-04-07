@@ -17,6 +17,9 @@ Estamos dentro de un SOC y nos llega una alerta de un incidente de nivel **crír
 - Goal: Investigar el incidente
 - link: [LetsDefend](https://app.letsdefend.io)
 
+![](/assets/img/Anexos/Pasted%20image%2020250407101344-1.png)
+
+
 
 ### PDF Link
 - PDF: [PDF Link](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/LetsDefend/LetsDefend%20SOC336.pdf)
