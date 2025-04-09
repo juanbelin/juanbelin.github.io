@@ -27,7 +27,7 @@ N/A
 
 
 
-
+## Reconocimiento
 
 Comenzamos con un completo de `nmap` para sacar los puertos y versiones corriendo en la máquina: 
 ```shell
@@ -152,6 +152,8 @@ Session completed
 ```
 
 > Aquí intente logearme pero no pude, mire el writeup de otras personas y esto es un rabbit hole
+
+## Explotación
 
 Con `hydra` pruebo fuerza bruta al panel de autenticación
 ```shell
