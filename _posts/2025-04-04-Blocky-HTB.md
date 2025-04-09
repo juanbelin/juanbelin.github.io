@@ -13,6 +13,7 @@ tags: [web,very easy]
 Blocky is fairly simple overall, and was based on a real-world machine. It demonstrates the risks of bad password practices as well as exposing internal files on a public facing system. On top of this, it exposes a massive potential attack vector: Minecraft. Tens of thousands of servers exist that are publicly accessible, with the vast majority being set up and configured by young and inexperienced system administrators.
 
 ### Machine Description
+
 ![](/assets/img/Anexos/Pasted%20image%2020250404135814-1.png)
 
 - Name: Bloky
