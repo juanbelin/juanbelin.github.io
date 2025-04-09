@@ -12,7 +12,7 @@ N/A
 
 ### Machine Description
 
-![](Pasted%20image%2020250409170306-1.png)
+![](/assets/img/Anexos/Pasted%20image%2020250409170306-1.png)
 
 - Name: Mybb
 - Goal: Get two flags
