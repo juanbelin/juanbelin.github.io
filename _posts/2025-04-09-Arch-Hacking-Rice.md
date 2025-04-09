@@ -1,7 +1,7 @@
 ---
 title: Arch Hacking Rice
 image: /assets/img/Anexos/rice_1.png
-description: My rice new Arch rice , focus for hacking.
+description: My new Arch rice , focus for hacking.
 categories: [Tutorial]
 tags: [linux]
 ---
