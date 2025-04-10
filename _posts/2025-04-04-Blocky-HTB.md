@@ -3,7 +3,7 @@ title: Bloky HTB (English)
 image: /assets/img/Anexos/Pasted%20image%2020250404085424-1.png
 description: Bloky HTB Machine [Difuculty easy]
 categories: [CTF,HackTheBox]
-tags: [web,very easy]
+tags: [hacking,easy]
 ---
 
 
