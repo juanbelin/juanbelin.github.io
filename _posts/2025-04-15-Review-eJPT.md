@@ -14,7 +14,7 @@ tags: [eJPT]
 ### Introducción 
 El 14/04/2025 me presente al examen de la [eJPT](https://security.ine.com/certifications/ejpt-certification/), certificación de [INE](https://security.ine.com/). Sabía que tenía el examen aprobado tras 4 horas pero quise comprometer todos los sistemas que pudiera y me demoré hasta las 7 horas terminando con una puntuación de 91%. El examen lo hice más o menos con 40 máquinas completadas pero no todas ellas a ciegas, probablemente en más de la mitad tuve que acudir al writeup ya que o me quedaba atascado o no conocía la metodología de ataque. La estructura del examen es la siguiente:
 
-![](Review%20eJPT-1.png)
+![](/assets/img/Anexos/Review%20eJPT-1.png)
 
 
 ### Estructura del examen 
@@ -22,11 +22,11 @@ El examen se compone de 35 preguntas tipo test las cuales se aseguran que has re
 
 INE te da una serie de herramientas para el examen por lo que no deberías complicar las cosas utilizando otras herramientas. En mi caso pude pasar el examen sin ir más allá de las herramientas que me dieron. 
 
-![](Review%20eJPT-3.png)
+![](/assets/img/Anexos/Review%20eJPT-3.png)
 
 La estructura mi laboratorio fue parecida a esta:
 
-![](Review%20eJPT-4.png)
+![](/assets/img/Anexos/Review%20eJPT-4.png)
 
 Con tu máquina Kali, la cual te proporciona INE desde tu navegador, estas dentro de una red en donde hay una serie de máquinas las cuales tienes que descubrir. No todas las máquinas de la red tienen que ser comprometidas, en mi examen, hubo 2 que eran de relleno. Tampoco es necesario escalar privilegios en todas las máquinas. Una máquina contiene otra interfaz por lo cual deberás usar esta máquina como puente para pivotar a las máquinas de la otra red las cuales en mi caso 3 de ellas eran de señuelo.
 
@@ -51,7 +51,7 @@ Con tu máquina Kali, la cual te proporciona INE desde tu navegador, estas dentr
 
 On April 14th, 2025, I took the [eJPT](https://security.ine.com/certifications/ejpt-certification/) exam, a certification by [INE](https://security.ine.com/). I knew I had passed the exam after 4 hours, but I wanted to compromise as many systems as I could, so I ended up spending 7 hours in total, finishing with a score of 91%. I tackled the exam with experience from about 40 machines under my belt, but not all of them were done blindly. For more than half of them, I had to refer to writeups either because I got stuck or I didn't know the attack methodology. The exam estructure is:
 
-![](Review%20eJPT-1.png)
+![](/assets/img/Anexos/Review%20eJPT-1.png)
 
 ### Exam Structure
 
@@ -59,11 +59,11 @@ The exam consists of 35 multiple-choice questions, each confirming that you’ve
 
 INE provides you with a set of tools for the exam, so there’s really no need to complicate things using your own custom tools. In my case, I passed the entire exam without going beyond the tools they provided.
 
-![](Review%20eJPT-3.png)
+![](/assets/img/Anexos/Review%20eJPT-3.png)
 
 My lab structure looked something like this:
 
-![](Review%20eJPT-4.png)
+![](/assets/img/Anexos/Review%20eJPT-4.png)
 
 Using your Kali machine, which INE provides straight from your browser, you’re placed inside a network where you must discover and compromise various machines. Not every machine needs to be compromised; in my case, two of them were just decoys. You also don’t need to escalate privileges on every machine. One machine contains another interface, so you’ll need to use it as a pivot point to access machines on the other network three of which were also decoys in my case.
 
