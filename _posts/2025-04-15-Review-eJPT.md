@@ -12,7 +12,7 @@ tags: [eJPT]
 ## Español
 
 ### Introducción 
-El 14/04/2025 me presente al examen de la [eJPT](https://security.ine.com/certifications/ejpt-certification/), certificación de [INE](https://security.ine.com/). Sabía que tenía el examen aprobado tras 4 horas pero quise comprometer todos los sistemas que pudiera y me demoré hasta las 7 horas terminando con una puntuación de 91%. El examen lo hice más o menos con 40 máquinas completadas pero no todas ellas a ciegas, probablemente en más de la mitad tuve que acudir al writeup ya que o me quedaba atascado o no conocía la metodología de ataque. La estructura del examen es la siguiente:
+El 14/04/2025 me presenté al examen de la [eJPT](https://security.ine.com/certifications/ejpt-certification/), certificación de [INE](https://security.ine.com/). Sabía que tenía el examen aprobado tras 4 horas pero quise comprometer todos los sistemas que pudiera y me demoré hasta las 7 horas terminando con una puntuación de 91%. El examen lo hice más o menos con 40 máquinas completadas pero no todas ellas a ciegas, probablemente en más de la mitad tuve que acudir al writeup ya que o me quedaba atascado o no conocía la metodología de ataque. La estructura del examen es la siguiente:
 
 ![](/assets/img/Anexos/Review%20eJPT-1.png)
 
