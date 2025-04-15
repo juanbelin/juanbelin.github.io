@@ -9,9 +9,6 @@ tags: [eJPT]
 
 
 
-- [Español](#Español)
-- [English](#English)
-
 ## Español
 
 ### Introducción 
