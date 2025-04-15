@@ -1,7 +1,7 @@
 ---
 title: eJPT Review
 image: Review%20eJPT.png
-image_path: /assets/img/Anexos/
+img_path: /assets/img/Anexos/
 description: A review about eJPT certification.
 categories: [Review]
 tags: [eJPT]
