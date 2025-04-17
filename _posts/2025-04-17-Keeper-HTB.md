@@ -1,4 +1,3 @@
-
 ---
 title: Keeper HTB (English)
 image: /assets/img/Anexos/Máquina%20Keeper-17.png
@@ -69,6 +68,7 @@ In the web we can see two domains so I add those to the _/etc/hosts_
 
  In the _keeper.htb_ domain we can see that there is a login which is using RT:
 ![](/assets/img/Anexos/Máquina%20Keeper-3.png)
+
 Searching we get the default credentilas and once we trying we successfully login.
 
 ![](/assets/img/Anexos/Máquina%20Keeper-4.png)
@@ -76,6 +76,7 @@ Searching we get the default credentilas and once we trying we successfully logi
 Once in, I see the next user:
 
 ![](/assets/img/Anexos/Máquina%20Keeper-5.png)
+
 ## Explotation
 
 On settings dashboard there is a comment with a password:
