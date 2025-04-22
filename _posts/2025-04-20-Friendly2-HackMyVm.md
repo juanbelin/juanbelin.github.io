@@ -162,6 +162,7 @@ ________________________________________________
 /%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd [Status: 200, Size: 1369, Words: 13, Lines: 27, Duration: 533ms]
 :: Progress: [929/929] :: Job [1/1] :: 66 req/sec :: Duration: [0:00:03] :: Errors: 0 ::
 ```
+## Explotation
 
 We see that the user **gh0st** exists so what we can do now is try to get the id_rsa from gh0st.
 
@@ -223,6 +224,7 @@ permitted by applicable law.
 gh0st@friendly2:~$ 
 ```
 
+## Privilage Escalation
 
 Once in as **gh0st** we can run security.sh as anyone without providing password and setting and environment variable at the time we run the script
 ```shell
