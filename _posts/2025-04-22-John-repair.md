@@ -1,5 +1,5 @@
 ---
-title: John The reaper error solved 
+title: John The Reaper error solved 
 image: /assets/img/Anexos/John%20repair-2.png
 description: John The reaper python2 error solved 
 categories: [Tutorial]
