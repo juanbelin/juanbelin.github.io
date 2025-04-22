@@ -1,5 +1,3 @@
-
-
 ---
 title: John The reaper error solved 
 image: /assets/img/Anexos/John%20repair-2.png
