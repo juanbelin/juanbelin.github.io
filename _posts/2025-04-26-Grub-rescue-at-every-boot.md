@@ -17,7 +17,7 @@ Sometimes when we boot our PC as daily we get this error. This error often appea
 
 ## Way 1
 
-So in order to fix it what we should do 
+So in order to fix it what we should do is as follows:
 ```shell
 ls
 (hd1) (hd1,gptx) (hd1,gptx) (hd1,gptx) (hd1,gptx) # Not always hd1, it can change!
