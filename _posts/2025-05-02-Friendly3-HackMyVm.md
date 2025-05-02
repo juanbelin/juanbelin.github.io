@@ -59,6 +59,7 @@ Nmap reports us the ports _21_(ftp), _22_(ssh) and _80_(http)
 
 In the web we can see the next banner
 ![](/assets/img/Anexos/Máquina%20Friendly%203-1744394388648.png)
+
 So apparently we have an user, juan. So now we can use this user using `hdyra` and try to brute force his password. 
 ```shell
 hydra -l juan -P /usr/share/wordlists/rockyou.txt ftp://192.168.1.85

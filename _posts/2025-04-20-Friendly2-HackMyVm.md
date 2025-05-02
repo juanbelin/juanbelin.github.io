@@ -51,6 +51,7 @@ MAC Address: F8:B5:4D:EC:75:E3 (Intel Corporate)
 Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 ```
 For now we get the port _22_ and the port _80_ so lets see the web page.
+
 ![](/assets/img/Anexos/Máquina%20Friendly%202-1744359942532.png)
 
 For now there is nothing we can do so lets fuzz it using `gobuster`:
@@ -109,6 +110,7 @@ Starting gobuster in directory enumeration mode
 ![](/assets/img/Anexos/Máquina%20Friendly%202-1744360282099.png)
 
 Looking the code I see an interesting comment which talk about _check_if_exist_ parameter.
+
 ![](/assets/img/Anexos/Máquina%20Friendly%202-1744360386510.png)
 
 Fuzzing for this parameter using `ffuf` we find an LFI:
