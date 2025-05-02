@@ -14,7 +14,7 @@ First VM of the Friendly saga for beginners! Have fun and learn!
 
 ### Machine Description
 
-![](/assets/img/Anexos/Máquina%20Friendly%203-9.png)
+![](/assets/img/Anexos/Máquina%20Friendly%203-8.png)
 
 - Name: Friendly3
 - Goal: Get two flags
