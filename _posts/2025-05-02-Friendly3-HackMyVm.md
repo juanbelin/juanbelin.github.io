@@ -24,7 +24,7 @@ First VM of the Friendly saga for beginners! Have fun and learn!
 
 
 ### PDF Link
-- PDF: [PDF Link](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/Hackmyvm/M%C3%A1quina%20Friendly3.pdf)
+- PDF: [PDF Link](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/Hackmyvm/M%C3%A1quina%20Friendly%203.pdf)
 
 
 
