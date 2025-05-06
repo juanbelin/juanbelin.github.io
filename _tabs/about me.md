@@ -4,10 +4,6 @@ order: 4
 ---
 
 
-
-
-![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdDhoY2FuaWZmZnYyaXV6MTZ4MW5va25yMXE0bGRtb2F3ZWF4ZTQwOSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/Y0uU6oq3hJ1Gu2Er1q/giphy.gif){: width="250" height="250" } 
-
 **Juan Belinchón**  
 
 I studied software development, but I found my true passion in **cybersecurity** a long time ago. Currently, I'm sharpening my **penetration testing** skills and frequently practicing on CTF platforms like **Hack The Box, Dockerlabs, and HackMyVM**.  
@@ -26,6 +22,14 @@ I studied software development, but I found my true passion in **cybersecurity**
 🔹 **Discord:** juanbelin  
 
 ---
+
+## 📜 Certs   
+![](/assets/img/Anexos/eJPT.png)
+
+![](/assets/img/Anexos/CPTS.png)
+
+CPTS is currently be preparing.
+
 
 ## 🛠 Knowledge  
 
