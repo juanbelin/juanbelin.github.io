@@ -56,7 +56,8 @@ Nmap done: 1 IP address (1 host up) scanned in 14.59 seconds
 Nmap nos reporta el puerto _22_ y _80_. En la web tenemos el siguiente banner que podría ser un usuario.
 
 
-![](Máquina%20Stranger-1.png)
+![](/assets/img/Anexos/Máquina%20Stranger-1.png)
+
 Por ahora lo que podemos hacer es fuzear por ficheros y directorios con `gobuster` 
 ```shell
 ❯ gobuster dir -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://172.17.0.2 -x html,txt,php
@@ -84,7 +85,7 @@ Starting gobuster in directory enumeration mode
 
 `gobuster` nos encuentra la ruta _strange_ que contiene lo siguiente:
 
-![](Máquina%20Stranger-2.png)
+![](/assets/img/Anexos/Máquina%20Stranger-2.png)
 
 
 
@@ -117,12 +118,12 @@ Finished
 ```
 
 Haciendo fuzzing de nuevo encontramos una nueva web que nos da esta pista:
-![](Máquina%20Stranger-4.png)
+![](/assets/img/Anexos/Máquina%20Stranger-4.png)
 
 
 En cuanto al _private.txt_
 
-![](Máquina%20Stranger-3.png)
+![](/assets/img/Anexos/Máquina%20Stranger-3.png)
 
 ```shell
 ❯ cat private.txt
