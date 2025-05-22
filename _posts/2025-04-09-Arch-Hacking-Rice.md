@@ -11,6 +11,10 @@ tags: [linux]
 This is my new rice using Arch Linux configured for penetration testing. Further information: [Github Link](https://github.com/juanbelin/Hyprland-arch-dotfiles) 
 
 
+## Video 
+
+{% include embed/youtube.html id='lpfnx4CC9cw ' %}
+
 ## Screenshots
 
 Here are some screenshots showcasing the rice:
