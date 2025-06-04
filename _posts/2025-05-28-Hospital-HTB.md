@@ -3,7 +3,7 @@ title: Hospital HTB (English)
 image: /assets/img/Anexos/Máquina%20Hospital.png
 description: Hospital HTB Machine [Difuculty medium]
 categories: [CTF,HackTheBox]
-tags: [hacking,easy]
+tags: [hacking,medium]
 ---
 
 
