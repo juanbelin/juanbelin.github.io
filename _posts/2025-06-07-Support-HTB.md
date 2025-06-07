@@ -177,7 +177,7 @@ After unzip it, we can execute it in Linux if we have `wine` installer
 ```
 
 Apparently this is doing a LDAP query so we can use Wireshark to see the traffic and I find a user and their password
-![](Máquina%20Support-2.png)
+![](/assets/img/Anexos/Máquina%20Support-2.png)
 
 ```shell
 nxc smb 10.10.11.174 -u /usr/share/wordlists/seclists/Usernames/top-usernames-shortlist.txt -p 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz'
@@ -210,14 +210,14 @@ INFO: Done in 00M 04S
 
 We can see the user _support_ but not more information. One thing I didn't do is use `ldapsearch` 
 
-![](Máquina%20Support-4.png)
+![](/assets/img/Anexos/Máquina%20Support-4.png)
 
 
 ```shell
 ldapsearch -H ldap://support.htb -D ldap@support.htb -w 'nvEfEK16^1aM4$e7AclUf8x$tRWxPWO1%lmz' -b "dc=support,dc=htb" "*" > ldap
 ```
 
-![](Máquina%20Support-5.png)
+![](/assets/img/Anexos/Máquina%20Support-5.png)
 After using it, I apparently found the password for the user _support_ which I justly found reciently using `bloodhound`. We can use `netxec` in order to know if we can use this user log using `evilwinrm`
 
 ```shell
@@ -270,10 +270,10 @@ download 20250602235520_BloodHound.zip
 ```
 
 Once we get the zip we upload it to `bloodhound` and we can realise that we hace the GenericAll permision again the DC and `bloodhound` give us the instructions to abuse it. 
-![](Máquina%20Support-6.png)
+![](/assets/img/Anexos/Máquina%20Support-6.png)
 
 
-![](Máquina%20Support-7.png)
+![](/assets/img/Anexos/Máquina%20Support-7.png)
 
 
  The steps I followed were: 
