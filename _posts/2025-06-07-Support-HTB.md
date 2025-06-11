@@ -18,7 +18,7 @@ Support is an Easy difficulty Windows machine that features an SMB share that al
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Windows
-- link: [Hospital](https://app.hackthebox.com/machines/Support/)
+- link: [Support](https://app.hackthebox.com/machines/Support/)
 
   
 
