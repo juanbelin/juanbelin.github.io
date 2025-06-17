@@ -6,15 +6,12 @@ categories: [tool]
 tags: [hacking]
 ---
 
+## Description
+
 **Hit-The-Dns** is a modern DNS recon tool written in bash which will help you during the DNS recon similar to tools like `subfinder` or `dnsenum`.
 
-- [Installation](https://github.com/juanbelin/Hit-The-Dns#installation)
-- [Example Usage](https://github.com/juanbelin/Hit-The-Dns#example-usage)
-	- [DNS Fuzzing](https://github.com/juanbelin/Hit-The-Dns#dns-fuzzing)
- 	- [Dns Fuzzing verbose mode](https://github.com/juanbelin/Hit-The-Dns#dns-fuzzing-verbose-mode)
- 	- [Checking dns.logs and following the next step](https://github.com/juanbelin/Hit-The-Dns#checking-dns.logs-and-following-the-next-step)
-- [Usage](https://github.com/juanbelin/Hit-The-Dns#Usage)
-- [Hit-The-Dns with Dnsenum comparation](https://github.com/juanbelin/Hit-The-Dns#Hit-The-Dns-with-Dnsenum-comparation)
+>[!NOTE]
+>[Link](https://github.com/juanbelin/Hit-The-Dns)
 
 ## Installation 
 ```
@@ -49,9 +46,9 @@ The **dns.logs** file will give you the next step in the recon (zone transfer at
 {% include embed/youtube.html id='u2cVWcbJr-k' %}
 
 
-![image](https://github.com/user-attachments/assets/257d4d61-3936-43cd-bfc2-0b0cc1990872)
+![image](/assets/img/Anexos/poc1.png)
 
-![image](https://github.com/user-attachments/assets/568ac592-3c0f-4b06-bcbe-be5f4c952a96)
+![image](/assets/img/Anexos/poc2.png)
 
 
 
