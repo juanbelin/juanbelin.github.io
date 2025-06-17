@@ -2,7 +2,7 @@
 title: Hit The DNS 
 image: /assets/img/Anexos/Logo.png
 description: Hit The DNS recon tool written in bash
-categories: [tool]
+categories: [Tool]
 tags: [hacking]
 ---
 
