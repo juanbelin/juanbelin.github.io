@@ -10,8 +10,8 @@ tags: [hacking]
 
 **Hit-The-Dns** is a modern DNS recon tool written in bash which will help you during the DNS recon similar to tools like `subfinder` or `dnsenum`.
 
->[!NOTE]
->[Link](https://github.com/juanbelin/Hit-The-Dns)
+>[Github Link](https://github.com/juanbelin/Hit-The-Dns)
+{: .prompt-tip }
 
 ## Installation 
 ```
