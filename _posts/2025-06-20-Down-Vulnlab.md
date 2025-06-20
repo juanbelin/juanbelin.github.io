@@ -22,7 +22,7 @@ N/A
   
 
 ### PDF Link
-- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/M%C3%A1quina%20Down.pdf)
+- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/Vulnlab/M%C3%A1quina%20Down.pdf)
 
 
 
