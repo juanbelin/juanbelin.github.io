@@ -1,6 +1,6 @@
 ---
 title: Data Vulnhab (English)
-image: /assets/img/Anexos/Vulnlab.png
+image: /assets/img/Anexos/Máquina%20Data.png
 description: Down Vulnhab [Difuculty easy]
 categories: [CTF,Vulnhab]
 tags: [hacking,easy]
@@ -28,7 +28,6 @@ N/A
 
 
 
-![](/assets/img/Anexos/Máquina%20Data.png)
 
 ## Reconnaissance 
 
