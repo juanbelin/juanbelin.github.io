@@ -178,8 +178,10 @@ Here `ctrl+o` to open the file explorer
 ![](/assets/img/Anexos/Máquina%20Lock-6.png)
 
 We confirm that we have the privilages we wanted, 
+
 ![](/assets/img/Anexos/Máquina%20Lock-7.png)
 then cmd here and we got the shell as SYSTEM!
+
 ![](/assets/img/Anexos/Máquina%20Lock-8.png)
 
 ![](/assets/img/Anexos/Máquina%20Lock-9.png)
