@@ -17,7 +17,7 @@ N/A
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Windows
-- link: [Data](https://wiki.vulnlab.com/guidance/easy/lock)
+- link: [Lock](https://wiki.vulnlab.com/guidance/easy/lock)
 
   
 
