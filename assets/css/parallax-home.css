@@ -1,0 +1,34 @@
+/* Parallax background effect for homepage */
+.hero-parallax {
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #232526 0%, #414345 100%);
+}
+.hero-parallax__bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('/assets/img/avatar.jpg') center/cover no-repeat;
+  opacity: 0.15;
+  will-change: transform;
+  transition: transform 0.2s;
+}
+.hero-parallax__content {
+  position: relative;
+  color: #fff;
+  z-index: 2;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 0 2px 8px #000a;
+}
+@media (max-width: 600px) {
+  .hero-parallax {
+    height: 35vh;
+    font-size: 1.2rem;
+  }
+}
