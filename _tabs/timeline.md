@@ -4,7 +4,6 @@ icon: fas fa-timeline
 order: 3
 ---
 
-<link rel="stylesheet" href="/assets/css/timeline.css">
 
 <div class="timeline">
   <div class="timeline-event left">
