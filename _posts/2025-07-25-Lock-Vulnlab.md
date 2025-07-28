@@ -1,5 +1,5 @@
 ---
-title: Lock Vulnhab (English)
+title: Lock Vulnlab (English)
 image: /assets/img/Anexos/Máquina%20Lock.png
 description: Down Vulnhab [Difuculty easy]
 categories: [CTF,Vulnhab]

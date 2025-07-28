@@ -1,5 +1,5 @@
 ---
-title: Data Vulnhab (English)
+title: Data Vulnlab (English)
 image: /assets/img/Anexos/Máquina%20Data.png
 description: Down Vulnhab [Difuculty easy]
 categories: [CTF,Vulnhab]

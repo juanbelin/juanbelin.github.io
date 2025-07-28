@@ -1,5 +1,5 @@
 ---
-title: Down Vulnhab (English)
+title: Down Vulnlab (English)
 image: /assets/img/Anexos/Vulnlab.png
 description: Down Vulnhab [Difuculty easy]
 categories: [CTF,Vulnhab]
