@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<!-- Parallax Hero Section -->
+<link rel="stylesheet" href="/assets/css/parallax-home.css">
+<div class="hero-parallax">
+  <div class="hero-parallax__bg" id="parallax-bg"></div>
+  <div class="hero-parallax__content">
+    <span>Bienvenido a mi blog de Ciberseguridad y Hacking</span>
+  </div>
+</div>
+<script>
+document.addEventListener('mousemove', function(e) {
+  var bg = document.getElementById('parallax-bg');
+  if (!bg) return;
+  var x = (e.clientX / window.innerWidth - 0.5) * 30;
+  var y = (e.clientY / window.innerHeight - 0.5) * 30;
+  bg.style.transform = `scale(1.1) translate(${x}px, ${y}px)`;
+});
+</script>
+
+<!-- Main Content -->
+<main class="page-content" aria-label="Content">
+  <div class="wrapper">
+    {{ content }}
+  </div>
+</main>
