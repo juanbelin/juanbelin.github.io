@@ -1,0 +1,18 @@
+<!-- Preloader HTML for logo animation -->
+<div id="preloader">
+  <img src="/assets/img/avatar.jpg" alt="Logo" />
+</div>
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      var preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.classList.add('hide');
+        setTimeout(function() {
+          preloader.style.display = 'none';
+        }, 700); // Match CSS transition
+      }
+    }, 1200); // Show logo for at least 1.2s
+  });
+</script>
+<link rel="stylesheet" href="/assets/css/preloader.css">
