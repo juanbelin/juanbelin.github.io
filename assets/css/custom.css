@@ -1,0 +1,9 @@
+/* Custom cursor styles */
+* {
+    cursor: url('/assets/img/favicons/favicon-32x32.png'), auto !important;
+}
+
+/* Optional: different cursor for clickable elements */
+a:hover, button:hover, input[type="submit"]:hover {
+    cursor: url('/assets/img/favicons/favicon-32x32.png'), pointer !important;
+}
