@@ -2,7 +2,7 @@
 title: Down Vulnlab (English)
 image: /assets/img/Anexos/Vulnlab.png
 description: Down Vulnhab [Difuculty easy]
-categories: [CTF,Vulnhab]
+categories: [CTF,Vulnlab]
 tags: [hacking,easy]
 ---
 
@@ -13,7 +13,7 @@ N/A
 ### Machine Description
 
 
-- Name: Vulnhab
+- Name: Down
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Linux
