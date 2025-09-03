@@ -17,7 +17,7 @@ tags: [hacking,easy]
 - Name: Forest
 - Goal: Get two flags
 - Difficulty: easy
-- Operating System: Linux
+- Operating System: Windows
 - link: [Forest](https://app.hackthebox.com/machines/212)
 
   
