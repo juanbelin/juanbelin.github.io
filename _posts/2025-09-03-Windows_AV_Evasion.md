@@ -1,9 +1,12 @@
 ---
 title: Windows AV Evasion (msfvenom edition)
+image: /assets/img/Anexos/rev_shell_AV_evasion.gif
 description: The easiest way to achieve a reverse shell bypassing Windows Defender
 categories: [Hacking, Windows]
 tags: [av-evasion, meterpreter, windows-defender]
 ---
+
+
 
 > [!WARNING]  
 > The entire article and the information shown is only for educational and informational purposes.
@@ -11,6 +14,8 @@ tags: [av-evasion, meterpreter, windows-defender]
 ## Introduction
 
 In this post, we'll explore a method to bypass Windows Defender using Python and Meterpreter to achieve a reverse shell.
+
+> Git repo -> https://github.com/juanbelin/Windows-AV-Evasion 
 
 ## Step-by-Step Process
 
@@ -35,6 +40,9 @@ We need to add `ctypes` since it's required by `python-reflection`:
 ```shell
 nano reload.py 
 ```
+
+![](/assets/img/Anexos/Windows_AV.png)
+
 
 ### 3. Generating the Executable
 
