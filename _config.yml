@@ -35,14 +35,14 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Juan Belinchón
-  email: juan.belinchon.pro@gmail.com # change to your email address
+  email: 
   links:
     # The first element serves as the copyright owner's link
     #- https://twitter.com/username # change to your Twitter homepage
     - https://github.com/juanbelin # change to your GitHub homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    - https://www.linkedin.com/in/juan-belinchón-sánchez-47a735244
+   
 
 # Site Verification Settings
 webmaster_verifications:
@@ -88,7 +88,7 @@ pageviews:
 #     light — Use the light color scheme
 #     dark — Use the dark color scheme
 #
-theme_mode: # [light | dark]
+theme_mode: dark # [light | dark] 
 
 # The CDN endpoint for media resources.
 # Notice that once it is assigned, the CDN url
