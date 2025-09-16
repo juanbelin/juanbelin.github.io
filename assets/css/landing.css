@@ -42,38 +42,27 @@ body{
 }
 
 /* Cursor personalizado */
+/* Cursor personalizado simple */
 * {
   cursor: none;
 }
 
 .custom-cursor {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 999;
-  mix-blend-mode: difference;
-  transition: transform 0.2s ease;
-}
-
-.custom-cursor-dot {
-  width: 4px;
-  height: 4px;
+  width: 12px;
+  height: 12px;
   background: var(--accent);
   border-radius: 50%;
   position: fixed;
   pointer-events: none;
   z-index: 999;
-  mix-blend-mode: difference;
+  transform: translate(-50%, -50%);
   transition: transform 0.1s ease;
 }
 
 a:hover ~ .custom-cursor {
-  transform: scale(1.5);
+  transform: scale(1.8);
+  background: white;
 }
-
 .hero{
   width:260px;
   height:260px;
@@ -164,6 +153,7 @@ a:hover ~ .custom-cursor {
   min-height: 27px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .subtitle span {
@@ -171,6 +161,11 @@ a:hover ~ .custom-cursor {
   opacity: 0;
   animation: rotateText 12s linear infinite;
   white-space: nowrap;
+  background: linear-gradient(90deg, var(--muted), #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position-x: 0%;
 }
 
 .subtitle span:nth-child(1) {
@@ -185,34 +180,24 @@ a:hover ~ .custom-cursor {
   animation-delay: 8s;
 }
 
-.subtitle::after {
-  content: "";
-  position: absolute;
-  right: -15px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 8px;
-  height: 18px;
-  background-color: var(--accent);
-  animation: cursor-blink 1s infinite;
-}
-
 @keyframes rotateText {
-  0%, 5% {
+  0%, 3% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
+    background-position-x: 0%;
   }
-  10%, 25% {
+  8%, 30% {
     opacity: 1;
     transform: translateY(0);
+    background-position-x: 100%;
   }
-  30%, 35% {
+  35%, 38% {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
   40%, 100% {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
 }
 
@@ -286,12 +271,14 @@ a:hover ~ .custom-cursor {
   left: 100%;
 }
 
-.blog-link svg {
+.blog-link i {
   transition: transform 0.3s ease;
   color: #8b5cf6;
+  font-size: 20px;
+  margin-left: 4px;
 }
 
-.blog-link:hover svg {
+.blog-link:hover i {
   transform: translateX(4px);
   color: #a78bfa;
 }
