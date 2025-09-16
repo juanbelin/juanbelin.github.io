@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Main | JuanBelin</title>
+  <title>Main | Juan Belin</title>
     <link rel="stylesheet" href="assets/css/landing.css">
-    <link rel="icon" type="image/jpg" href="/assets/img/favicons/favicon.ico">
-    <script src="assets/js/custom-cursor.js"></script>
+    <link rel="icon" type="image/jpg" href="assets/img/avatar.jpg">
   </head>
   <body>
     <main class="wrap">
@@ -16,7 +15,11 @@
         </div>
 
         <div class="name"><span>[juanbelin@pwned]:∼#</span></div>
-        <div class="subtitle">Especialista en Ciberseguridad</div>
+        <div class="subtitle">
+          <span>Especialista en Ciberseguridad</span>
+          <span>CTF Player</span>
+          <span>Linux Enthusiast</span>
+        </div>
 
         <div class="icons" role="navigation" aria-label="Enlaces sociales">
           <a class="icon-link" href="https://github.com/juanbelin" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
@@ -53,8 +56,12 @@
       </a>
     </main>
 
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
     <script>
       document.addEventListener('DOMContentLoaded', function() {
+        // Efecto de escritura
         const nameSpan = document.querySelector('.name span');
         const text = nameSpan.textContent;
         nameSpan.textContent = '';
@@ -69,6 +76,40 @@
         }
         
         setTimeout(type, 500);
+
+        // Cursor personalizado
+        const cursor = document.querySelector('.custom-cursor');
+        const cursorDot = document.querySelector('.custom-cursor-dot');
+
+        document.addEventListener('mousemove', (e) => {
+          cursor.style.left = e.clientX - cursor.offsetWidth / 2 + 'px';
+          cursor.style.top = e.clientY - cursor.offsetHeight / 2 + 'px';
+          cursorDot.style.left = e.clientX - cursorDot.offsetWidth / 2 + 'px';
+          cursorDot.style.top = e.clientY - cursorDot.offsetHeight / 2 + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+          cursor.style.transform = 'scale(0.8)';
+          cursorDot.style.transform = 'scale(0.8)';
+        });
+
+        document.addEventListener('mouseup', () => {
+          cursor.style.transform = 'scale(1)';
+          cursorDot.style.transform = 'scale(1)';
+        });
+
+        // Efecto hover en links
+        document.querySelectorAll('a').forEach(link => {
+          link.addEventListener('mouseenter', () => {
+            cursor.style.transform = 'scale(1.5)';
+            cursorDot.style.transform = 'scale(1.5)';
+          });
+          
+          link.addEventListener('mouseleave', () => {
+            cursor.style.transform = 'scale(1)';
+            cursorDot.style.transform = 'scale(1)';
+          });
+        });
       });
     </script>
   </body>
