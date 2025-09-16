@@ -139,8 +139,9 @@ body{
 .blog-link {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 16px;
   padding: 16px 32px;
+  width: fit-content;
   background: #2a2139;
   color: #e4d5ff;
   text-decoration: none;
