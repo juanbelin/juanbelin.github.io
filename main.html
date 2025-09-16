@@ -71,9 +71,25 @@
       .icons{display:flex;gap:16px;margin-top:12px}
 
       .icon-link{
-        width:72px;height:72px;border-radius:16px;display:inline-flex;align-items:center;justify-content:center;
-        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));color:var(--muted);text-decoration:none;border:1px solid rgba(255,255,255,0.03);
+        min-width:200px;height:72px;border-radius:16px;
+        display:inline-flex;align-items:center;gap:16px;padding:0 24px;
+        background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+        color:var(--muted);text-decoration:none;
+        border:1px solid rgba(255,255,255,0.03);
         transition:all .25s cubic-bezier(.2,.9,.2,1);
+      }
+
+      .icon-link .icon{
+        font-size:24px;
+        width:32px;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      .icon-link .label{
+        font-size:16px;
+        font-weight:500;
       }
 
       .icon-link:focus{outline:2px solid rgba(6,182,212,0.18);outline-offset:4px}
@@ -86,15 +102,32 @@
         background:linear-gradient(180deg, rgba(6,182,212,0.1), rgba(255,255,255,0.02));
       }
 
+      @font-face {
+        font-family: 'Symbols Nerd Font';
+        src: url('https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/NerdFontsSymbolsOnly/complete/Symbols-2048-em%20Nerd%20Font%20Complete.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
       .small{font-size:12px;color:var(--muted);margin-top:6px}
 
       @media (max-width:520px){
         .hero{width:160px;height:160px}
-        .icon-link{width:64px;height:64px}
+        .icon-link{
+          min-width:unset;
+          width:100%;
+          height:56px;
+          padding:0 16px;
+        }
         .card{padding:28px}
       }
       @media (max-width:420px){
         .card{flex-direction:column;padding:20px}
+        .icons{
+          width:100%;
+          flex-direction:column;
+          gap:12px;
+        }
       }
     </style>
   </head>
@@ -110,35 +143,24 @@
 
         <div class="icons" role="navigation" aria-label="Enlaces sociales">
           <a class="icon-link" href="https://github.com/juanbelin" target="_blank" rel="noopener noreferrer" title="GitHub" aria-label="GitHub">
-          <!-- GitHub SVG -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-          </svg>
-        </a>
+            <span class="icon" style="font-family: 'Symbols Nerd Font';">&#xf308;</span>
+            <span class="label">GitHub</span>
+          </a>
 
-        <a class="icon-link" href="https://juanbelin.github.io/" target="_blank" rel="noopener noreferrer" title="Blog" aria-label="Blog">
-          <!-- Blog SVG -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19.5 3h-15A1.5 1.5 0 003 4.5v15A1.5 1.5 0 004.5 21h15a1.5 1.5 0 001.5-1.5v-15A1.5 1.5 0 0019.5 3zm-15-1.5h15a3 3 0 013 3v15a3 3 0 01-3 3h-15a3 3 0 01-3-3v-15a3 3 0 013-3z"/>
-            <path d="M6 7h12v2H6zm0 4h12v2H6zm0 4h8v2H6z"/>
-          </svg>
-        </a>
+          <a class="icon-link" href="https://juanbelin.github.io/" target="_blank" rel="noopener noreferrer" title="Blog" aria-label="Blog">
+            <span class="icon" style="font-family: 'Symbols Nerd Font';">&#xf02d;</span>
+            <span class="label">Blog</span>
+          </a>
 
-        <a class="icon-link" href="https://app.hackthebox.com/profile/1728358" target="_blank" rel="noopener noreferrer" title="Hack The Box" aria-label="Hack The Box">
-          <!-- HTB SVG -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.996 0a1.119 1.119 0 0 0-.784.326L2.634 8.902a1.112 1.112 0 0 0-.326.784v4.628a1.112 1.112 0 0 0 .326.784l4.628 4.628a1.112 1.112 0 0 0 .784.326h4.628a1.112 1.112 0 0 0 .784-.326l4.628-4.628a1.112 1.112 0 0 0 .326-.784V9.686a1.112 1.112 0 0 0-.326-.784l-4.628-4.628a1.112 1.112 0 0 0-.784-.326zm.002 3.824a1.112 1.112 0 0 1 .784.326l3.14 3.14a1.112 1.112 0 0 1 .326.784v3.14a1.112 1.112 0 0 1-.326.784l-3.14 3.14a1.112 1.112 0 0 1-.784.326h-3.14a1.112 1.112 0 0 1-.784-.326l-3.14-3.14a1.112 1.112 0 0 1-.326-.784v-3.14a1.112 1.112 0 0 1 .326-.784l3.14-3.14a1.112 1.112 0 0 1 .784-.326z"/>
-            <path d="M12 6.266l-2.334 2.334v2.334L12 13.268l2.334-2.334v-2.334z"/>
-          </svg>
-        </a>
-        
-        <a class="icon-link" href="https://hackmyvm.eu/public/?u=belin" target="_blank" rel="noopener noreferrer" title="HackMyVM" aria-label="HackMyVM">
-          <!-- HackMyVM SVG -->
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 2H3a1 1 0 00-1 1v18a1 1 0 001 1h18a1 1 0 001-1V3a1 1 0 00-1-1zm-1 17H4V4h16v15z"/>
-            <path d="M9.5 15.5L12 13l2.5 2.5m-5-7L12 11l2.5-2.5M8 9v6m8-6v6"/>
-          </svg>
-        </a>
+          <a class="icon-link" href="https://app.hackthebox.com/profile/1728358" target="_blank" rel="noopener noreferrer" title="Hack The Box" aria-label="Hack The Box">
+            <span class="icon" style="font-family: 'Symbols Nerd Font';">&#xf1b2;</span>
+            <span class="label">Perfil de HTB</span>
+          </a>
+          
+          <a class="icon-link" href="https://hackmyvm.eu/public/?u=belin" target="_blank" rel="noopener noreferrer" title="HackMyVM" aria-label="HackMyVM">
+            <span class="icon" style="font-family: 'Symbols Nerd Font';">&#xf233;</span>
+            <span class="label">HackMyVM</span>
+          </a>
       </div>
     </main>
   </body>
