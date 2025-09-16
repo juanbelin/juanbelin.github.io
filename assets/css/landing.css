@@ -145,12 +145,12 @@ a:hover ~ .custom-cursor {
 
 .subtitle{
   color:var(--muted);
-  font-size:18px;
+  font-size:22px;
   margin-top:4px;
   font-weight: 500;
   position: relative;
   width: fit-content;
-  min-height: 27px;
+  min-height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,6 +166,21 @@ a:hover ~ .custom-cursor {
   -webkit-text-fill-color: transparent;
   background-size: 200% 100%;
   background-position-x: 0%;
+}
+
+.subtitle span i {
+  margin-left: 8px;
+  font-size: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  background: inherit;
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: transform 0.3s ease;
+}
+
+.subtitle span:hover i {
+  transform: scale(1.2);
 }
 
 .subtitle span:nth-child(1) {
