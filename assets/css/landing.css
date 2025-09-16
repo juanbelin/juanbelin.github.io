@@ -145,7 +145,7 @@ a:hover ~ .custom-cursor {
 
 .subtitle{
   color:var(--muted);
-  font-size:22px;
+  font-size:20px;
   margin-top:4px;
   font-weight: 500;
   position: relative;
