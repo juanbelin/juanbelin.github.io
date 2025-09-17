@@ -7,8 +7,48 @@
     <link rel="stylesheet" href="assets/css/landing.css">
     <link rel="icon" type="image/jpg" href="assets/img/avatar.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+      .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .background-gif {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .background-gif.active {
+        opacity: 1;
+      }
+
+      /* Aseguramos que el contenido principal esté por encima del fondo */
+      .wrap {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Ajustamos la tarjeta para que sea más visible sobre el fondo */
+      .card {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(5px);
+      }
+    </style>
   </head>
   <body>
+    <div class="background-container">
+      <img src="assets/gif/page_poc1.gif" class="background-gif active" alt="Background animation 1">
+      <img src="assets/gif/page_poc2.gif" class="background-gif" alt="Background animation 2">
+    </div>
     <main class="wrap">
       <div class="card" role="main" aria-label="Tarjeta principal">
         <div class="hero" title="Logo">
@@ -107,6 +147,23 @@
             cursor.style.transform = 'scale(1)';
             cursorDot.style.transform = 'scale(1)';
           });
+        });
+        // Función para alternar los GIFs de fondo
+        function cycleBackgrounds() {
+          const backgrounds = document.querySelectorAll('.background-gif');
+          const current = document.querySelector('.background-gif.active');
+          const next = current.nextElementSibling || backgrounds[0];
+          
+          current.classList.remove('active');
+          next.classList.add('active');
+        }
+
+        // Iniciar el ciclo cuando termine cada GIF
+        const firstGif = document.querySelector('.background-gif');
+        firstGif.addEventListener('load', function() {
+          // Obtener la duración del GIF (asumiendo que dura 5 segundos, ajusta según sea necesario)
+          const duration = 5000; // 5 segundos
+          setInterval(cycleBackgrounds, duration);
         });
       });
     </script>
