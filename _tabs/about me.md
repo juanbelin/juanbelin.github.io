@@ -1,4 +1,5 @@
 ---
+redirect_to: /main.html
 icon: fas fa-info-circle
 order: 4
 ---
