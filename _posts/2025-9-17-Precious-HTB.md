@@ -16,12 +16,12 @@ tags: [hacking,easy]
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Linux
-- link: [Active](https://app.hackthebox.com/machines/513)
+- link: [Precious](https://app.hackthebox.com/machines/513)
 
   
 
 ### PDF Link
-- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/Vulnlab/M%C3%A1quina%20Precious.pdf)
+- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/M%C3%A1quina%20Precious.pdf)
 
 
 
