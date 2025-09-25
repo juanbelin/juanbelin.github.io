@@ -3,6 +3,7 @@ title: Windows AV Evasion (msfvenom edition)
 image: /assets/img/Anexos/rev_shell_AV_evasion.gif
 description: The easiest way to achieve a reverse shell bypassing Windows Defender
 categories: [Hacking, Windows]
+pin: true
 tags: [av-evasion, meterpreter, windows-defender]
 ---
 
