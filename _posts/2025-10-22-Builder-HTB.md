@@ -1,13 +1,9 @@
+---
 title: Builder HTB
-
 image: /assets/img/Anexos/Máquina%20Builder.png
-
 description: Builder HTB [Difuculty Medium]
-
 categories: [CTF,HackTheBox]
-
 tags: [hacking,medium]
-
 ---
 
   
