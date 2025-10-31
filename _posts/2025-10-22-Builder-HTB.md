@@ -34,7 +34,7 @@ Builder is a medium-difficulty Linux machine that features a Jenkins instance. T
 
 ### PDF Link
 
-- PDF: https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/M%C3%A1quina%20Builder.pdf
+- PDF: [Link to PDF](https://github.com/juanbelin/Writeups-CTFs-Challenges/blob/main/HTB/M%C3%A1quina%20Builder.pdf)
 
 
 ## Reconnaissance 
