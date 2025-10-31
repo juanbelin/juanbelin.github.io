@@ -98,3 +98,12 @@ Parameters:
 
 Example: ./test.sh 192.168.1.20 443
 ```
+
+## Nota: favicon diferente en index.html
+
+Si en https://juanbelin.github.io/main.html ves el favicon correcto pero en la raíz (index.html) aparece el favicon por defecto, sigue estos pasos:
+
+1. Asegúrate de tener el fichero del favicon en tu repo, p.ej. /assets/img/favicon.ico.  
+2. Añade este enlace en tu head común (_includes/head.html) o en el <head> de index.html si no usas includes:
+   <link rel="icon" href="{{ '/assets/img/favicon.ico' | relative_url }}" type="image/x-icon" />
+3. Limpia la caché del navegador (Ctrl+F5) y espera a que GitHub Pages regenere.

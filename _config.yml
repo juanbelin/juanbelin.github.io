@@ -19,10 +19,10 @@ timezone: Europe/Madrid
 
 title: JuanBelin # the main title
 
-tagline: Ciberseguridad | Pentesting | Desarrollo de Software | Linux | eJPTv2 # it will display as the subtitle
+tagline: Cybersecurity | Pentesting | Software development | Linux | eJPTv2 # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Blog sobre ciberseguridad y hacking.
+  Cybersecurity and hacking blog
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -49,7 +49,7 @@ social:
 
 # Site Verification Settings
 webmaster_verifications:
-  google: # fill in your Google verification code
+  google: google987f6e2a8a73c1b5.html
   bing: # fill in your Bing verification code
   alexa: # fill in your Alexa verification code
   yandex: # fill in your Yandex verification code
