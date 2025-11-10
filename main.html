@@ -10,9 +10,19 @@
   </head>
   <body>
     <div class="background-container">
-      <img src="assets/gif/page_poc1.gif" class="background-gif active" alt="Background animation 1">
-      <img src="assets/gif/page_poc2.gif" class="background-gif" alt="Background animation 2">
-      <img src="assets/gif/page_poc3.gif" class="background-gif" alt="Background animation 3">
+      <video class="background-gif background-video active" autoplay muted loop playsinline aria-hidden="true">
+        <source src="assets/gif/page_poc1.mp4" type="video/mp4">
+        <!-- fallback al gif si no hay soporte/archivo mp4 -->
+        <img src="assets/gif/page_poc1.gif" alt="Background animation 1">
+      </video>
+      <video class="background-gif background-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="assets/gif/page_poc2.mp4" type="video/mp4">
+        <img src="assets/gif/page_poc2.gif" alt="Background animation 2">
+      </video>
+      <video class="background-gif background-video" autoplay muted loop playsinline aria-hidden="true">
+        <source src="assets/gif/page_poc3.mp4" type="video/mp4">
+        <img src="assets/gif/page_poc3.gif" alt="Background animation 3">
+      </video>
     </div>
     <main class="wrap">
       <div class="card" role="main" aria-label="Tarjeta principal">
@@ -65,6 +75,25 @@
 
     <div class="custom-cursor"></div>
     <div class="custom-cursor-dot"></div>
+
+    <!-- Ajuste de velocidad de reproducción para los videos de fondo -->
+    <script>
+      (function(){
+        // Velocidad deseada: 1.0 = normal, 1.25 = un poco más rápido
+        const speed = 1.25;
+        const videos = document.querySelectorAll('.background-video');
+        videos.forEach(v => {
+          // Si el mp4 no está disponible el <video> fallará al fallback <img>, así que comprobamos existencia de source
+          const src = v.querySelector('source');
+          if (!src || !src.getAttribute('src')) return;
+          v.addEventListener('loadedmetadata', () => {
+            try { v.playbackRate = speed; } catch(e) { /* ignore */ }
+          });
+          // Forzar valor en caso de cambios
+          v.playbackRate = speed;
+        });
+      })();
+    </script>
 
     <script src="assets/js/main.js"></script>
   </body>
