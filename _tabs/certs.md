@@ -1,5 +1,4 @@
 ---
-layout: certs
 icon: fa-solid fa-certificate
 order: 6
 ---
