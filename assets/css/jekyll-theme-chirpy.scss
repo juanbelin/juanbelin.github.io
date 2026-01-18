@@ -7,6 +7,8 @@
 {%- endif -%}
 ';
 
+@use 'custom-headings' as *;
+
 em {
   font-style: italic;
   color: #ff5733; 
@@ -14,6 +16,121 @@ em {
 
 strong {
   font-weight: bold;
-  color: #276fab; 
+  color: #ff8c00;
 }
+
+
+pre code {
+  color: inherit;
+}
+
+
+
+.post-preview img {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.hero img,
+#avatar img {
+  border: none;
+  box-shadow: none;
+}
+
+/* Marco blanco para imágenes en posts */
+article img,
+.post-content img {
+  border: 0.5px solid white !important;
+  box-shadow: 0 0 0 1px #ddd, 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+}
+/* Fecha y categorías en bold en preview cards */
+.post-meta time {
+  font-weight: bold;
+}
+
+.post-meta .categories {
+  font-weight: bold;
+}
+
+/* Recently Updated - rojo e icono */
+#access-lastmod h2.panel-heading {
+  color: #ff8080;
+  font-size: 1.3rem;
+}
+
+#access-lastmod h2.panel-heading::before {
+  content: "🕒 ";
+  margin-right: 0.5rem;
+}
+
+#access-lastmod ul li a {
+  font-size: 1.1rem;
+}
+
+/* Trending Tags - rojo e icono */
+aside section:last-of-type h2.panel-heading {
+  color: #ff0000;
+  font-size: 1.3rem;
+}
+
+aside section:last-of-type h2.panel-heading::before {
+  content: "🔖 ";
+  margin-right: 0.5rem;
+}
+
+/* Hover effects para preview cards - discreto */
+.card-wrapper {
+  transition: all 0.3s ease;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Footer mejorado */
+footer {
+  border-top: 2px solid #ff5733;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  background: linear-gradient(135deg, rgba(255, 87, 51, 0.05) 0%, rgba(255, 140, 0, 0.05) 100%);
+}
+
+footer p {
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+footer a {
+  color: #ff5733;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff5733;
+  transition: width 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff8c00;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+
+footer time {
+  font-weight: 600;
+}
+
 

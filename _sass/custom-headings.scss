@@ -1,0 +1,50 @@
+// Estilos personalizados para encabezados más grandes con colores diferenciados
+
+h1 {
+  font-size: 3.1rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  color: #f56a00;
+}
+
+h3 {
+  font-size: 1.7rem;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+  color: #eaa717;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+  color: #ff9341;
+}
+
+h5 {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+  color: #b19cd9;
+}
+
+// Estilos para preview card
+.post-preview {
+  img {
+    border: none !important;
+    box-shadow: none !important;
+  }
+}
+
+// Asegurar que las imágenes en las preview cards no tengan marco
+.post-card img,
+.post-preview img {
+  border: 0 !important;
+  box-shadow: none !important;
+}
