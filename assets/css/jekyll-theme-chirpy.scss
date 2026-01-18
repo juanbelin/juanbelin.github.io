@@ -84,17 +84,11 @@ aside section:last-of-type h2.panel-heading::before {
 }
 
 .card-wrapper:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Footer mejorado */
-footer {
-  border-top: 2px solid #ff5733;
-  margin-top: 3rem;
-  padding-top: 2rem;
-  background: linear-gradient(135deg, rgba(255, 87, 51, 0.05) 0%, rgba(255, 140, 0, 0.05) 100%);
-}
 
 footer p {
   font-size: 0.95rem;
@@ -110,7 +104,21 @@ footer a {
   position: relative;
 }
 
-footer a::after {
+
+
+
+/* Animación hover en elementos de navegación */
+.nav-link {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  transform: translateY(-3px);
+  color: #ff5733 !important;
+}
+
+.nav-link::before {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -121,16 +129,8 @@ footer a::after {
   transition: width 0.3s ease;
 }
 
-footer a:hover {
-  color: #ff8c00;
-}
-
-footer a:hover::after {
+.nav-link:hover::before {
   width: 100%;
-}
-
-footer time {
-  font-weight: 600;
 }
 
 
