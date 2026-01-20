@@ -69,7 +69,7 @@ body{
 /* Cursor personalizado */
 /* Cursor personalizado simple */
 * {
-  cursor: none;
+  cursor: auto;
 }
 
 .custom-cursor {

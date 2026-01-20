@@ -15,40 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   setTimeout(type, 500);
 
-  // Cursor personalizado
-  const cursor = document.querySelector('.custom-cursor');
-  const cursorDot = document.querySelector('.custom-cursor-dot');
-
-  document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX - cursor.offsetWidth / 2 + 'px';
-    cursor.style.top = e.clientY - cursor.offsetHeight / 2 + 'px';
-    cursorDot.style.left = e.clientX - cursorDot.offsetWidth / 2 + 'px';
-    cursorDot.style.top = e.clientY - cursorDot.offsetHeight / 2 + 'px';
-  });
-
-  document.addEventListener('mousedown', () => {
-    cursor.style.transform = 'scale(0.8)';
-    cursorDot.style.transform = 'scale(0.8)';
-  });
-
-  document.addEventListener('mouseup', () => {
-    cursor.style.transform = 'scale(1)';
-    cursorDot.style.transform = 'scale(1)';
-  });
-
-  // Efecto hover en links
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('mouseenter', () => {
-      cursor.style.transform = 'scale(1.5)';
-      cursorDot.style.transform = 'scale(1.5)';
-    });
-    
-    link.addEventListener('mouseleave', () => {
-      cursor.style.transform = 'scale(1)';
-      cursorDot.style.transform = 'scale(1)';
-    });
-  });
-
   // Función para alternar los GIFs de fondo
   async function cycleBackgrounds() {
     const backgrounds = document.querySelectorAll('.background-gif');

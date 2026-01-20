@@ -59,7 +59,8 @@ article img,
 }
 
 #access-lastmod h2.panel-heading::before {
-  content: "🕒 ";
+  content: '\f1da';
+  font: var(--fa-font-solid);
   margin-right: 0.5rem;
 }
 
@@ -68,13 +69,14 @@ article img,
 }
 
 /* Trending Tags - rojo e icono */
-aside section:last-of-type h2.panel-heading {
+aside section:nth-of-type(3) h2.panel-heading {
   color: #ff0000;
   font-size: 1.3rem;
 }
 
-aside section:last-of-type h2.panel-heading::before {
-  content: "🔖 ";
+aside section:nth-of-type(3) h2.panel-heading::before {
+  content: '\f06d';
+  font: var(--fa-font-solid);
   margin-right: 0.5rem;
 }
 
@@ -131,6 +133,16 @@ footer a {
 
 .nav-link:hover::before {
   width: 100%;
+}
+
+/* Elemento de navegación activo en naranja */
+.nav-item.active .nav-link {
+  color: #ff8c00 !important;
+}
+
+.nav-item.active .nav-link::before {
+  width: 100%;
+  background: #ff8c00;
 }
 
 
