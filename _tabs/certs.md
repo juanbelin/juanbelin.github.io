@@ -3,7 +3,24 @@ icon: fa-solid fa-certificate
 order: 6
 ---
 
+
+
+## Hack The Box
+
+### CPTS
+![](/assets/img/Anexos/CPTS2.png)
+
+
+## Cyber Warfare Labs
+
+### CRTA
+![](/assets/img/Anexos/CRTA.png)
+
+
+
 ## INE 
+
+### eJPTv2 
 ![](/assets/img/Anexos/eJPT.png)
 
 
@@ -26,7 +43,4 @@ I suggest you to see my post about the [eJPT](/posts/Review-eJPT/).
 ![](/assets/img/Anexos/hacking.webp)
 **Credential ID:** 7561-4631-3405-6682
 
-## Hack The Box
-I'm currently working in the CPTS (Certified Penetration Testing Specialist) path
 
-![](/assets/img/Anexos/CPTS.png)

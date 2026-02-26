@@ -148,7 +148,7 @@ a:hover ~ .custom-cursor {
   top: 50%;
   transform: translateY(-50%);
   width: 10px;
-  height: 20px;
+  height: 30px;
   background-color: var(--accent);
   animation: cursor-blink 1s infinite;
 }
