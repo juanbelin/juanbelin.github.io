@@ -1,4 +1,3 @@
-
 ---
 title: CPTS Review and Tips
 image: /assets/img/Anexos/CPTS2.png
