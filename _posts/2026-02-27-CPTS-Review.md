@@ -52,8 +52,8 @@ El examen se compone son 10 días en donde tienes que sacar mínimo 12 flags par
 Durante el examen el mayor enemigo eres tu, ves cosas donde no las hay, caes en rabbit holes que te inventas tu solo, pruebas cosas que están fuera del scope del examen. Ten cuidado contigo mismo, el examen esta hecho para frustrarte y sacarte de tus casillas, si llevas mucho tiempo intentando algo sin resultados, eso es porque muy probablemente esa no sea la solución. 
 
 #### Flags que más me costaron
-Como ya muchos sabréis, hubo un cambio en la CPTS creo que por Junio de 2025 en donde algunas flags cambiaron, por lo que tener cuidado al leer reviews viejas ya que ellos experimentaron situaciones diferentes con ciertas flags. Sin embargo, mucha gente dice que cualquier flag puede sentirse frustrante, al fin y al cabo cada persona es diferente y puede que tenga diferentes metodologías, estoy de acuerdo pero la flag 8 me parece especialmente tricky. Las flags que más me costaron fueron: 
-- Flag 1 
+Como ya muchos sabréis, hubo un cambio en la CPTS creo que por Junio de 2025 en donde algunas flags cambiaron, por lo que tener cuidado al leer reviews viejas ya que ellos experimentaron situaciones diferentes con ciertas flags. Sin embargo, mucha gente dice que cualquier flag puede sentirse frustrante, al fin y al cabo cada persona es diferente y puede que tenga diferentes metodologías, estoy de acuerdo pero la **flag 8** me parece especialmente tricky. Las flags que más me costaron fueron: 
+- Flag 1
 - Flag 2
 - Flag 6 
 - Flag 8
@@ -84,18 +84,19 @@ Eso fue Suficiente para hacer un buen reporte que me permitió aprobar el examen
 
 ### Como preparar el examen 
 En mi caso, no hice los prolabs Dante y Zephyr ya que leí varias veces en reddit que todo lo que entre en el examen se enseña en algún momento en la PATH por lo que no consideré hacerlos. Sin embargo, debes hacer labs que te ayuden a estar preparado para el examen. Lo que recomiendo en base a lo que hice es lo siguiente: 
-- Haz el AEN a ciegas
+- **Haz el AEN a ciegas**
 
 ![](/assets/img/Anexos/CPTS%20POST-9.png)
+
 Este módulo es lo más parecido que hay al examen. Sin embargo, cuando te presentes al examen, **Olvídate del AEN**, el examen no es un **AEN 2.0**, te lo puedo asgurar. 
-- Haz el track de _CPTS Preparation_
+- **Haz el track de _CPTS Preparation_**
 
 ![](/assets/img/Anexos/CPTS%20POST-10.png)
 
 Este track es el oficial creado por HackTheBox, te ayudará a practicar y reforzar conceptos dentro del scope de la CPTS aunque también hay máquinas que dan conceptos que están fuera del scope. 
 
-- Haz máquinas de la [NetSecFocus Trophy Room](https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview), a mi me vinieron bien para practicar, pero no te vuelvas loco, no tienes porque hacerlas todas. 
-- Practica pivoting, en mi caso, hice el siguiente lab diseñado específicamente para practicar pivoting entre múltiples interfaces https://labs.thehackerslabs.com/machine/45. 
+- **Haz máquinas de la** [NetSecFocus Trophy Room](https://docs.google.com/spreadsheets/u/1/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/htmlview), a mi me vinieron bien para practicar, pero no te vuelvas loco, no tienes porque hacerlas todas. 
+- **Practica pivoting**, en mi caso, hice el siguiente lab diseñado específicamente para practicar pivoting entre múltiples interfaces <https://labs.thehackerslabs.com/machine/45>. 
 
 Ahora bien, mejora tus notas y cheatsheets con todo lo que vayas aprendiendo mientras que completas los labs. Yo tenía una página en donde apuntaba las máquinas que iba haciendo y lo que aprendía de ellas
 
