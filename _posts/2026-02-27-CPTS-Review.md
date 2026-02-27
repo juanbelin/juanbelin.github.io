@@ -28,7 +28,7 @@ Aquí dejo una pequeña muestra de como me organizaba los apuntes con obsidian:
 ![](/assets/img/Anexos/CPTS%20POST-4.png)
 
 
-![](C/assets/img/Anexos/PTS%20POST-5.png)
+![](/assets/img/Anexos/CPTS%20POST-5.png)
 
 
 #### Errores que debes evitar cuando estudies la PATH 
