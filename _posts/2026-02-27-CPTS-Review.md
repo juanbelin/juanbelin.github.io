@@ -128,19 +128,19 @@ Después de haber conseguido la CPTS, me gustaría formarme en read team, sin em
 ![](/assets/img/Anexos/CPTS%20POST.jpg)
 ### The PATH
 
-![](/assets/img/Anexos/CPTS POST-1.png)
+![](/assets/img/Anexos/CPTS%20POST-1.png)
 
 90% of what appears on the exam is taught at some point in the PATH modules. **Do not expect to just copy and paste all the time**, because, as you'll know when you take the PATH (or if you've already taken it), HackTheBox places special importance on "thinking outside the box." You need to be able to connect concepts and find the logic behind them. You have to understand the _why_ of things.
 
 Here, I strongly recommend using a good note-taking app from minute one. In my case, I used [Obsidian](https://obsidian.md/). During the PATH modules, try to focus and pay attention. Do the labs for each module blind whenever you can, and take good notes on what you've learned from them, especially the "_Skill assessments_" each module has, which are like a final exam/lab for each module to put everything you've learned into practice.
 
 Here's a small sample of how I organized my notes with Obsidian:
-![](/assets/img/Anexos/CPTS POST-2.png)
+![](/assets/img/Anexos/CPTS%20POST-2.png)
 
-![](/assets/img/Anexos/CPTS POST-4.png)
+![](/assets/img/Anexos/CPTS%20POST-4.png)
 
 
-![](/assets/img/Anexos/CPTS POST-5.png)
+![](/assets/img/Anexos/CPTS%20POST-5.png)
 
 
 #### Mistakes to Avoid When Studying the PATH
@@ -154,12 +154,12 @@ During my learning through the PATH, I made a series of mistakes that caused fru
 
 ### The Exam
 
-![](/assets/img/Anexos/CPTS POST-8.png)
+![](/assets/img/Anexos/CPTS%20POST-8.png)
 
 The exam consists of 10 days where you need to capture at least 12 flags to pass and produce a professional pentesting report. The exam is full of noise, rabbit holes, and distractions. In my opinion, it's a realistic environment where all the machines are interconnected, just like in a real company. I got the 12 flags on day 8. I spent the last 2 days working on the report (I had almost nothing in the report because I didn't want to lose focus on the exam), and about 5 hours before the exam deadline, at 3 in the morning, I submitted the report after reviewing it several times.
 
 #### Your Biggest Enemy is You
-![](CPTS POST-3.png)
+![](CPTS%20POST-3.png)
 
 
 During the exam, your biggest enemy is yourself. You see things that aren't there, you fall into rabbit holes you create on your own, you try things that are out of scope. Be careful with yourself; the exam is designed to frustrate you and push your buttons. If you've been trying something for a long time without results, it's very likely that it's not the solution.
@@ -187,7 +187,7 @@ As many of you may know, there was a change to the CPTS around June 2025, where 
 
 #### Reporting
 
-![](CPTS POST-14.png)
+![](CPTS%20POST-14.png)
 
 My examiner's feedback confirmed that my report was very well written. The steps I followed were:
 
@@ -206,13 +206,13 @@ That was enough to create a good report that allowed me to pass the exam.
 In my case, I didn't do the Dante and Zephyr Pro Labs because I read several times on Reddit that everything that appears on the exam is taught at some point in the PATH, so I didn't consider doing them. However, you should do labs that help you get ready for the exam. Based on what I did, I recommend the following:
 
 - **Do the AEN module blind.**
-    ![](/assets/img/Anexos/CPTS POST-9.png)
+    ![](/assets/img/Anexos/CPTS%20POST-9.png)
 
   
 This module is the closest thing to the exam. However, when you take the exam, **forget about AEN**; the exam is **not AEN 2.0**, I can assure you.
 
 - **Do the CPTS Preparation track.**
-    ![](/assets/img/Anexos/CPTS POST-10.png)
+    ![](/assets/img/Anexos/CPTS%20POST-10.png)
 
 This track is the official one created by HackTheBox. It will help you practice and reinforce concepts within the CPTS scope, although there are also machines that introduce concepts outside the scope.
 
@@ -223,7 +223,7 @@ This track is the official one created by HackTheBox. It will help you practice 
 
 Now, improve your notes and cheatsheets with everything you learn while completing the labs. I had a page where I noted down the machines I was working on and what I learned from them.
 
-![](/assets/img/Anexos/CPTS POST-12.png)
+![](/assets/img/Anexos/CPTS%20POST-12.png)
 
 ### My Thoughts on the CPTS
 
@@ -233,10 +233,10 @@ Although the CPTS is gaining more and more fame in the industry and is starting 
 
 I want to make it clear that I'm not underestimating the OSCP, but I believe that in terms of value for money, the CPTS today is a better option.
 
-![](/assets/img/Anexos/CPTS POST-2.jpg)
+![](/assets/img/Anexos/CPTS%20POST-2.jpg)
 ### Next Steps
 
 After having obtained the CPTS, I'd like to train in red teaming. However, I think my weak point is web hacking, so I don't want to neglect that. After this positive experience with HackTheBox and already having the CWES PATH at 64%, I might go for it before summer starts. Either way, I'll continue training and doing labs. The certifications I have in mind for the rest of the year and early 2027 are the following:
 
-![](/assets/img/Anexos/CPTS POST-16.png)
+![](/assets/img/Anexos/CPTS%20POST-16.png)
 
