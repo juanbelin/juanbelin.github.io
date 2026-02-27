@@ -44,7 +44,7 @@ Durante mi aprendizaje a través de la PATH, cometí una serie de errores que hi
 ![](/assets/img/Anexos/CPTS%20POST-8.png)
 
 
-El examen se compone son 10 días en donde tienes que sacar mínimo 12 flags para aprobar y hacer un reporte de pentesting profesional. El examen esta lleno de ruido, rabbit holes y distracciones. Es a mi parecer un entorno realista en donde todas las máquinas mantienen una relación entre sí, tal cual como si fuera una compañía. Conseguí las 12 flags en el día 8, los últimos 2 días estuve haciendo el reporte (no tenía casi nada en el reporte ya no quería perder el foco en el examen) y unas 5 horas antes de la deadline del examen entregué el reporte a las 3 de la mañana habiéndolo revisado varias veces.
+El examen se compone de 10 días en donde tienes que sacar mínimo 12 flags para aprobar y hacer un reporte de pentesting profesional. El examen esta lleno de ruido, rabbit holes y distracciones. Es a mi parecer un entorno realista en donde todas las máquinas mantienen una relación entre sí, tal cual como si fuera una compañía. Conseguí las 12 flags en el día 8, los últimos 2 días estuve haciendo el reporte (no tenía casi nada en el reporte ya no quería perder el foco en el examen) y unas 5 horas antes de la deadline del examen entregué el reporte a las 3 de la mañana habiéndolo revisado varias veces.
 
 #### El mayor enemigo eres tu  
 ![](/assets/img/Anexos/CPTS%20POST-3.png)
