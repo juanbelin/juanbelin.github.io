@@ -159,7 +159,7 @@ During my learning through the PATH, I made a series of mistakes that caused fru
 The exam consists of 10 days where you need to capture at least 12 flags to pass and produce a professional pentesting report. The exam is full of noise, rabbit holes, and distractions. In my opinion, it's a realistic environment where all the machines are interconnected, just like in a real company. I got the 12 flags on day 8. I spent the last 2 days working on the report (I had almost nothing in the report because I didn't want to lose focus on the exam), and about 5 hours before the exam deadline, at 3 in the morning, I submitted the report after reviewing it several times.
 
 #### Your Biggest Enemy is You
-![](CPTS%20POST-3.png)
+![](/assets/img/Anexos/CPTS%20POST-3.png)
 
 
 During the exam, your biggest enemy is yourself. You see things that aren't there, you fall into rabbit holes you create on your own, you try things that are out of scope. Be careful with yourself; the exam is designed to frustrate you and push your buttons. If you've been trying something for a long time without results, it's very likely that it's not the solution.
@@ -187,7 +187,7 @@ As many of you may know, there was a change to the CPTS around June 2025, where 
 
 #### Reporting
 
-![](CPTS%20POST-14.png)
+![](/assets/img/Anexos/CPTS%20POST-14.png)
 
 My examiner's feedback confirmed that my report was very well written. The steps I followed were:
 
