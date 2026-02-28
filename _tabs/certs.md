@@ -1,46 +1,7 @@
 ---
+redirect_to: /certs.html
 icon: fa-solid fa-certificate
-order: 6
+order: 5
 ---
-
-
-
-## Hack The Box
-
-### CPTS
-![](/assets/img/Anexos/CPTS2.png)
-
-
-## Cyber Warfare Labs
-
-### CRTA
-![](/assets/img/Anexos/CRTA.png)
-
-
-
-## INE 
-
-### eJPTv2 
-![](/assets/img/Anexos/eJPT.png)
-
-
-I suggest you to see my post about the [eJPT](/posts/Review-eJPT/).
-
-## Hack4u 
-
-### Linux Introduction
-![](/assets/img/Anexos/introduccionalinux.webp)
-
-**Credential ID:** 9052-5502-5418-1982
-
-### Python Offensive
-
-![](/assets/img/Anexos/offensivepython.webp)
-**Credential ID:** 4967-4588-4680-4775
-
-### Introduction to Hacking
-
-![](/assets/img/Anexos/hacking.webp)
-**Credential ID:** 7561-4631-3405-6682
 
 
