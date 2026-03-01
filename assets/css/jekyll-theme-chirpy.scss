@@ -37,6 +37,14 @@ pre code {
   box-shadow: none;
 }
 
+
+
+.content {
+  font-size: 1.150rem;
+  line-height: 1.9rem;
+}
+
+
 /* Marco blanco para imágenes en posts */
 article img,
 .post-content img {
@@ -55,7 +63,7 @@ article img,
 /* Recently Updated - rojo e icono */
 #access-lastmod h2.panel-heading {
   color: #ff8080;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
 }
 
 #access-lastmod h2.panel-heading::before {
