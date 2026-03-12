@@ -40,7 +40,7 @@ pre code {
 
 
 .content {
-  font-size: 1.150rem;
+  font-size: 1.145rem;
   line-height: 1.9rem;
 }
 
@@ -88,15 +88,7 @@ aside section:nth-of-type(3) h2.panel-heading::before {
   margin-right: 0.5rem;
 }
 
-/* Hover effects para preview cards - discreto */
-.card-wrapper {
-  transition: all 0.3s ease;
-}
 
-.card-wrapper:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
-}
 
 /* Footer mejorado */
 
@@ -116,41 +108,5 @@ footer a {
 
 
 
-
-/* Animación hover en elementos de navegación */
-.nav-link {
-  transition: all 0.3s ease;
-  position: relative;
-}
-
-.nav-link:hover {
-  transform: translateY(-3px);
-  color: #ff5733 !important;
-}
-
-.nav-link::before {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: #ff5733;
-  transition: width 0.3s ease;
-}
-
-.nav-link:hover::before {
-  width: 100%;
-}
-
-/* Elemento de navegación activo en naranja */
-.nav-item.active .nav-link {
-  color: #ff8c00 !important;
-}
-
-.nav-item.active .nav-link::before {
-  width: 100%;
-  background: #ff8c00;
-}
 
 
