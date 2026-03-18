@@ -1,5 +1,5 @@
 ---
-title: 
+title: SSRF Skills Assesment HTB Academy 
 image: /assets/img/Anexos/SSRF-HTB.jpg
 description: Solution of the SSRF Skills Assesment from HTB Academy 
 categories: [CTF,HackTheBox]
