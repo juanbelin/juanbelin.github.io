@@ -1,16 +1,21 @@
 ---
 title: SSRF Skills Assesment HTB Academy 
-image: /assets/img/Anexos/SSRF-HTB.jpg
+image: /assets/img/Anexos/SSRFHTB.jpg
 description: Solution of the SSRF Skills Assesment from HTB Academy 
 categories: [CTF,HackTheBox]
 tags: [hacking]
 ---
+
+
+## Solution 
 
 Once we've got the target, if we take a look the source code `CTRL+U` que can see a Javascript script which reveals a new api endpoint 
 
 ![](/assets/img/Anexos/Server%20Side%20Attacks%20Skills%20Assessments.png)
 
 ![](/assets/img/Anexos/Server%20Side%20Attacks%20Skills%20Assessments-1.png)
+
+![](/assets/img/Anexos/SSRFHTB.jpg)
 
 
 ```shell
