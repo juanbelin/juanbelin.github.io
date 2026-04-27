@@ -217,6 +217,117 @@
             overflow: hidden;
         }
 
+        /* Sección de Miscellaneous */
+        .miscellaneous-section {
+            width: 100%;
+            text-align: center;
+        }
+
+        .miscellaneous-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e6f0fb;
+            margin: 20px 0;
+        }
+
+        .misc-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .misc-item {
+            border-radius: 12px;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            height: 180px;
+        }
+
+        .misc-item:hover {
+            transform: translateY(-8px);
+            border-color: rgba(6, 182, 212, 0.3);
+            box-shadow: 0 12px 35px rgba(6, 182, 212, 0.2);
+        }
+
+        .misc-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            object-position: center;
+        }
+
+        .misc-item:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Modal para ampliar imágenes */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .modal-image {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+            transform: scale(1.2);
+        }
+
         @media (max-width: 768px) {
             .top-nav {
                 position: relative;
@@ -228,6 +339,12 @@
             }
             body { flex-direction: column; overflow-y: auto; }
             .carousel-content { height: 250px; }
+            .misc-gallery {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+            .misc-item {
+                height: 140px;
+            }
         }
     </style>
 </head>
@@ -277,8 +394,32 @@
                 <div class="cert-name" id="certName" style="font-weight: bold; font-size: 22px;">CPTS</div>
                 <div class="cert-organization" id="certOrg" style="color: var(--muted);">Hack The Box</div>
             </div>
+
+            <div class="miscellaneous-section">
+                <h2 class="miscellaneous-title">Miscellaneous</h2>
+                <div class="misc-gallery">
+                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/POO.png')">
+                        <img src="/assets/img/Anexos/POO.png" alt="POO">
+                    </div>
+                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/Dante.png')">
+                        <img src="/assets/img/Anexos/Dante.png" alt="Dante">
+                    </div>
+                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/Zephyr.png')">
+                        <img src="/assets/img/Anexos/Zephyr.png" alt="Zephyr">
+                    </div>
+                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/Unintended.png')">
+                        <img src="/assets/img/Anexos/Unintended.png" alt="Unintended">
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <!-- Modal para ampliar imágenes -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" class="modal-image" alt="Expanded">
+    </div>
 
     <script>
         const certs = [
@@ -319,6 +460,28 @@
             currentIndex = index;
             updateCarousel();
         }
+
+        // Funciones para el modal de imágenes
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+            modalImage.src = imageSrc;
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar modal al presionar Escape
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
     </script>
 </body>
 </html>
