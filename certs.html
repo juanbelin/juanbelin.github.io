@@ -378,8 +378,8 @@
                 <button class="btn" onclick="previousCert()">❮</button>
                 <div class="carousel-content">
                     <img src="/assets/img/Anexos/CPTS2.png" alt="CPTS" class="cert-image active">
+                    <img src="/assets/img/Anexos/CWES.png" alt="CWES" class="cert-image">
                     <img src="/assets/img/Anexos/CRTA.png" alt="CRTA" class="cert-image">
-                    <img src="/assets/img/Anexos/CWES.png" alt="CPTS" class="cert-image active">
                     <img src="/assets/img/Anexos/eJPT_cert.png" alt="eJPT" class="cert-image">
                 </div>
                 <button class="btn" onclick="nextCert()">❯</button>
@@ -389,6 +389,7 @@
                 <span class="dot active" onclick="goToCert(0)"></span>
                 <span class="dot" onclick="goToCert(1)"></span>
                 <span class="dot" onclick="goToCert(2)"></span>
+                <span class="dot" onclick="goToCert(3)"></span>
             </div>
 
             <div class="cert-info">
@@ -411,15 +412,6 @@
                     <div class="misc-item" onclick="openModal('/assets/img/Anexos/Unintended.png')">
                         <img src="/assets/img/Anexos/Unintended.png" alt="Unintended">
                     </div>
-                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/hack4u1.png')">
-                        <img src="/assets/img/Anexos/hack4u1.png" alt="hack4u1">
-                    </div>
-                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/hack4u2.png')">
-                        <img src="/assets/img/Anexos/hack4u2.png" alt="hack4u2">
-                    </div>
-                    <div class="misc-item" onclick="openModal('/assets/img/Anexos/hack4u3.png')">
-                        <img src="/assets/img/Anexos/hack4u3.png" alt="hack4u3">
-                    </div>
                 </div>
             </div>
         </div>
@@ -433,7 +425,8 @@
 
     <script>
         const certs = [
-            { name: 'CPTS', org: 'Hack The Box' },
+            { name: 'CPTS', org: 'HackTheBox' },
+            { name: 'CWES', org: 'HackTheBox' },
             { name: 'CRTA', org: 'Cyber Warfare Labs' },
             { name: 'eJPTv2', org: 'INE' }
         ];
