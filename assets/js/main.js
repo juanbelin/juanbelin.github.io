@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (i < text.length) {
       nameSpan.textContent += text.charAt(i);
       i++;
-      setTimeout(type, 100);
+      setTimeout(type, 150);
     }
   }
   
-  setTimeout(type, 500);
+  setTimeout(type, 750);
 
   // Función para alternar los GIFs de fondo
   async function cycleBackgrounds() {

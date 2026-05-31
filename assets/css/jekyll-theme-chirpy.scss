@@ -107,6 +107,23 @@ footer a {
 }
 
 
+/* === Hacer el contenido de los posts más ancho === */
 
+/* Contenedor principal */
+#main-wrapper > .container {
+  max-width: 1370px;     /* Valor por defecto suele ser ~900-1000px. Sube a 1100-1300px */
+  /* max-width: 1400px; */ /* Para pantallas muy anchas */
+}
+
+/* Si quieres aún más control sobre el artículo */
+.post-content {
+  max-width: 100% !important;
+}
+
+/* Opcional: reducir un poco el padding lateral para ganar más espacio */
+#main-wrapper > .container {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
 
 
