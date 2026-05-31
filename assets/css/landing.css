@@ -325,22 +325,17 @@ body {
   align-items: center;
   gap: 12px;
   margin-top: 4px;
-  padding-top: 22px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255,255,255,.05);
 }
 
 .competencies-title {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(156,163,175,.45);  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  color: rgba(156,163,175,.45);
 }
-
-.competencies-title i {
-  font-size: 12px;}
 
 .competencies-track-wrap {
   width: 100%;
@@ -368,7 +363,7 @@ body {
   width: max-content;
   /* transform en GPU → cero reflow */
   will-change: transform;
-  animation: scroll-tags 18s linear infinite;
+  animation: scroll-tags 22s linear infinite;
 }
 
 /* Pausa al hover para leer cómodamente */
@@ -386,7 +381,7 @@ body {
   gap: 8px;
   padding: 8px 16px;
   border-radius: 999px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   color: rgba(156,163,175,.75);
   background: rgba(255,255,255,.03);
@@ -409,12 +404,9 @@ body {
 
 .comp-tag:hover i { color: var(--accent); }
 
-/* Evitar cursor de texto al pasar por encima de Core Competencies */
+/* Evitar cursor de texto al pasar por la sección de Core Competencies */
 .competencies-section,
-.competencies-section *,
-.competencies-track-wrap,
-.competencies-track,
-.comp-tag {
+.competencies-section * {
   cursor: default;
 }
 

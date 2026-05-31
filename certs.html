@@ -65,6 +65,121 @@
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
+        /* Timeline vertical de certificaciones */
+        .certs-timeline {
+            margin-top: 16px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(2,6,23,.45);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .certs-timeline .timeline-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 8px;
+            align-items: center;
+        }
+
+        .timeline-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        /* Línea vertical continua que se difumina hacia abajo (el pasado) */
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            bottom: 5px;
+            right: 4px; /* Centrado respecto al dot-small */
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent) 0%, rgba(6, 182, 212, 0.4) 70%, rgba(6, 182, 212, 0.05) 100%);
+            z-index: 1;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: space-between;
+            color: #cbd5e1;
+            font-size: 14px;
+            white-space: nowrap;
+            position: relative;
+            padding-bottom: 14px;
+            z-index: 2;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline-item .dot-small {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
+            flex-shrink: 0;
+        }
+
+        .timeline-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .timeline-item .t-date {
+            color: rgba(156,163,175,.8);
+            font-size: 13px;
+        }
+
+        .timeline-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .timeline-icon img,
+        .timeline-icon i {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .timeline-icon i {
+            font-size: 18px;
+            color: var(--accent);
+        }
+
         .sprint-title {
             color: var(--accent);
             font-size: 12px;
@@ -287,12 +402,8 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .modal-image {
@@ -303,12 +414,8 @@
         }
 
         @keyframes zoomIn {
-            from {
-                transform: scale(0.8);
-            }
-            to {
-                transform: scale(1);
-            }
+            from { transform: scale(0.8); }
+            to { transform: scale(1); }
         }
 
         .modal-close {
@@ -342,9 +449,7 @@
             .misc-gallery {
                 grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             }
-            .misc-item {
-                height: 140px;
-            }
+            .misc-item { height: 140px; }
         }
     </style>
 </head>
@@ -367,6 +472,47 @@
             <p class="sprint-text">
                 Currently improving my Red Team and evasion skills while working on labs and CTFs on platforms like HackTheBox.
             </p>
+        </div>
+
+        <div class="certs-timeline" aria-label="Certs timeline">
+            <div class="timeline-title"><i class="fas fa-stream" aria-hidden="true"></i> Certs timeline</div>
+            <ul class="timeline-list">
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-label"><span class="timeline-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span> CWES</span>
+                        <span class="t-date">May 2026</span>
+                    </div>
+                    <span class="dot-small"></span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-label"><span class="timeline-icon"><i class="fas fa-flask" aria-hidden="true"></i></span> Prolabs</span>
+                        <span class="t-date">April 2026</span>
+                    </div>
+                    <span class="dot-small"></span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-label"><span class="timeline-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span> CRTA</span>
+                        <span class="t-date">Feb 2026</span>
+                    </div>
+                    <span class="dot-small"></span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-label"><span class="timeline-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span> CPTS</span>
+                        <span class="t-date">Feb 2026</span>
+                    </div>
+                    <span class="dot-small"></span>
+                </li>
+                <li class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-label"><span class="timeline-icon"><i class="fas fa-certificate" aria-hidden="true"></i></span> eJPT</span>
+                        <span class="t-date">April 2025</span>
+                    </div>
+                    <span class="dot-small"></span>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -417,10 +563,9 @@
         </div>
     </main>
 
-    <!-- Modal para ampliar imágenes -->
     <div id="imageModal" class="modal" onclick="closeModal()">
         <span class="modal-close" onclick="closeModal()">&times;</span>
-        <img id="modalImage"  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E" class="modal-image" alt="Expanded">
+        <img id="modalImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E" class="modal-image" alt="Expanded">
     </div>
 
     <script>
@@ -464,7 +609,6 @@
             updateCarousel();
         }
 
-        // Funciones para el modal de imágenes
         function openModal(imageSrc) {
             const modal = document.getElementById('imageModal');
             const modalImage = document.getElementById('modalImage');
@@ -479,7 +623,6 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Cerrar modal al presionar Escape
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeModal();
