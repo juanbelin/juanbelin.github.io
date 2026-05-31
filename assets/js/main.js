@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (i < text.length) {
       nameSpan.textContent += text.charAt(i);
       i++;
-      setTimeout(type, 150);
+      setTimeout(type, 120);
     }
   }
   

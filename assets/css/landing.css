@@ -334,8 +334,13 @@ body {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(156,163,175,.45);
+  color: rgba(156,163,175,.45);  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
+
+.competencies-title i {
+  font-size: 12px;}
 
 .competencies-track-wrap {
   width: 100%;
@@ -363,7 +368,7 @@ body {
   width: max-content;
   /* transform en GPU → cero reflow */
   will-change: transform;
-  animation: scroll-tags 22s linear infinite;
+  animation: scroll-tags 18s linear infinite;
 }
 
 /* Pausa al hover para leer cómodamente */
