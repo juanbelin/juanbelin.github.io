@@ -10,10 +10,7 @@ I studied software development, but I found my true passion in **cybersecurity**
 
 ---
 
-## Check this out
 
-🔹 [Personal card](https://juanbelin.github.io/main.html)  
-🔹 **Discord:** juanbelin  
 
 ## Purpose of This Blog  
 
