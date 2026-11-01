@@ -15,3 +15,22 @@ Thumbs.db
 
 # Temporary reports catalog update
 src/data/reports-manifest.json.tmp
+
+# Local documentation and migration records
+/docs/
+
+# Legacy Jekyll caches
+.bundle/
+.jekyll-cache/
+.jekyll-metadata
+_site/
+vendor/
+
+# Local environment files
+.env.*
+!.env.example
+
+# Local assistant configuration
+.agents/
+.codex/
+.aws/
