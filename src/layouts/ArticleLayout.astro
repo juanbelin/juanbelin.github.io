@@ -61,6 +61,21 @@ const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
         {image && <img class="article-cover" src={image} alt={`${title} cover`} />}
       </header>
 
+      {headings.length > 0 && (
+        <details class="article-mobile-toc">
+          <summary>Contents</summary>
+          <nav aria-label="On this page">
+            <ol>
+              {headings.map(heading => (
+                <li style={`--toc-depth: ${heading.depth - minDepth}`}>
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                </li>
+              ))}
+            </ol>
+          </nav>
+        </details>
+      )}
+
       {hasLinks && (
         <div class="article-resource-links">
           {video && <a href={video} class="btn primary" target="_blank" rel="noopener">Watch video <span class="arrow">→</span></a>}
