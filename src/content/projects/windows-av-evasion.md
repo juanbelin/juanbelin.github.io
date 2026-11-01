@@ -3,7 +3,7 @@ title: Windows AV Evasion
 description: An educational Windows Defender evasion demonstration, documented in the project README.
 date: '2026-11-01'
 status: public
-category: Evasion
+category: Red Team
 stack:
   - Python
   - Bash
