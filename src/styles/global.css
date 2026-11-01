@@ -1348,11 +1348,11 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
 .cert-logo-cwes { width: 104px; height: 104px; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
 .code-block { border: 1px solid var(--rule-2); margin: 1.5em 0; min-width: 0; background: var(--bg-2); }
-.code-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px 16px; color: var(--ink-2); font: 11px var(--font-mono); }
-.code-language { letter-spacing: .5px; }
-.code-copy { padding: 6px 10px; color: var(--ink-2); border: 1px solid var(--rule-2); font: inherit; }
-.code-copy:hover, .code-copy[data-copied] { color: var(--accent); border-color: var(--accent); }
-.prose .code-block pre { margin: 0; border: 0; border-top: 1px solid var(--rule-2); }
+.code-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 14px 0; color: var(--ink-3); font: 11px var(--font-mono); }
+.code-language { letter-spacing: 0; }
+.code-copy { padding: 4px 0 4px 10px; color: var(--ink-2); border: 0; font: inherit; }
+.code-copy:hover, .code-copy:focus-visible, .code-copy[data-copied] { color: var(--ink); }
+.prose .code-block pre { margin: 0; border: 0; padding: 12px 14px 16px; }
 .image-trigger { display: block; max-width: 100%; padding: 0; margin: 2em 0; line-height: 0; cursor: zoom-in; }
 .prose .image-trigger img { margin: 0; }
 .image-trigger-cover { width: fit-content; margin: 36px auto 0; }
