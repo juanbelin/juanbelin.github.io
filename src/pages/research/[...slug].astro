@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
+import { readingMinutes } from '@/lib/reading-time.mjs';
 import ArticleLayout from '@/layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
@@ -30,7 +31,7 @@ const relatedPosts = (await getCollection('research', ({ data }) => !data.draft)
 
 const meta: string[] = [];
 if (entry.data.difficulty) meta.push(entry.data.difficulty);
-if (entry.data.readingTime) meta.push(`${entry.data.readingTime} min read`);
+meta.push(`${readingMinutes(entry.body)} min read`);
 ---
 <ArticleLayout
   headings={headings}

@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Granny.png
 pin: false
-readingTime: 5
 difficulty: Easy
 legacySlug: Granny-HTB
 ---

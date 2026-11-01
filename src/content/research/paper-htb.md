@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Paper.png
 pin: false
-readingTime: 5
 difficulty: Easy
 legacySlug: Paper-HTB
 ---

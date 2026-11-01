@@ -10,7 +10,6 @@ tags:
   - notes
 image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-0O6b-BaoV_hj9IJHYMEpiHjVRbdDKmUIVQ&s
 pin: true
-readingTime: 1
 legacySlug: Hacking_Wi-Fi_Notes
 ---
 

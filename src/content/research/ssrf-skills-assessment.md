@@ -10,7 +10,6 @@ tags:
   - hacking
 image: /assets/img/Anexos/SSRFHTB.jpg
 pin: false
-readingTime: 2
 legacySlug: SSRF-Skills-Assessment
 ---
 

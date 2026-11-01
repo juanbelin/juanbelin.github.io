@@ -9,7 +9,6 @@ tags:
   - CWES
 image: /assets/img/Anexos/CWES.png
 pin: true
-readingTime: 6
 legacySlug: CWES
 ---
 

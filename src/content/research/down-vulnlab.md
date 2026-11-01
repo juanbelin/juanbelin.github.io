@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Vulnlab.png
 pin: false
-readingTime: 3
 difficulty: Easy
 legacySlug: Down-Vulnlab
 ---

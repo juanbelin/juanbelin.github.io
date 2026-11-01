@@ -9,7 +9,6 @@ tags:
   - hacking
 image: /assets/img/Anexos/Logo.png
 pin: true
-readingTime: 2
 legacySlug: Hit-The-DNS
 ---
 

@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Friendly%202-1.png
 pin: false
-readingTime: 6
 difficulty: Easy
 legacySlug: Friendly2-HackMyVm
 ---

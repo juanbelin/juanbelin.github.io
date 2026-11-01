@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Active.png
 pin: false
-readingTime: 9
 difficulty: Easy
 legacySlug: Active-HTB
 ---

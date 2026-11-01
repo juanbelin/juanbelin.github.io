@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Pasted%20image%2020250404085424-1.png
 pin: false
-readingTime: 4
 difficulty: Easy
 legacySlug: Blocky-HTB
 ---

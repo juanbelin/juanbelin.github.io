@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Data.png
 pin: false
-readingTime: 4
 difficulty: Easy
 legacySlug: Data-Vulnlab
 ---

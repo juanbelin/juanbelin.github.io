@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Forest.png
 pin: false
-readingTime: 8
 difficulty: Easy
 legacySlug: Forest-HTB
 ---

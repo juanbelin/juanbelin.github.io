@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Pasted%20image%2020250402092936.png
 pin: false
-readingTime: 4
 difficulty: Medium
 legacySlug: DockerLabs-HTB
 ---

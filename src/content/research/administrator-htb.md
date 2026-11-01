@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Máquina%20Administrator.png
 pin: false
-readingTime: 10
 difficulty: Medium
 legacySlug: Administrator-HTB
 ---

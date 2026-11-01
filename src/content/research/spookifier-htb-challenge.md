@@ -11,7 +11,6 @@ tags:
   - very easy
 image: https://tse1.mm.bing.net/th?id=OIG1.iKzTRYDeUwZgb8AvNvbH&pid=ImgGn
 pin: false
-readingTime: 2
 difficulty: Very easy
 legacySlug: Spookifier-HTB-Challenge
 ---

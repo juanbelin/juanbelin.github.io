@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Cicada.png
 pin: false
-readingTime: 14
 difficulty: Easy
 legacySlug: HTB-Cicada-HTB
 ---

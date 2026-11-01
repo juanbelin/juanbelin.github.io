@@ -11,7 +11,6 @@ tags:
   - very easy
 image: https://cdn.invicti.com/app/uploads/2022/06/28121118/session-hijacking-768x403.webp
 pin: false
-readingTime: 1
 difficulty: Very easy
 legacySlug: OnlyHacks-HTB-Challenge
 ---

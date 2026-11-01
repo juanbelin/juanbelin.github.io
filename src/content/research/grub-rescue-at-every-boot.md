@@ -9,7 +9,6 @@ tags:
   - linux
 image: /assets/img/Anexos/Pasted%20image%2020250408103223-1.png
 pin: false
-readingTime: 2
 legacySlug: Grub-rescue-at-every-boot
 ---
 

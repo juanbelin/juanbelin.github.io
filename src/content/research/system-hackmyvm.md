@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Pasted%20image%2020250401125207.png
 pin: false
-readingTime: 5
 difficulty: Easy
 legacySlug: System_HackMyVm
 ---

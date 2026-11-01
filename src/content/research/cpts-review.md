@@ -9,7 +9,6 @@ tags:
   - CPTS
 image: /assets/img/Anexos/CPTS2.png
 pin: true
-readingTime: 13
 legacySlug: CPTS-Review
 ---
 

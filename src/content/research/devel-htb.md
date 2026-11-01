@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Pasted%20image%2020250410152509-1.png
 pin: false
-readingTime: 4
 difficulty: Easy
 legacySlug: Devel-HTB
 ---

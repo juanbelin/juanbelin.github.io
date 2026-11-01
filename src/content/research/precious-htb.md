@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Precious.png
 pin: false
-readingTime: 4
 difficulty: Easy
 legacySlug: Precious-HTB
 ---

@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Máquina%20Builder.png
 pin: false
-readingTime: 6
 difficulty: Medium
 legacySlug: Builder-HTB
 ---

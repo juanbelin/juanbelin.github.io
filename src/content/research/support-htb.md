@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Support.png
 pin: false
-readingTime: 10
 difficulty: Easy
 legacySlug: Support-HTB
 ---

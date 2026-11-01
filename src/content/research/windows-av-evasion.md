@@ -10,7 +10,6 @@ tags:
   - hacking
 image: /assets/img/Anexos/rev_shell_AV_evasion.gif
 pin: true
-readingTime: 2
 legacySlug: Windows_AV_Evasion
 ---
 

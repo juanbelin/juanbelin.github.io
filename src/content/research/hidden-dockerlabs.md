@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Máquina%20Hidden-4.png
 pin: false
-readingTime: 3
 difficulty: Medium
 legacySlug: Hidden-Dockerlabs
 ---

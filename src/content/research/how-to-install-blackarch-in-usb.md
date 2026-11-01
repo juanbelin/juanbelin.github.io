@@ -9,7 +9,6 @@ tags:
   - linux
 image: https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2014/12/blackarch-linux.jpg?fit=1200%2C675&quality=70&strip=all&ssl=1
 pin: true
-readingTime: 5
 legacySlug: How_to_install_BlackArch_in_USB
 ---
 

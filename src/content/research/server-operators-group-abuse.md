@@ -9,7 +9,6 @@ tags:
   - hacking
 image: /assets/img/Anexos/Server%20Operators%20Group%20Abuse.png
 pin: false
-readingTime: 3
 legacySlug: Server-Operators-Group-Abuse
 ---
 

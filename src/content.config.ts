@@ -27,7 +27,6 @@ const research = defineCollection({
     pin: z.boolean().default(false),
     legacySlug: z.string().optional(),
     difficulty: z.string().optional(),
-    readingTime: z.number().optional(),
     video: z.string().url().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),

@@ -9,7 +9,6 @@ tags:
   - tool
 image: /assets/img/Anexos/John%20repair-2.png
 pin: false
-readingTime: 1
 legacySlug: John-repair
 ---
 

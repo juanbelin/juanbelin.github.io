@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Máquina%20Stranger.png
 pin: false
-readingTime: 5
 difficulty: Medium
 legacySlug: Stranger-Dockerlabs
 ---

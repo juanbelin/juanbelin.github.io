@@ -9,7 +9,6 @@ tags:
   - eJPT
 image: /assets/img/Anexos/Review%20eJPT.png
 pin: false
-readingTime: 5
 legacySlug: Review-eJPT
 ---
 

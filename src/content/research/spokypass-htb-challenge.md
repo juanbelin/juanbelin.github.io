@@ -11,7 +11,6 @@ tags:
   - very easy
 image: /assets/img/Anexos/Pasted%20image%2020250401091447.png
 pin: false
-readingTime: 2
 difficulty: Very easy
 legacySlug: SpokyPass-HTB-Challenge
 ---

@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Driver-2.png
 pin: false
-readingTime: 7
 difficulty: Easy
 legacySlug: Driver-HTB
 ---

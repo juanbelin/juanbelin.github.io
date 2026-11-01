@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Pasted%20image%2020250318104150-1.png
 pin: false
-readingTime: 7
 difficulty: Easy
 legacySlug: Armadeggon-HTB
 ---

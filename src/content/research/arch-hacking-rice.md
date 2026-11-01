@@ -9,7 +9,6 @@ tags:
   - linux
 image: /assets/img/Anexos/rice_1.png
 pin: true
-readingTime: 1
 legacySlug: Arch-Hacking-Rice
 ---
 

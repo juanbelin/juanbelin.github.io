@@ -11,7 +11,6 @@ tags:
   - easy
 image: /assets/img/Anexos/Máquina%20Nexus-8.png
 pin: false
-readingTime: 5
 difficulty: Easy
 legacySlug: Nexus-HackMyVm
 ---

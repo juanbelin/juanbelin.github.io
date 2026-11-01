@@ -10,7 +10,6 @@ tags:
   - notes
 image: https://www.appsecmonkey.com/static/images/xxe/cover.jpg
 pin: false
-readingTime: 3
 legacySlug: XXE-notes
 ---
 

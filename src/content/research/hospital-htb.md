@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Máquina%20Hospital.png
 pin: false
-readingTime: 9
 difficulty: Medium
 legacySlug: Hospital-HTB
 ---

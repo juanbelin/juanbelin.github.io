@@ -11,7 +11,6 @@ tags:
   - medium
 image: /assets/img/Anexos/Pasted%20image%2020250409170413-1.png
 pin: false
-readingTime: 5
 difficulty: Medium
 legacySlug: Mybb-Dockerlabs
 ---
