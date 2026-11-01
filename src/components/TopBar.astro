@@ -1,4 +1,6 @@
 ---
+import SearchButton from './SearchButton.astro';
+import PostSearch from './PostSearch.astro';
 import { site, nav } from '@/data/site';
 const { path = '/' } = Astro.props;
 const isActive = (href: string) =>
@@ -23,6 +25,7 @@ const isActive = (href: string) =>
           aria-current={isActive(item.href) ? 'page' : undefined}
         >{item.label}</a>
       ))}
+      <SearchButton />
     </nav>
     <div class="top-right">
       <span class="avail"><span class="dot" aria-hidden="true"></span>Available</span>
@@ -44,8 +47,10 @@ const isActive = (href: string) =>
         aria-current={isActive(item.href) ? 'page' : undefined}
       >{item.label}</a>
     ))}
+    <SearchButton />
   </nav>
 </header>
+<PostSearch />
 
 <script>
   const toggle = document.getElementById('menuToggle');

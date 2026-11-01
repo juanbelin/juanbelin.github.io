@@ -906,7 +906,7 @@ body::after {
 }
 .prose p { color: var(--ink-2); }
 .prose strong { color: var(--ink); font-weight: 600; }
-.prose em { font-family: var(--font-serif); font-style: italic; color: var(--ink); }
+.prose em { font-family: var(--font-serif); font-style: italic; font-weight: 300; color: var(--accent); }
 .prose a {
   color: var(--accent);
   border-bottom: 1px solid currentColor;
@@ -1510,3 +1510,23 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
   .article-main .prose { font-size: 16px; }
   .article-main .prose pre { padding: 14px; font-size: 12px; }
 }
+
+/* Post search uses a native modal for keyboard focus and Escape support. */
+.post-search-toggle { display: inline-flex; align-items: center; justify-content: center; color: var(--ink-3); padding: 4px; }
+.post-search-toggle:hover, .post-search-toggle:focus-visible { color: var(--ink); }
+.nav .post-search-toggle { align-self: center; }
+.mobile-nav .post-search-toggle { padding: 16px 24px; justify-content: flex-start; border-bottom: 1px solid var(--rule); }
+.post-search { width: min(640px, calc(100vw - 32px)); max-height: 80dvh; margin: 10dvh auto auto; padding: 24px; background: var(--bg-2); color: var(--ink); border: 1px solid var(--rule-2); overflow-y: auto; }
+.post-search::backdrop { background: rgba(0, 0, 0, .75); }
+body:has(.post-search[open]) { overflow: hidden; }
+.post-search-header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; }
+.post-search-header h2 { font: 400 30px var(--font-display); }
+.post-search-header button { color: var(--ink-2); font-size: 28px; width: 40px; height: 40px; }
+.post-search input { display: block; width: 100%; min-width: 0; padding: 12px; border: 1px solid var(--rule-2); background: var(--bg); color: var(--ink); font: 16px var(--font-body); }
+.post-search-status { color: var(--ink-2); font: 12px var(--font-mono); margin: 18px 0 10px; }
+.post-search-results { list-style: none; }
+.post-search-results a { display: block; padding: 16px 0; border-bottom: 1px solid var(--rule-2); overflow-wrap: anywhere; }
+.post-search-results a:hover strong, .post-search-results a:focus-visible strong { color: var(--accent); }
+.post-search-results strong { display: block; font-size: 16px; font-weight: 500; }
+.post-search-results span { display: block; margin-top: 6px; color: var(--ink-2); font-size: 13px; }
+@media (max-width: 720px) { .post-search { padding: 20px; } }

@@ -1,0 +1,13 @@
+<dialog class="post-search" id="postSearch" aria-labelledby="postSearchTitle">
+  <div class="post-search-header">
+    <h2 id="postSearchTitle">Search posts</h2>
+    <button type="button" data-close-post-search aria-label="Close search">×</button>
+  </div>
+  <label class="sr-only" for="postSearchInput">Search by title, topic or content</label>
+  <input id="postSearchInput" type="search" placeholder="Search posts…" autocomplete="off" autofocus />
+  <p class="post-search-status" data-post-search-status role="status" aria-live="polite"></p>
+  <ul class="post-search-results" data-post-search-results></ul>
+</dialog>
+<script>
+  import '@/scripts/post-search';
+</script>
