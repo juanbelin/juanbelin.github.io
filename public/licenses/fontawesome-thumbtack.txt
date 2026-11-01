@@ -1,0 +1,6 @@
+Font Awesome Free thumbtack icon (Classic Solid)
+Copyright Fonticons, Inc.
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://fontawesome.com/license/free
+https://fontawesome.com/icons/classic/solid/thumbtack
+The icon is embedded as SVG in ResearchCard.astro.

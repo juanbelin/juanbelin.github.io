@@ -1,0 +1,60 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionBand from '@/components/SectionBand.astro';
+import ResearchCard from '@/components/ResearchCard.astro';
+import { researchPage, researchPageHref } from '@/lib/research-pagination.mjs';
+import { site } from '@/data/site';
+interface Props { currentPage?: number; }
+const { currentPage = 1 } = Astro.props;
+const writeups = (await getCollection('research', ({ data }) => !data.draft))
+  .sort((a, b) => Number(b.data.pin) - Number(a.data.pin) || b.data.date.valueOf() - a.data.date.valueOf());
+const categories = [...new Set(writeups.flatMap(w => w.data.categories))].sort();
+const tags = [...new Set(writeups.flatMap(w => w.data.tags))].sort();
+const state = researchPage(writeups.length, currentPage);
+const title = state.page > 1 ? `Research — Page ${state.page}` : 'Research';
+---
+<BaseLayout path={researchPageHref(state.page)} title={title} description="CTF write-ups, security tutorials, certification reviews and technical notes.">
+  <div style="padding-top: 88px;">
+    <SectionBand num="03" label="Journal" title="Research & technical notes"
+      meta={`<b>${String(writeups.length).padStart(2, '0')}</b> posts<br>${categories.length} categories`} />
+  </div>
+  <div class="container section-body" data-research-index data-site-name={site.name}>
+    <p class="section-desc rv">CTF write-ups, security tutorials, certification reviews and technical notes from my cybersecurity journey.</p>
+    <form class="research-filters" id="researchFilters" role="search" aria-label="Filter research posts" hidden>
+      <div class="research-filter">
+        <label for="researchCategory">Category</label>
+        <select id="researchCategory" name="category">
+          <option value="">All categories</option>
+          {categories.map(category => <option value={category}>{category}</option>)}
+        </select>
+      </div>
+      <div class="research-filter">
+        <label for="researchTag">Tag</label>
+        <select id="researchTag" name="tag">
+          <option value="">All tags</option>
+          {tags.map(tag => <option value={tag}>{tag}</option>)}
+        </select>
+      </div>
+      <button type="reset" class="btn">Clear filters</button>
+    </form>
+    <p class="research-results" id="researchResults" role="status" aria-live="polite">Showing {writeups.length ? state.start + 1 : 0}–{state.end} of {writeups.length} posts</p>
+    <div class="research-list" id="researchList">
+      {writeups.slice(state.start, state.end).map(entry => <ResearchCard entry={entry} />)}
+    </div>
+    <p class="section-desc" id="researchEmpty" hidden={writeups.length !== 0}>No posts match these filters.</p>
+    <nav class="research-pagination" aria-label="Research pages" data-research-pagination hidden={state.pages <= 1}>
+      {state.page > 1 ? <a class="pagination-link" href={researchPageHref(state.page - 1)} data-research-page>← Previous</a> : <span class="pagination-link" aria-disabled="true">← Previous</span>}
+      {Array.from({ length: state.pages }, (_, i) => i + 1).map(page => (
+        <a class="pagination-link" href={researchPageHref(page)} data-research-page aria-current={page === state.page ? 'page' : undefined}>{page}</a>
+      ))}
+      {state.page < state.pages ? <a class="pagination-link" href={researchPageHref(state.page + 1)} data-research-page>Next →</a> : <span class="pagination-link" aria-disabled="true">Next →</span>}
+    </nav>
+    <template id="researchCatalog">
+      {writeups.map(entry => <ResearchCard entry={entry} />)}
+    </template>
+  </div>
+  <script>
+    import '@/scripts/research-index';
+  </script>
+</BaseLayout>

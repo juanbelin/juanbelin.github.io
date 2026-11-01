@@ -1,0 +1,20 @@
+{
+  "name": "juanbelin-portfolio",
+  "type": "module",
+  "version": "2026.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "sync:reports": "node scripts/sync-report-catalog.mjs",
+    "import:projects": "node scripts/import-project-readmes.mjs"
+  },
+  "dependencies": {
+    "astro": "^5.2.0",
+    "@astrojs/check": "^0.9.4",
+    "typescript": "^5.7.2",
+    "sharp": "0.34.5",
+    "rehype-raw": "7.0.0"
+  }
+}

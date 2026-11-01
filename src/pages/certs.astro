@@ -1,0 +1,38 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionBand from '@/components/SectionBand.astro';
+import { certs } from '@/data/certs';
+---
+<BaseLayout path="/certs" title="Certifications & education" description="Security certifications, official education and ongoing training.">
+  <div style="padding-top: 88px;">
+    <SectionBand num="05" label="Credentials" title="Certifications & education" meta={`<b>${String(certs.length).padStart(2, '0')}</b> total`} />
+  </div>
+  <div class="container section-body">
+    <p class="section-desc rv">Security certifications, official education and ongoing training.</p>
+    <div class="certs-scroll rv">
+      <table class="certs-table">
+        <thead>
+          <tr><th>Year</th><th>Certification / education</th><th>Issuer</th><th>Status / verify</th></tr>
+        </thead>
+        <tbody>
+          {certs.map(c => (
+            <tr>
+              <td>{c.year}</td>
+              <td>
+                <span class="cert-name">{c.name}</span>
+                {c.description && <span class="cert-description">{c.description}</span>}
+              </td>
+              <td class="cert-issuer">{c.issuerUrl
+                ? <a href={c.issuerUrl} target="_blank" rel="noopener noreferrer">{c.issuer}</a>
+                : c.issuer}</td>
+              <td>
+                {c.verify && <a class="cert-link" href={c.verify.url} target="_blank" rel="noopener noreferrer">{c.verify.label}</a>}
+                {c.status && <span class={`cert-status ${c.status.variant ?? ''}`}>{c.status.label}</span>}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,737 @@
+{
+  "posts": [
+    {
+      "source": "2025-02-02-SQL_Injection_Notes.md",
+      "slug": "sql-injection-notes",
+      "title": "Apuntes SQL Injection (Spanish)",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "notes"
+      ]
+    },
+    {
+      "source": "2025-02-08-Hacking_Wi-Fi_Notes.md",
+      "slug": "hacking-wi-fi-notes",
+      "title": "Apuntes Hacking WI-FI (Spanish)",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "hacking",
+        "notes"
+      ]
+    },
+    {
+      "source": "2025-03-03-How_to_install_BlackArch_in_USB.md",
+      "slug": "how-to-install-blackarch-in-usb",
+      "title": "How to install BlackArch in USB with persistence!",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "source": "2025-03-28-Armadeggon-HTB.md",
+      "slug": "armadeggon-htb",
+      "title": "Armadeggon HTB",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-03-29-PingPong-Dockerlabs.md",
+      "slug": "pingpong-dockerlabs",
+      "title": "PingPong Dockerlabs",
+      "categories": [
+        "CTF",
+        "Dockerlabs"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-03-30-Horizontall-HTB.md",
+      "slug": "horizontall-htb",
+      "title": "Horizontall HTB",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-01-SpokyPass-HTB-Challenge.md",
+      "slug": "spokypass-htb-challenge",
+      "title": "SpookyPass HTB Challenge (English)",
+      "categories": [
+        "Challenge",
+        "HTB"
+      ],
+      "tags": [
+        "reversing",
+        "very easy"
+      ]
+    },
+    {
+      "source": "2025-04-01-System_HackMyVm.md",
+      "slug": "system-hackmyvm",
+      "title": "System HackMyVm (English)",
+      "categories": [
+        "CTF",
+        "HackMyVm"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-03-DockerLabs-HTB.md",
+      "slug": "dockerlabs-htb",
+      "title": "Reverse Dockerlabs",
+      "categories": [
+        "CTF",
+        "Dockerlabs"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-04-03-OnlyHacks-HTB-Challenge.md",
+      "slug": "onlyhacks-htb-challenge",
+      "title": "OnlyHacks HTB Challenge (English)",
+      "categories": [
+        "Challenge",
+        "HTB"
+      ],
+      "tags": [
+        "web",
+        "very easy"
+      ]
+    },
+    {
+      "source": "2025-04-03-Spookifier-HTB-Challenge.md",
+      "slug": "spookifier-htb-challenge",
+      "title": "Spookifier HTB Challenge (English)",
+      "categories": [
+        "Challenge",
+        "HTB"
+      ],
+      "tags": [
+        "web",
+        "very easy"
+      ]
+    },
+    {
+      "source": "2025-04-04-Blocky-HTB.md",
+      "slug": "blocky-htb",
+      "title": "Bloky HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-07-SOC336-LetsDefend-.md",
+      "slug": "soc336-letsdefend",
+      "title": "Let’s Defend SOC336",
+      "categories": [
+        "Blue Team",
+        "LetsDefend"
+      ],
+      "tags": [
+        "soc"
+      ]
+    },
+    {
+      "source": "2025-04-07-XXE-notes.md",
+      "slug": "xxe-notes",
+      "title": "Apuntes XXE",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "hacking",
+        "notes"
+      ]
+    },
+    {
+      "source": "2025-04-09-Arch-Hacking-Rice.md",
+      "slug": "arch-hacking-rice",
+      "title": "Arch Hacking Rice",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "source": "2025-04-09-Mybb-Dockerlabs.md",
+      "slug": "mybb-dockerlabs",
+      "title": "Mybb Dockerlabs",
+      "categories": [
+        "CTF",
+        "Dockerlabs"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-04-10-Devel-HTB.md",
+      "slug": "devel-htb",
+      "title": "Devel HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-10-Lame-HTB.md",
+      "slug": "lame-htb",
+      "title": "Lame HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-12-Friendly-HackMyVm.md",
+      "slug": "friendly-hackmyvm",
+      "title": "Friendly HackMyVM (English)",
+      "categories": [
+        "CTF",
+        "HackMyVm"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-15-Review-eJPT.md",
+      "slug": "review-ejpt",
+      "title": "eJPT Review",
+      "categories": [
+        "Review"
+      ],
+      "tags": [
+        "eJPT"
+      ]
+    },
+    {
+      "source": "2025-04-16-Granny-HTB.md",
+      "slug": "granny-htb",
+      "title": "Granny HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-17-Keeper-HTB.md",
+      "slug": "keeper-htb",
+      "title": "Keeper HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-20-Friendly2-HackMyVm.md",
+      "slug": "friendly2-hackmyvm",
+      "title": "Friendly2 HackMyVM (English)",
+      "categories": [
+        "CTF",
+        "HackMyVm"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-04-21-Hidden-Dockerlabs.md",
+      "slug": "hidden-dockerlabs",
+      "title": "Hidden Dockerlabs",
+      "categories": [
+        "CTF",
+        "Dockerlabs"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-04-22-John-repair.md",
+      "slug": "john-repair",
+      "title": "John The Reaper error solved",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "tool"
+      ]
+    },
+    {
+      "source": "2025-04-26-Grub-rescue-at-every-boot.md",
+      "slug": "grub-rescue-at-every-boot",
+      "title": "Grub rescue at every boot solved",
+      "categories": [
+        "Tutorial"
+      ],
+      "tags": [
+        "linux"
+      ]
+    },
+    {
+      "source": "2025-05-02-Friendly3-HackMyVm.md",
+      "slug": "friendly3-hackmyvm",
+      "title": "Friendly3 HackMyVM (English)",
+      "categories": [
+        "CTF",
+        "HackMyVm"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-05-02-Stranger-Dockerlabs.md",
+      "slug": "stranger-dockerlabs",
+      "title": "Stranger Dockerlabs",
+      "categories": [
+        "CTF",
+        "Dockerlabs"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-05-28-Hospital-HTB.md",
+      "slug": "hospital-htb",
+      "title": "Hospital HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-06-07-Support-HTB.md",
+      "slug": "support-htb",
+      "title": "Support HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-06-11-Nexus-HackMyVm.md",
+      "slug": "nexus-hackmyvm",
+      "title": "Nexus HackMyVM (English)",
+      "categories": [
+        "CTF",
+        "HackMyVm"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-06-17-Hit-The-DNS.md",
+      "slug": "hit-the-dns",
+      "title": "Hit The DNS",
+      "categories": [
+        "Tool"
+      ],
+      "tags": [
+        "hacking"
+      ]
+    },
+    {
+      "source": "2025-06-20-Down-Vulnlab.md",
+      "slug": "down-vulnlab",
+      "title": "Down Vulnlab (English)",
+      "categories": [
+        "CTF",
+        "Vulnlab"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-07-09-Data-Vulnlab.md",
+      "slug": "data-vulnlab",
+      "title": "Data Vulnlab (English)",
+      "categories": [
+        "CTF",
+        "Vulnlab"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-07-25-Lock-Vulnlab.md",
+      "slug": "lock-vulnlab",
+      "title": "Lock Vulnlab (English)",
+      "categories": [
+        "CTF",
+        "Vulnlab"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-08-02-Forest-HTB.md",
+      "slug": "forest-htb",
+      "title": "Forest HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-08-06-Active-HTB.md",
+      "slug": "active-htb",
+      "title": "Active HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-09-03-Windows_AV_Evasion.md",
+      "slug": "windows-av-evasion",
+      "title": "Windows AV Evasion (msfvenom edition)",
+      "categories": [
+        "Tutorial",
+        "Evasion"
+      ],
+      "tags": [
+        "hacking"
+      ]
+    },
+    {
+      "source": "2025-09-10-Paper-HTB.md",
+      "slug": "paper-htb",
+      "title": "Paper HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-09-23-Driver-HTB.md",
+      "slug": "driver-htb",
+      "title": "Driver HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-09-25-HTB-Cicada-HTB.md",
+      "slug": "htb-cicada-htb",
+      "title": "Cicada HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2025-10-22-Builder-HTB.md",
+      "slug": "builder-htb",
+      "title": "Builder HTB",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-10-31-Administrator-HTB.md",
+      "slug": "administrator-htb",
+      "title": "Administrator HTB",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "medium"
+      ]
+    },
+    {
+      "source": "2025-9-17-Precious-HTB.md",
+      "slug": "precious-htb",
+      "title": "Precious HTB (English)",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking",
+        "easy"
+      ]
+    },
+    {
+      "source": "2026-02-08-Server-Operators-Group-Abuse.md",
+      "slug": "server-operators-group-abuse",
+      "title": "Server Operators Group Abuse",
+      "categories": [
+        "tutorial"
+      ],
+      "tags": [
+        "hacking"
+      ]
+    },
+    {
+      "source": "2026-02-27-CPTS-Review.md",
+      "slug": "cpts-review",
+      "title": "CPTS Review and Tips",
+      "categories": [
+        "Review"
+      ],
+      "tags": [
+        "CPTS"
+      ]
+    },
+    {
+      "source": "2026-03-18-SSRF-Skills-Assessment.md",
+      "slug": "ssrf-skills-assessment",
+      "title": "SSRF Skills Assesment HTB Academy",
+      "categories": [
+        "CTF",
+        "HackTheBox"
+      ],
+      "tags": [
+        "hacking"
+      ]
+    },
+    {
+      "source": "2026-05-28-CWES.md",
+      "slug": "cwes",
+      "title": "CWES Review and Tips",
+      "categories": [
+        "Review"
+      ],
+      "tags": [
+        "CWES"
+      ]
+    }
+  ],
+  "missingAssets": [],
+  "normalizedAssets": [
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250313090731-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250313090731-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250313093740-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250313093740-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250313093814-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250313093814-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250313093837-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250313093837-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250313094910-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250313094910-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092517-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092517-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092432-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092432-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316091721-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316091721-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092257-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092257-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092632-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092632-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092655-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092655-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092708-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092708-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092734-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092734-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092756-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092756-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092910-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092910-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092820-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092820-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092952-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092952-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316092257-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316092257-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250316150401-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250316150401-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250318104332-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250318104332-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250318150921-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250318150921-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250318151055-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250318151055-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250318151902-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250318151902-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250318160435-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250318160435-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250319091424-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250319091424-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250319091514-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250319091514-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250319091557-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250319091557-1.png"
+    },
+    {
+      "source": "/assets/img/Anexos/Pasted%20image%2020250318104150-1.png",
+      "target": "/assets/img/Anexos/Pasted image 20250318104150-1.png"
+    }
+  ],
+  "conversions": [
+    {
+      "filename": "2025-04-09-Arch-Hacking-Rice.md",
+      "video": "lpfnx4CC9cw"
+    },
+    {
+      "filename": "2025-06-17-Hit-The-DNS.md",
+      "video": "jjW2ubTnhqw"
+    },
+    {
+      "filename": "2025-06-17-Hit-The-DNS.md",
+      "video": "u2cVWcbJr-k"
+    },
+    {
+      "filename": "2025-06-17-Hit-The-DNS.md",
+      "video": "eyP8REu-1g0"
+    }
+  ],
+  "assetCount": 434
+}

@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import { site } from '@/data/site';
+
+// Keep published URLs shareable, including for crawlers that do not execute JS.
+export async function getStaticPaths() {
+  const entries = await getCollection('research', ({ data }) => !data.draft && !!data.legacySlug);
+  return entries.map(entry => ({
+    params: { slug: entry.data.legacySlug },
+    props: { entry },
+  }));
+}
+const { entry } = Astro.props;
+const destination = new URL(`/research/${entry.id}/`, Astro.site).href;
+const image = new URL(`/og/research/${entry.id}.jpg`, Astro.site).href;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{entry.data.title} — {site.name}</title>
+    <meta name="description" content={entry.data.description} />
+    <link rel="canonical" href={destination} />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={entry.data.title} />
+    <meta property="og:description" content={entry.data.description} />
+    <meta property="og:url" content={destination} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={entry.data.title} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="article:published_time" content={entry.data.date.toISOString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={entry.data.title} />
+    <meta name="twitter:description" content={entry.data.description} />
+    <meta name="twitter:image" content={image} />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+  </head>
+  <body>
+    <p>Continue reading: <a href={destination}>{entry.data.title}</a>.</p>
+    <script define:vars={{ destination }}>
+      window.location.replace(destination + window.location.hash);
+    </script>
+  </body>
+</html>

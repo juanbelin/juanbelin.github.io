@@ -1,0 +1,17 @@
+---
+title: Apuntes Hacking WI-FI (Spanish)
+description: Apuntes de Hacking WI-FI
+date: '2025-02-08'
+type: Tutorial
+categories:
+  - Tutorial
+tags:
+  - hacking
+  - notes
+image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-0O6b-BaoV_hj9IJHYMEpiHjVRbdDKmUIVQ&s
+pin: true
+readingTime: 1
+legacySlug: Hacking_Wi-Fi_Notes
+---
+
+Aquí dejo enlace del PDF de mis apuntes de Hacking Wi-Fi, muy útiles para practicar en laboratorios -> [PDF Link](https://github.com/juanbelin/Apuntes-Hacking-WIFI/blob/main/Vulneraci%C3%B3n%20de%20redes%20WPA-WPA2(PSK).pdf)

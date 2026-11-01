@@ -1,0 +1,46 @@
+---
+import GitHubIcon from '@/components/GitHubIcon.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionBand from '@/components/SectionBand.astro';
+import { reports, reportGroups, reportsRepository } from '@/data/reports';
+import { encodePath } from '@/lib/report-catalog.mjs';
+---
+<BaseLayout path="/reports" title="Reports & write-ups" description="My CTF reports and challenge write-ups, organized by platform.">
+  <div style="padding-top: 88px;">
+    <SectionBand num="06" label="Portfolio" title="REPORTS & WRITE-UPS" meta="Organized by platform" />
+  </div>
+  <div class="container section-body">
+    <p class="section-desc rv">My reports, CTF write-ups and challenge solutions from Hack The Box, HackMyVM and other training platforms.</p>
+    <a class="btn" href={reportsRepository} target="_blank" rel="noopener noreferrer">Browse the repository <GitHubIcon /></a>
+    <p class="reports-status" data-reports-status role="status" aria-live="polite">{reports.length ? `${reports.length} reports` : 'Loading reports…'}</p>
+    <p class="report-download-status" data-report-download-status role="status" aria-live="polite"></p>
+    <div class="report-platforms" data-report-platforms data-local-reports={reports.length}>
+      {reportGroups.map(group => (
+        <section class="report-platform" data-platform={group.folder}>
+          <div class="report-platform-head">
+            <h3>{group.label.toUpperCase()}</h3>
+            <a href={`${reportsRepository}/tree/main/${encodePath(group.folder)}`} target="_blank" rel="noopener noreferrer" aria-label={`Browse ${group.label} reports on GitHub`}>→</a>
+          </div>
+          <ul class="report-platform-list">
+            {group.reports.map(report => (
+              <li class="platform-report-row">
+                <a href={report.sourceUrl} target="_blank" rel="noopener noreferrer" class="platform-report">
+                  <span>{report.title.toUpperCase()}{report.section && <small>{report.section.toUpperCase()}</small>}</span>
+                  <span class="report-format">{report.format.toUpperCase()}</span>
+                </a>
+                <a class="report-download" href={report.remoteUrl} download={report.path.split('/').at(-1)} data-report-download data-filename={report.path.split('/').at(-1)} aria-label={`Download ${report.title}`} title="Download from GitHub">
+                  <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4" /></svg>
+                </a>
+              </li>
+            ))}
+          </ul>
+          {group.reports.length === 0 && <a class="report-platform-browse" href={`${reportsRepository}/tree/main/${encodePath(group.folder)}`} target="_blank" rel="noopener noreferrer">Browse reports on GitHub →</a>}
+        </section>
+      ))}
+    </div>
+  </div>
+  <script>
+    import '@/scripts/reports';
+    import '@/scripts/report-downloads';
+  </script>
+</BaseLayout>

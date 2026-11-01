@@ -1,0 +1,58 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionBand from '@/components/SectionBand.astro';
+
+const entries = [
+  {
+    num: 'I',
+    title: 'Adversary simulation & security awareness',
+    body: 'At S2GRUPO, I deliver hands-on awareness sessions and controlled phishing campaigns for private companies and public-sector organizations. I manage Linux VPS instances, domains, DNS and campaign platforms, create tailored email templates and landing pages, and turn campaign results into technical and executive reports with actionable recommendations.',
+    tags: ['Phishing exercises','Gophish', 'Automation','Social Engineering', 'Speech','Linux / DNS'],
+  },
+  {
+    num: 'II',
+    title: 'Malware development & automation',
+    body: 'At Áudea, I developed custom tools to reduce manual effort in ethical hacking operations and worked on the Ransomware Simulator platform. I integrated agentic AI and LLMs using Google Gemini and ADK to automate complex attack scenarios, supported threat modeling, and developed active and passive antivirus evasion techniques.',
+    tags: ['Malware Development', 'AV Evasion', 'Automation', 'IA', 'Bash', 'Python'],
+  },
+  {
+    num: 'III',
+    title: 'IT infrastructure & software development',
+    body: 'During my IT internship at ARKANUM PICTURES in Berlin, I worked with databases, C programming, virtualization and tools such as Unity and Unreal Engine. I also supported networks and production hardware, from routers and Raspberry Pi devices to workstations, cameras, displays and cabling.',
+    tags: ['C', 'Databases', 'Virtualization', 'Networking', 'Hardware'],
+  },
+  {
+    num: 'IV',
+    title: 'CTF practice & tool development',
+    body: 'I have worked through 120+ machines and regularly practice on Hack The Box, Vulnlab, HackMyVM and Dockerlabs. I document techniques and lessons in my write-ups, and build tools such as Hit-The-Dns to automate recurring tasks. Labs, CTFs and personal projects help me stay current, explore new techniques and keep improving my offensive security workflow.',
+    tags: ['CTFs', 'Hack The Box', 'Vulnlab', 'HackMyVM', 'Tool Development'],
+  },
+];
+---
+<BaseLayout path="/profile" title="Profile" description="What I bring to a security team.">
+  <div style="padding-top: 88px;">
+    <SectionBand num="01" label="Profile" title="What I bring to a security team" meta={`<b>${String(entries.length).padStart(2, '0')}</b> areas`} />
+  </div>
+
+  <div class="container section-body">
+    <p class="section-desc rv">Professional experience across adversary simulation, malware development, automation and IT infrastructure — supported by hands-on offensive security certifications.</p>
+
+    <div class="entries">
+      {entries.map(e => (
+        <article class="entry rv">
+          <span class="entry-num">{e.num}</span>
+          <div class="entry-content">
+            <h3>{e.title}</h3>
+            <p>{e.body}</p>
+          </div>
+          <div class="entry-side">
+            <h5>Toolkit</h5>
+            <div class="entry-tags">
+              {e.tags.map(t => <span class="tag">{t}</span>)}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

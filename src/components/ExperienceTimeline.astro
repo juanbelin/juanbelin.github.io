@@ -1,0 +1,63 @@
+---
+import type { Experience } from '@/data/experience';
+
+interface Props {
+  entries: Experience[];
+}
+
+const { entries } = Astro.props;
+const ordered = [...entries].sort((a, b) => b.start.localeCompare(a.start));
+const formatDate = (date: string) => new Date(`${date}-01T00:00:00Z`)
+  .toLocaleDateString('en-US', { month: 'short', year: 'numeric', timeZone: 'UTC' });
+---
+
+<ol class="experience-timeline" aria-label="Work experience timeline">
+  {ordered.map(entry => (
+    <li class="experience-item rv">
+      <div class="experience-period">
+        <time datetime={entry.start}>{formatDate(entry.start)}</time>
+        <span aria-hidden="true"> — </span>
+        {entry.end ? <time datetime={entry.end}>{formatDate(entry.end)}</time> : <span>Present</span>}
+      </div>
+      <article class="experience-card">
+        <div class="experience-heading">
+          {entry.logo && <img class="experience-logo" src={entry.logo} alt={`${entry.company} logo`} width="72" height="72" loading="lazy" />}
+          <div class="experience-heading-text">
+          <h3>{entry.companyUrl
+            ? <a href={entry.companyUrl} target="_blank" rel="noopener noreferrer">{entry.company}</a>
+            : entry.company}</h3>
+          <p class="experience-role">{entry.role}</p>
+          {entry.location && <p class="experience-location">{entry.location}</p>}
+          </div>
+        </div>
+        <p>{entry.summary}</p>
+        {entry.highlights.length > 0 && (
+          <ul class="experience-highlights">
+            {entry.highlights.map(highlight => <li>{highlight}</li>)}
+          </ul>
+        )}
+        {entry.images && entry.images.length > 0 && (
+          <div class="experience-gallery">
+            {entry.images.map(image => (
+              <figure>
+                <a href={image.src} target="_blank" rel="noopener noreferrer" aria-label={`View image: ${image.alt}`}>
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                </a>
+                {image.caption && <figcaption>{image.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        )}
+      </article>
+    </li>
+  ))}
+  {ordered.length === 0 && (
+    <li class="experience-item rv">
+      <div class="experience-period">Work history</div>
+      <article class="experience-card">
+        <h3>Experience coming soon</h3>
+        <p>Details about my professional roles and projects will be added here.</p>
+      </article>
+    </li>
+  )}
+</ol>

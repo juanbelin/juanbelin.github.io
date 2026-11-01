@@ -1,0 +1,67 @@
+---
+import { site, nav } from '@/data/site';
+const { path = '/' } = Astro.props;
+const isActive = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+---
+<header class="top">
+  <div class="top-inner">
+    <div class="brand-group">
+    <a href="/" class="brand">
+      <img src={site.photo} alt="" class="brand-avatar" />
+      <span class="brand-text">
+        <span class="brand-mark">{site.short}</span>
+        <span class="brand-sep">/</span>
+        <span>{site.year}</span>
+      </span>
+    </a>
+    </div>
+    <nav class="nav">
+      {nav.map(item => (
+        <a
+          href={item.href}
+          aria-current={isActive(item.href) ? 'page' : undefined}
+        >{item.label}</a>
+      ))}
+    </nav>
+    <div class="top-right">
+      <span class="avail"><span class="dot" aria-hidden="true"></span>Available</span>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileNav"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+    {nav.map(item => (
+      <a
+        href={item.href}
+        aria-current={isActive(item.href) ? 'page' : undefined}
+      >{item.label}</a>
+    ))}
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('mobileNav');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+</script>

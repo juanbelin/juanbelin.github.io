@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionBand from '@/components/SectionBand.astro';
+import { site } from '@/data/site';
+
+const rows = [
+  ...Object.values(site.socials),
+  ...(site.email ? [{ label: 'Email', value: site.email, url: `mailto:${site.email}` }] : []),
+];
+---
+<BaseLayout path="/contact" title="Contact" description="Open to penetration testing, red team, SOC, blue team, and IT opportunities.">
+  <div style="padding-top: 88px;">
+    <SectionBand num="08" label="Contact" title="Get in touch" />
+  </div>
+
+  <div class="container section-body">
+    <p class="section-desc rv">Open to penetration testing, red team, SOC, blue team, and any IT opportunity worth pursuing.</p>
+
+    <div class="contact-list rv">
+      {rows.map(r => (
+        <a class="contact-row" href={r.url} target="_blank" rel="noopener">
+          <span class="contact-lbl">{r.label}</span>
+          <span class="contact-val">{r.value}</span>
+          <span class="contact-arrow">→</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

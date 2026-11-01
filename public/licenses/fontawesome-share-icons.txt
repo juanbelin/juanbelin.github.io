@@ -1,0 +1,7 @@
+Font Awesome Free 6.7.2 brand icons: X (x-twitter), LinkedIn, Reddit (reddit-alien).
+Copyright Fonticons, Inc. / Dave Gandy.
+License: Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://fontawesome.com/license/free
+https://creativecommons.org/licenses/by/4.0/
+SVG paths sourced from https://github.com/iconify/icon-sets/blob/master/json/fa6-brands.json
+The icons are embedded in ShareIcon.astro. Brand trademarks belong to their respective owners.

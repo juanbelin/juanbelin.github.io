@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import SectionBand from '@/components/SectionBand.astro';
+import ExperienceTimeline from '@/components/ExperienceTimeline.astro';
+import { experience } from '@/data/experience';
+import { cybersecurityMonths, formatExperienceDuration } from '@/lib/experience-duration.mjs';
+const includedRoles = experience.filter(role => role.cybersecurity || role.includeInTotal).map(({ start, end, cybersecurity, includeInTotal }) => ({ start, end, cybersecurity, includeInTotal }));
+const totalExperience = formatExperienceDuration(cybersecurityMonths(includedRoles));
+---
+<BaseLayout path="/experience" title="Experience" description="My professional journey, responsibilities and work in cybersecurity.">
+  <div style="padding-top: 88px;">
+    <SectionBand num="02" label="Career" title="Work experience" meta="Professional journey" />
+  </div>
+  <div class="container section-body">
+    <p class="section-desc rv">My professional journey — the teams I have worked with, my responsibilities and the projects I have contributed to.</p>
+    <div class="experience-total" title="experience calendar">
+      <span class="band-label">Professional experience</span>
+      <strong data-cybersecurity-total data-roles={JSON.stringify(includedRoles)}>{totalExperience}</strong>
+      <span class="experience-total-note">Cybersecurity &amp; IT</span>
+    </div>
+    <ExperienceTimeline entries={experience} />
+  </div>
+  <script>
+    import '@/scripts/experience-duration';
+  </script>
+</BaseLayout>

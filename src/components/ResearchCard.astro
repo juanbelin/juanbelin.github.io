@@ -1,0 +1,39 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'research'>;
+  showCover?: boolean;
+}
+const { entry, showCover = true } = Astro.props;
+const { title, description, date, categories, tags, image, readingTime, pin } = entry.data;
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', {
+  day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC',
+});
+---
+<a class="research-card rv" href={`/research/${entry.id}`}
+  data-research-card data-categories={JSON.stringify(categories)} data-tags={JSON.stringify(tags)}>
+  <div class="research-card-body">
+    <div class="research-card-meta">
+      <time datetime={date.toISOString()}>{fmt(date)}</time>
+
+      {readingTime && <><span class="research-card-separator" aria-hidden="true">·</span><span>{readingTime} min read</span></>}
+      {pin && <span class="research-pinned" role="img" aria-label="Pinned post" title="Pinned post">
+        <!-- Font Awesome Free thumbtack, Classic Solid (CC BY 4.0, Fonticons, Inc.). -->
+        <svg class="fa-solid fa-thumbtack" width="13" height="17" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
+          <path d="M298.028 214.645 285.034 64H320c17.673 0 32-14.327 32-32S337.673 0 320 0H64C46.327 0 32 14.327 32 32s14.327 32 32 32h34.966L85.972 214.645C36.128 238.725 0 277.075 0 320c0 8.837 7.163 16 16 16h144v128c0 1.242.289 2.467.845 3.578l16 32c5.9 11.8 22.997 11.8 28.9 0l16-32A8.008 8.008 0 0 0 224 464V336h144c8.837 0 16-7.163 16-16 0-42.925-36.128-81.275-85.972-105.355z" />
+        </svg>
+      </span>}
+    </div>
+    <h3>{title}</h3>
+    <p>{description}</p>
+    {categories.length > 0 && (
+      <div class="research-card-categories">{categories.join(' / ')}</div>
+    )}
+    {tags.length > 0 && (
+      <div class="research-card-tags">{tags.map(tag => <span>#{tag}</span>)}</div>
+    )}
+  </div>
+  {showCover && image && <div class="research-card-media"><img class="research-card-cover" src={image} alt="" width="480" height="360" loading="lazy" /></div>}
+  <span class="research-card-arrow" aria-hidden="true">→</span>
+</a>

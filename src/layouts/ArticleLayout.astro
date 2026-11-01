@@ -1,0 +1,116 @@
+---
+import GitHubIcon from '@/components/GitHubIcon.astro';
+import type { MarkdownHeading } from 'astro';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from './BaseLayout.astro';
+import ResearchCard from '@/components/ResearchCard.astro';
+import ImageGallery from '@/components/ImageGallery.astro';
+import ShareIcon from '@/components/ShareIcon.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  type: string;
+  date: Date;
+  meta?: string[];
+  ledger?: string;
+  video?: string;
+  repo?: string;
+  demo?: string;
+  image?: string;
+  categories?: string[];
+  tags?: string[];
+  headings?: MarkdownHeading[];
+  relatedPosts?: CollectionEntry<'research'>[];
+  sharePath?: string;
+  showDate?: boolean;
+}
+const { title, description, type, date, meta = [], ledger, video, repo, demo, image,
+  categories = [], tags = [], headings = [], relatedPosts = [], sharePath, showDate = true } = Astro.props;
+const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '.');
+const hasLinks = video || repo || demo;
+const minDepth = Math.min(...headings.map(heading => heading.depth));
+const permalink = new URL(sharePath ?? Astro.url.pathname, Astro.site).href;
+const socialImage = ledger === '/research' ? {
+  src: `/og${Astro.url.pathname.replace(/\/$/, '')}.jpg`,
+  width: 1200, height: 630, type: 'image/jpeg',
+} : undefined;
+const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
+  { label: 'X', href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(permalink)}` },
+  { label: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(permalink)}` },
+  { label: 'Reddit', href: `https://www.reddit.com/submit?url=${encodeURIComponent(permalink)}&title=${encodeURIComponent(title)}` },
+];
+---
+<BaseLayout title={`${title} — ${type}`} description={description} image={image} socialImage={socialImage} publishedTime={showDate ? date.toISOString() : undefined}>
+  <div class:list={['article-shell', { 'article-no-toc': headings.length === 0 }]}>
+    <article class="article-main">
+      <header class="article-head">
+        <div class="article-meta">
+          <span class="type">{type}</span>
+          {showDate && <><span class="sep">·</span><span>{fmt(date)}</span></>}
+          {meta.map(m => <><span class="sep">·</span><span>{m}</span></>)}
+        </div>
+        <h1 class="article-title">{title}</h1>
+        <p class="article-lede">{description}</p>
+        {(categories.length > 0 || tags.length > 0) && (
+          <div class="article-taxonomy">
+            {categories.map(category => <a class="tag" href={`/research?category=${encodeURIComponent(category)}`}>{category}</a>)}
+            {tags.map(tag => <a class="tag" href={`/research?tag=${encodeURIComponent(tag)}`}>#{tag}</a>)}
+          </div>
+        )}
+        {image && <img class="article-cover" src={image} alt={`${title} cover`} />}
+      </header>
+
+      {hasLinks && (
+        <div class="article-resource-links">
+          {video && <a href={video} class="btn primary" target="_blank" rel="noopener">Watch video <span class="arrow">→</span></a>}
+          {repo && <a href={repo} class="btn" target="_blank" rel="noopener">Repository <GitHubIcon /></a>}
+          {demo && <a href={demo} class="btn" target="_blank" rel="noopener">Live demo <span class="arrow">→</span></a>}
+        </div>
+      )}
+
+      <div class="prose" data-article-prose><slot /></div>
+
+      <footer class="article-footer">
+        <div class="article-share" aria-label="Share this post">
+          <span class="band-label">Share</span>
+          {shares.map(share => <a class="share-link share-icon" href={share.href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${share.label}`} title={`Share on ${share.label}`}><ShareIcon name={share.label} /></a>)}
+          <button class="share-link share-icon" type="button" data-copy-url={permalink} aria-label="Copy link" title="Copy link"><ShareIcon name="copy" /></button>
+        </div>
+        <p class="article-copy-status" role="status" aria-live="polite" data-copy-status></p>
+
+        {relatedPosts.length > 0 && (
+          <section class="further-reading" aria-labelledby="furtherReadingTitle">
+            <span class="band-label">Keep exploring</span>
+            <h2 id="furtherReadingTitle">Further Reading</h2>
+            <div class="further-reading-grid">
+              {relatedPosts.map(entry => <ResearchCard entry={entry} showCover={false} />)}
+            </div>
+          </section>
+        )}
+        <a href={ledger ?? '/'} class="btn article-back"><span class="arrow">←</span> Back</a>
+      </footer>
+    </article>
+
+    {headings.length > 0 && (
+      <aside class="article-toc" aria-label="Table of contents">
+        <nav class="article-toc-inner" aria-label="On this page">
+          <h2>Contents</h2>
+          <ol>
+            {headings.map(heading => (
+              <li style={`--toc-depth: ${heading.depth - minDepth}`}>
+                <a href={`#${heading.slug}`} data-toc-link>{heading.text}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      </aside>
+    )}
+  </div>
+  <ImageGallery />
+  <script>
+    import '@/scripts/article';
+    import '@/scripts/code-blocks';
+    import '@/scripts/image-gallery';
+  </script>
+</BaseLayout>

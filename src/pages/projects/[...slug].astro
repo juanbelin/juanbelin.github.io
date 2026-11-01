@@ -1,0 +1,34 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '@/layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects', ({ data }) => !data.draft);
+  return projects.map(entry => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content, headings } = await render(entry);
+
+const statusMap: Record<string, string> = {
+  public: 'Public', wip: 'WIP', research: 'Research', private: 'Private',
+};
+---
+<ArticleLayout
+  showDate={false}
+  headings={headings}
+  title={entry.data.title}
+  description={entry.data.description}
+  type={statusMap[entry.data.status] ?? entry.data.status}
+  date={entry.data.date}
+  meta={entry.data.stack}
+  video={entry.data.video}
+  repo={entry.data.repo}
+  demo={entry.data.demo}
+  ledger="/projects"
+>
+  <Content />
+</ArticleLayout>
