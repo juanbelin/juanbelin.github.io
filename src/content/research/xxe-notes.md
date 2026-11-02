@@ -8,7 +8,7 @@ categories:
 tags:
   - hacking
   - notes
-image: https://www.appsecmonkey.com/static/images/xxe/cover.jpg
+image: 
 pin: false
 legacySlug: XXE-notes
 ---

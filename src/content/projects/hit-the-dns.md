@@ -57,8 +57,15 @@ https://github.com/user-attachments/assets/fa2420e5-3267-4568-bfa3-fc597894c4ba
 The **dns.logs** file will give you the next step in the recon (zone transfer attack) according with the subdmains that the tool has found during the fuzzing.
 
 
+<iframe
+  class="video-embed"
+  src="https://github-production-user-asset-6210df.s3.amazonaws.com/149154922/455627416-5878ce49-a2e9-44aa-9bd7-5e5bfa3419fa.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20261102%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20261102T204421Z&X-Amz-Expires=300&X-Amz-Signature=130b992139fe60ff8e640abfcda73a76c6b54f117abf6d29dc933130d0a47561&X-Amz-SignedHeaders=host&response-content-type=video%2Fmp4"
+  title="Video demonstration"
+  loading="lazy"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
 
-https://github.com/user-attachments/assets/5878ce49-a2e9-44aa-9bd7-5e5bfa3419fa
 
 
 
@@ -101,11 +108,7 @@ https://github.com/user-attachments/assets/5878ce49-a2e9-44aa-9bd7-5e5bfa3419fa
 ## Hit-The-Dns with Dnsenum comparation
 Some tools such as dnsemun does not always find the subdomains even if they exist in the DNS because of the way it implements threads and filters.
 
-https://github.com/user-attachments/assets/f97bd939-7b29-42bb-829e-be0352a52af1
 
 <p align="center">
   <img width="250" src="https://github.com/user-attachments/assets/159cf532-f0db-4101-b634-a3861c10ccc2" />
 </p>
-
-## License
-> © 2025 juanbelin. All rights reserved.
