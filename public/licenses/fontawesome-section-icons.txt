@@ -1,0 +1,7 @@
+Font Awesome Free file-pen and code icons (Classic Solid)
+Copyright Fonticons, Inc.
+License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+https://fontawesome.com/license/free
+https://fontawesome.com/icons/file-pen?f=classic&s=solid
+https://fontawesome.com/icons/code?f=classic&s=solid
+The icons are embedded as SVG in src/pages/index.astro.

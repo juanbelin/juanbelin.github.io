@@ -26,7 +26,6 @@ N/A
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Linux
-- link: [Nexus](https://hackmyvm.eu/machines/machine.php?vm=Nexus)
 
 
 ### PDF Link

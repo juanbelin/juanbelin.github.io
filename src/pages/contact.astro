@@ -8,13 +8,13 @@ const rows = [
   ...(site.email ? [{ label: 'Email', value: site.email, url: `mailto:${site.email}` }] : []),
 ];
 ---
-<BaseLayout path="/contact" title="Contact" description="Open to penetration testing, red team, SOC, blue team, and IT opportunities.">
+<BaseLayout path="/contact" title="Contact" description="Open to penetration testing, red team, blue team.">
   <div style="padding-top: 88px;">
     <SectionBand num="08" label="Contact" title="Get in touch" />
   </div>
 
   <div class="container section-body">
-    <p class="section-desc rv">Open to penetration testing, red team, SOC, blue team, and any IT opportunity worth pursuing.</p>
+    <p class="section-desc rv">Open to penetration testing, red team, blue team.</p>
 
     <div class="contact-list rv">
       {rows.map(r => (

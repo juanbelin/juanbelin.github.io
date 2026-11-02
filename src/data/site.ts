@@ -17,7 +17,6 @@ export const site = {
     github: { label: 'GitHub', value: 'juanbelin', url: 'https://github.com/juanbelin' },
     discord: { label: 'Discord', value: '@JuanBelin', url: 'https://discord.com/users/751431109224431716' },
     hackthebox: { label: 'Hack The Box', value: '@JuanBelin', url: 'https://profile.hackthebox.com/profile/019c4726-d2f8-703d-9c6f-acde75c1ee63' },
-    hackmyvm: { label: 'HackMyVM', value: 'belin', url: 'https://hackmyvm.eu/public/?u=belin' },
   },
   photo: '/images/profile.png',
   stats: [

@@ -27,7 +27,6 @@ First VM of the Friendly saga for beginners! Have fun and learn!
 - Goal: Get two flags
 - Difficulty: easy
 - Operating System: Linux
-- link: [Friendly](https://hackmyvm.eu/machines/machine.php?vm=Friendly3)
 
 
 ### PDF Link
