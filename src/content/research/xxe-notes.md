@@ -8,7 +8,6 @@ categories:
 tags:
   - hacking
   - notes
-image: 
 pin: false
 legacySlug: XXE-notes
 ---
