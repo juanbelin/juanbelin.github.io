@@ -27,10 +27,10 @@ export const certs: Cert[] = [
   { year: '2026', name: 'eJPTv2', issuer: 'INE / eLearnSecurity',
     issuerUrl: 'https://ine.com/',
     verify: { label: 'verify ↗', url: 'https://certs.ine.com/ce3019f9-f225-4853-a8a4-adefde4f89b3#acc.Y1KBVmMj' } },
-  { year: '2025', name: 'Master in Cybersecurity',
+  { year: '2025', name: 'Cybersecurity',
     description: 'Official education', issuer: '—', kind: 'education' },
-  { year: '2024', name: 'Cross-Platform Application Development (DAM)',
-    description: 'Higher Vocational Qualification · Official education',
+  { year: '2024', name: 'Grade in Software Development',
+    description: 'Official education',
     issuer: '—', kind: 'education' },
 
 

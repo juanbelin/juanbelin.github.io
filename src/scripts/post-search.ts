@@ -1,5 +1,5 @@
 import { searchPosts } from '@/lib/search-posts.mjs';
-interface SearchPost { url: string; title: string; description: string; categories: string[]; tags: string[]; body: string; }
+interface SearchPost { url: string; title: string; description: string; tags: string[]; headings: string[]; }
 const dialog = document.querySelector<HTMLDialogElement>('#postSearch');
 const input = document.querySelector<HTMLInputElement>('#postSearchInput');
 const results = document.querySelector<HTMLUListElement>('[data-post-search-results]');

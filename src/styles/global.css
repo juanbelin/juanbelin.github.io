@@ -1531,3 +1531,43 @@ body:has(.post-search[open]) { overflow: hidden; }
 .post-search-results strong { display: block; font-size: 16px; font-weight: 500; }
 .post-search-results span { display: block; margin-top: 6px; color: var(--ink-2); font-size: 13px; }
 @media (max-width: 720px) { .post-search { padding: 20px; } }
+
+/* Keep credential names and issuers close on wide screens. */
+.certs-table { table-layout: fixed; }
+.certs-table th:nth-child(1) { width: 9%; }
+.certs-table th:nth-child(2) { width: 37%; }
+.certs-table th:nth-child(3) { width: 32%; }
+.certs-table th:nth-child(4) { width: 22%; text-align: right; }
+.certs-table :is(th, td):not(:last-child) { padding-right: 20px; }
+
+/* Mobile research previews: cover first, then full-width copy. */
+@media (max-width: 720px) {
+  .research-list, .research > .research-card { margin-top: 0; }
+  .research-card, .further-reading-grid .research-card {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding: 0;
+    margin-bottom: 24px;
+    border: 1px solid var(--rule-2);
+    overflow: hidden;
+    background: var(--bg-2);
+  }
+  .research-card-media {
+    grid-row: 1;
+    margin: 0;
+    aspect-ratio: 1.91 / 1;
+    border: 0;
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .research-card-body { min-width: 0; padding: 22px; }
+  .research-card h3 { font-size: 26px; line-height: 1.2; }
+  .research-card p { font-size: 14px; line-height: 1.7; }
+  .research-card-categories { font-size: 12px; margin-top: 16px; }
+  .research-card-tags { gap: 8px 12px; }
+  .research-card:hover, .research-card:focus-visible,
+  .further-reading-grid .research-card:hover,
+  .further-reading-grid .research-card:focus-visible { padding: 0; }
+  .research-card::before { display: none; }
+  .certs-table { table-layout: auto; }
+  .certs-table th:nth-child(n) { width: auto; }
+}
