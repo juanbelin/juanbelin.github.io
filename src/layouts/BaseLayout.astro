@@ -67,12 +67,8 @@ const ogImage = new URL(socialImage?.src ?? image, Astro.site);
   <BackToTop />
 
   <script>
-    const rv = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('in'); rv.unobserve(e.target); }
-      });
-    }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
-    document.querySelectorAll('.rv').forEach(el => rv.observe(el));
+    import { observeReveals } from '@/scripts/reveal';
+    observeReveals();
   </script>
 </body>
 </html>

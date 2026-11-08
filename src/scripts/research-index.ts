@@ -1,4 +1,5 @@
 import { researchPage, researchPageHref } from '@/lib/research-pagination.mjs';
+import { observeReveals, unobserveReveals } from '@/scripts/reveal';
 
 const root = document.querySelector<HTMLElement>('[data-research-index]');
 const form = document.querySelector<HTMLFormElement>('#researchFilters');
@@ -21,11 +22,13 @@ if (root && form && category && tag && results && empty && list && pagination &&
   const render = (requestedPage: number) => {
     const filtered = records.filter(record => (!category.value || record.categories.includes(category.value)) && (!tag.value || record.tags.includes(tag.value)));
     const state = researchPage(filtered.length, requestedPage);
+    unobserveReveals(list);
     list.replaceChildren(...filtered.slice(state.start, state.end).map(record => {
       const card = record.element.cloneNode(true) as HTMLAnchorElement;
-      card.classList.add('in');
+      card.classList.remove('in');
       return card;
     }));
+    observeReveals(list);
     results.textContent = filtered.length ? `Showing ${state.start + 1}–${state.end} of ${filtered.length} posts` : '0 posts';
     empty.hidden = filtered.length !== 0;
     pagination.hidden = state.pages <= 1;
