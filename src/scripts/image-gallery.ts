@@ -50,7 +50,7 @@ if (gallery && display && counter && caption && original && previous && next && 
   next.addEventListener('click', () => showImage(current + 1));
   gallery.querySelector('[data-gallery-close]')?.addEventListener('click', () => gallery.close());
   gallery.addEventListener('click', event => {
-    if (event.target === gallery || (event.target instanceof HTMLElement && event.target.hasAttribute('data-gallery-backdrop'))) gallery.close();
+    if (event.target instanceof Element && !event.target.closest('[data-gallery-image], button, a')) gallery.close();
   });
   gallery.addEventListener('keydown', event => {
     if (event.key === 'ArrowRight') { event.preventDefault(); showImage(current + 1); }

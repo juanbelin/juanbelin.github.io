@@ -39,17 +39,13 @@ const headerMeta = [
 const wordsLabel = wordCount === undefined ? undefined : `${wordCount.toLocaleString('en-GB')} words`;
 const minDepth = Math.min(...headings.map(heading => heading.depth));
 const permalink = new URL(sharePath ?? Astro.url.pathname, Astro.site).href;
-const socialImage = ledger === '/research' ? {
-  src: `/og${Astro.url.pathname.replace(/\/$/, '')}.jpg`,
-  width: 1200, height: 630, type: 'image/jpeg',
-} : undefined;
 const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
   { label: 'X', href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(permalink)}` },
   { label: 'LinkedIn', href: `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(permalink)}` },
   { label: 'Reddit', href: `https://www.reddit.com/submit?url=${encodeURIComponent(permalink)}&title=${encodeURIComponent(title)}` },
 ];
 ---
-<BaseLayout title={`${title} — ${type}`} description={description} image={image} socialImage={socialImage} publishedTime={showDate ? date.toISOString() : undefined}>
+<BaseLayout title={`${title} — ${type}`} description={description} image={image} publishedTime={showDate ? date.toISOString() : undefined}>
   <div class:list={['article-shell', { 'article-no-toc': headings.length === 0 }]}>
     <article class="article-main">
       <header class="article-head">
