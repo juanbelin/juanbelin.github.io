@@ -54,4 +54,26 @@ if (sections.length > 0) {
   updateContents();
 }
 
+const mobileContents = document.querySelector<HTMLDetailsElement>('.article-mobile-toc');
+if (mobileContents) {
+  const trigger = mobileContents.querySelector<HTMLElement>('summary');
+  const closeContents = (restoreFocus = false) => {
+    mobileContents.open = false;
+    if (restoreFocus) trigger?.focus();
+  };
+  mobileContents.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => closeContents(true));
+  });
+  document.addEventListener('click', event => {
+    if (event.target instanceof Node && !mobileContents.contains(event.target)) closeContents();
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && mobileContents.open) {
+      closeContents(true);
+      event.preventDefault();
+    }
+  });
+  window.matchMedia('(max-width: 1100px)').addEventListener('change', () => closeContents());
+}
+
 export {};
