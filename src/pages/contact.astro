@@ -1,4 +1,5 @@
 ---
+import ContactIcon from '@/components/ContactIcon.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionBand from '@/components/SectionBand.astro';
 import { site } from '@/data/site';
@@ -18,8 +19,8 @@ const rows = [
 
     <div class="contact-list rv">
       {rows.map(r => (
-        <a class="contact-row" href={r.url} target="_blank" rel="noopener">
-          <span class="contact-lbl">{r.label}</span>
+        <a class="contact-row" href={r.url} target="_blank" rel="noopener noreferrer">
+          <span class="contact-lbl"><span class="contact-icon"><ContactIcon name={r.label} /></span>{r.label}</span>
           <span class="contact-val">{r.value}</span>
           <span class="contact-arrow">→</span>
         </a>

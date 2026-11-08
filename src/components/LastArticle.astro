@@ -1,0 +1,10 @@
+---
+import { getCollection } from 'astro:content';
+const latest = (await getCollection('research', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf() || a.id.localeCompare(b.id))[0];
+const date = latest?.data.date;
+const label = date?.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' });
+---
+{latest && date && <a class="last-article" href={`/research/${latest.id}`} title={latest.data.title} aria-label={`Last article: ${latest.data.title}, ${label}`}>
+  <span>Last article</span><span aria-hidden="true"> · </span><time datetime={date.toISOString().slice(0, 10)}>{label}</time>
+</a>}

@@ -14,7 +14,8 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', {
 });
 ---
 <a class="research-card rv" href={`/research/${entry.id}`}
-  data-research-card data-categories={JSON.stringify(categories)} data-tags={JSON.stringify(tags)}>
+  data-research-card data-with-cover={showCover && image ? true : undefined} data-categories={JSON.stringify(categories)} data-tags={JSON.stringify(tags)}>
+  {showCover && image && <div class="research-card-media"><img class="research-card-cover" src={image} alt="" width="480" height="360" loading="lazy" /></div>}
   <div class="research-card-body">
     <div class="research-card-meta">
       <time datetime={date.toISOString()}>{fmt(date)}</time>
@@ -36,6 +37,4 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', {
       <div class="research-card-tags">{tags.map(tag => <span>#{tag}</span>)}</div>
     )}
   </div>
-  {showCover && image && <div class="research-card-media"><img class="research-card-cover" src={image} alt="" width="480" height="360" loading="lazy" /></div>}
-  <span class="research-card-arrow" aria-hidden="true">→</span>
 </a>

@@ -5,7 +5,7 @@ date: '2025-04-03'
 type: Challenge · HTB
 categories:
   - Challenge
-  - HTB
+  - HackTheBox
 tags:
   - web
   - very easy

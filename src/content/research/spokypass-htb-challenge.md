@@ -5,7 +5,7 @@ date: '2025-04-01'
 type: Challenge · HTB
 categories:
   - Challenge
-  - HTB
+  - HackTheBox
 tags:
   - reversing
   - very easy

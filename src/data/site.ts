@@ -8,7 +8,6 @@ export const site = {
   roleLong: 'Offensive Security Specialist & CTF Player',
   location: 'Madrid · ES',
   timezone: 'Europe/Madrid',
-  caseFile: '2026-JB-01',
   year: 2026,
   // Add your email when ready.
   email: '',
@@ -23,7 +22,7 @@ export const site = {
     { num: '+120', lbl: 'Machines<br>compromised' },
     { num: '04', lbl: 'Industry-recognized<br>certifications' },
     { num: '+1', lbl: 'Years working<br>in cybersecurity' },
-    { num: '+3', lbl: 'Years<br>studying' },
+    { num: '+3', lbl: 'Years<br>building' },
   ],
   ticker: [
     'HTB CPTS', 'HTB CWES', 'CRTA', 'eJPTv2',

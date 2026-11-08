@@ -1,4 +1,5 @@
 ---
+import LastArticle from '@/components/LastArticle.astro';
 import GitHubIcon from '@/components/GitHubIcon.astro';
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
@@ -21,7 +22,7 @@ const projects = (await getCollection('projects', ({ data }) => !data.draft))
   <section class="hero">
     <div class="container">
       <div class="hero-meta">
-        <span class="idx">CASE FILE <b>{site.caseFile}</b></span>
+        <span class="idx"><LastArticle /></span>
         <span>{site.location} — {site.timezone}</span>
       </div>
 

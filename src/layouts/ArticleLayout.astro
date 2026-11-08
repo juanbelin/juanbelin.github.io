@@ -1,4 +1,5 @@
 ---
+import { site } from '@/data/site';
 import GitHubIcon from '@/components/GitHubIcon.astro';
 import type { MarkdownHeading } from 'astro';
 import type { CollectionEntry } from 'astro:content';
@@ -24,11 +25,18 @@ interface Props {
   relatedPosts?: CollectionEntry<'research'>[];
   sharePath?: string;
   showDate?: boolean;
+  wordCount?: number;
 }
 const { title, description, type, date, meta = [], ledger, video, repo, demo, image,
-  categories = [], tags = [], headings = [], relatedPosts = [], sharePath, showDate = true } = Astro.props;
+  categories = [], tags = [], headings = [], relatedPosts = [], sharePath, showDate = true, wordCount } = Astro.props;
 const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '.');
 const hasLinks = video || repo || demo;
+const headerMeta = [
+  ...(ledger === '/research' ? [] : [{ label: type, kind: 'type' }]),
+  ...(showDate ? [{ label: fmt(date), kind: 'date' }] : []),
+  ...meta.map(label => ({ label, kind: /^\d+ min read$/.test(label) ? 'reading-time' : 'detail' })),
+];
+const wordsLabel = wordCount === undefined ? undefined : `${wordCount.toLocaleString('en-GB')} words`;
 const minDepth = Math.min(...headings.map(heading => heading.depth));
 const permalink = new URL(sharePath ?? Astro.url.pathname, Astro.site).href;
 const socialImage = ledger === '/research' ? {
@@ -46,12 +54,16 @@ const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
     <article class="article-main">
       <header class="article-head">
         <div class="article-meta">
-          <span class="type">{type}</span>
-          {showDate && <><span class="sep">·</span><span>{fmt(date)}</span></>}
-          {meta.map(m => <><span class="sep">·</span><span>{m}</span></>)}
+          {headerMeta.map((item, index) => <>{index > 0 && <span class="sep">·</span>}
+            {item.kind === 'date' ? <time class="article-date" datetime={date.toISOString()}>{item.label}</time> :
+              <span class={item.kind} data-word-count={item.kind === 'reading-time' ? wordsLabel : undefined}
+                tabindex={item.kind === 'reading-time' && wordsLabel ? 0 : undefined}
+                aria-label={item.kind === 'reading-time' && wordsLabel ? `${item.label}, ${wordsLabel}` : undefined}>{item.label}</span>}
+          </>)}
         </div>
         <h1 class="article-title">{title}</h1>
         <p class="article-lede">{description}</p>
+        {!image && <p class="article-author">By <a href={site.socials.github.url} rel="author noopener noreferrer" target="_blank"><strong>{site.name}</strong></a></p>}
         {(categories.length > 0 || tags.length > 0) && (
           <div class="article-taxonomy">
             {categories.map(category => <a class="tag" href={`/research?category=${encodeURIComponent(category)}`}>{category}</a>)}
@@ -59,6 +71,7 @@ const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
           </div>
         )}
         {image && <img class="article-cover" src={image} alt={`${title} cover`} />}
+        {image && <p class="article-author">By <a href={site.socials.github.url} rel="author noopener noreferrer" target="_blank"><strong>{site.name}</strong></a></p>}
       </header>
 
       {headings.length > 0 && (
@@ -96,6 +109,8 @@ const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
           <button class="share-link share-icon" type="button" data-copy-url={permalink} aria-label="Copy link" title="Copy link"><ShareIcon name="copy" /></button>
         </div>
         <p class="article-copy-status" role="status" aria-live="polite" data-copy-status></p>
+        <p class="article-rights">© {site.year} <a href={site.socials.github.url} target="_blank" rel="noopener noreferrer">{site.name}</a>. Some rights reserved.</p>
+        <hr class="article-footer-divider" />
 
         {relatedPosts.length > 0 && (
           <section class="further-reading" aria-labelledby="furtherReadingTitle">

@@ -1,10 +1,11 @@
 ---
+import LastArticle from '@/components/LastArticle.astro';
 import { site } from '@/data/site';
 ---
 <footer class="footer">
   <div class="footer-inner">
     <span>© {site.year} {site.name}</span>
-    <span class="center">CASE FILE {site.caseFile}</span>
+    <span class="center"><LastArticle /></span>
     <span class="right">{site.location}</span>
   </div>
 </footer>

@@ -1,6 +1,6 @@
 ---
 import { getCollection, render } from 'astro:content';
-import { readingMinutes } from '@/lib/reading-time.mjs';
+import { readingMinutes, countWords } from '@/lib/reading-time.mjs';
 import ArticleLayout from '@/layouts/ArticleLayout.astro';
 
 export async function getStaticPaths() {
@@ -34,6 +34,7 @@ if (entry.data.difficulty) meta.push(entry.data.difficulty);
 meta.push(`${readingMinutes(entry.body)} min read`);
 ---
 <ArticleLayout
+  wordCount={countWords(entry.body)}
   headings={headings}
   relatedPosts={relatedPosts}
   sharePath={entry.data.legacySlug ? `/posts/${encodeURIComponent(entry.data.legacySlug)}/` : undefined}

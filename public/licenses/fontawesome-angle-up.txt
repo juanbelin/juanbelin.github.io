@@ -1,0 +1,4 @@
+Font Awesome Free angle-up icon, Classic Solid
+Copyright Fonticons, Inc.
+License: CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+Source: https://fontawesome.com/icons/angle-up?f=classic&s=solid

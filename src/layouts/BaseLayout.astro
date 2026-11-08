@@ -2,6 +2,7 @@
 import '@/styles/global.css';
 import { site } from '@/data/site';
 import TopBar from '@/components/TopBar.astro';
+import BackToTop from '@/components/BackToTop.astro';
 import Footer from '@/components/Footer.astro';
 
 interface Props {
@@ -20,7 +21,9 @@ const {
   socialImage,
   publishedTime,
 } = Astro.props;
-const title = `${pageTitle ?? site.roleLong} — ${site.name}`;
+const title = path === '/' && !pageTitle
+  ? `${site.name} | Offensive Security Specialist`
+  : `${pageTitle ?? site.roleLong} — ${site.name}`;
 const ogImage = new URL(socialImage?.src ?? image, Astro.site);
 ---
 <!DOCTYPE html>
@@ -61,6 +64,7 @@ const ogImage = new URL(socialImage?.src ?? image, Astro.site);
   <TopBar path={path} />
   <slot />
   <Footer />
+  <BackToTop />
 
   <script>
     const rv = new IntersectionObserver(entries => {
