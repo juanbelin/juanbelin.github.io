@@ -1263,7 +1263,7 @@ body::after {
 .research-card[hidden], .research-filters[hidden] { display: none; }
 .research-card-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; color: var(--ink-2); font: 11px var(--font-mono); margin-bottom: 14px; }
 .research-pinned { display: inline-flex; align-items: center; color: var(--accent); }
-.research-card h3 { font: 400 clamp(24px, 3vw, 34px) var(--font-display); line-height: 1.1; margin-bottom: 12px; transition: color .2s; }
+.research-card h3 { font: 400 clamp(22px, 2.6vw, 30px) var(--font-display); line-height: 1.1; margin-bottom: 12px; transition: color .2s; }
 .research-card:hover h3 { color: var(--accent); }
 .research-card p { font-size: 14px; color: var(--ink-2); line-height: 1.7; }
 .research-card-categories { color: var(--accent); font: 14px var(--font-mono); margin-top: 18px; letter-spacing: .5px; line-height: 1.5; }
@@ -1284,7 +1284,7 @@ body::after {
   .research-card { grid-template-columns: minmax(0, 1fr) 120px; gap: 16px; padding: 24px 0; }
   .research-card-media { align-self: start; margin-top: 26px; }
   .research-card-arrow { display: none; }
-  .research-card h3 { font-size: 24px; }
+  .research-card h3 { font-size: 22px; }
   .research-card-meta { font-size: 10px; gap: 8px; }
   .research-card p { font-size: 13px; }
 }
@@ -1325,7 +1325,7 @@ body::after {
 .further-reading-grid .research-card { grid-template-columns: minmax(0, 1fr); align-content: start; align-items: start; padding: 20px; border: 1px solid var(--rule-2); gap: 20px; }
 .further-reading-grid .research-card-cover { grid-row: 1; margin: 0; }
 .further-reading-grid .research-card-arrow { display: none; }
-.further-reading-grid .research-card h3 { font-size: 27px; }
+.further-reading-grid .research-card h3 { font-size: 24px; }
 .further-reading-grid .research-card p { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .article-back { margin-top: 40px; }
 @media (max-width: 1100px) {
@@ -1562,7 +1562,7 @@ body:has(.post-search[open]) { overflow: hidden; }
     border-bottom: 1px solid var(--rule-2);
   }
   .research-card-body { min-width: 0; padding: 22px; }
-  .research-card h3 { font-size: 26px; line-height: 1.2; }
+  .research-card h3 { font-size: 23px; line-height: 1.2; }
   .research-card p { font-size: 14px; line-height: 1.7; }
   .research-card-categories { font-size: 12px; margin-top: 16px; }
   .research-card-tags { gap: 8px 12px; }
@@ -1605,7 +1605,7 @@ body:has(.post-search[open]) { overflow: hidden; }
   .research-card[data-with-cover] { grid-template-columns: minmax(0, 1fr); gap: 0; padding: 0; margin-bottom: 24px; border: 1px solid var(--rule-2); overflow: hidden; background: var(--bg-2); }
   .research-card[data-with-cover] .research-card-media { grid-column: 1; grid-row: 1; margin: 0; border: 0; border-bottom: 1px solid var(--rule-2); }
   .research-card[data-with-cover] .research-card-body { grid-column: 1; grid-row: 2; padding: 22px; }
-  .research-card[data-with-cover] h3 { font-size: 26px; line-height: 1.2; }
+  .research-card[data-with-cover] h3 { font-size: 23px; line-height: 1.2; }
   .research-card[data-with-cover] p { font-size: 14px; line-height: 1.7; }
   .research-card[data-with-cover]:hover, .research-card[data-with-cover]:focus-visible { padding: 0; }
   .research-filter { flex: 1 1 120px; max-width: 220px; }
@@ -1629,7 +1629,11 @@ body:has(.post-search[open]) { overflow: hidden; }
 }
 
 .article-share .share-icon svg { width: 15px; height: 15px; }
-.article-rights { margin-bottom: 20px; color: var(--ink-2); font: 11px/1.7 var(--font-mono); }
+.article-footer-row { display: flex; align-items: center; justify-content: space-between; gap: 16px 24px; flex-wrap: wrap; }
+.article-footer-row .article-share { margin-left: auto; flex-shrink: 0; justify-content: flex-end; }
+.article-rights { flex: 1 1 300px; margin: 0; color: var(--ink-2); font: 11px/1.7 var(--font-mono); }
+.article-copy-status { text-align: right; }
+.article-copy-status:empty { display: none; }
 .article-footer-divider { margin: 20px 0 32px; border: 0; border-top: 1px solid var(--rule-2); }
 
 .article-author strong { font-weight: 600; }

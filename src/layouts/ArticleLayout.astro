@@ -103,13 +103,15 @@ const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
       <div class="prose" data-article-prose><slot /></div>
 
       <footer class="article-footer">
+        <div class="article-footer-row">
+        <p class="article-rights">This post is licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> by the author.</p>
         <div class="article-share" aria-label="Share this post">
           <span class="band-label">Share</span>
           {shares.map(share => <a class="share-link share-icon" href={share.href} target="_blank" rel="noopener noreferrer" aria-label={`Share on ${share.label}`} title={`Share on ${share.label}`}><ShareIcon name={share.label} /></a>)}
           <button class="share-link share-icon" type="button" data-copy-url={permalink} aria-label="Copy link" title="Copy link"><ShareIcon name="copy" /></button>
         </div>
+        </div>
         <p class="article-copy-status" role="status" aria-live="polite" data-copy-status></p>
-        <p class="article-rights">© {site.year} <a href={site.socials.github.url} target="_blank" rel="noopener noreferrer">{site.name}</a>. Some rights reserved.</p>
         <hr class="article-footer-divider" />
 
         {relatedPosts.length > 0 && (

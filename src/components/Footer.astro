@@ -4,7 +4,7 @@ import { site } from '@/data/site';
 ---
 <footer class="footer">
   <div class="footer-inner">
-    <span>© {site.year} {site.name}</span>
+    <span>© {site.year} <a href={site.socials.github.url} target="_blank" rel="noopener noreferrer">{site.name}</a></span>
     <span class="center"><LastArticle /></span>
     <span class="right">{site.location}</span>
   </div>
