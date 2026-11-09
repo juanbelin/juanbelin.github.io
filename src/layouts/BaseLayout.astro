@@ -12,6 +12,7 @@ interface Props {
   image?: string;
   socialImage?: { src: string; width: number; height: number; type: string };
   publishedTime?: string;
+  noindex?: boolean;
 }
 const {
   title: pageTitle,
@@ -20,6 +21,7 @@ const {
   image = site.photo,
   socialImage,
   publishedTime,
+  noindex = false,
 } = Astro.props;
 const title = path === '/' && !pageTitle
   ? `${site.name} | Offensive Security Specialist`
@@ -33,6 +35,7 @@ const ogImage = new URL(socialImage?.src ?? image, Astro.site);
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  {noindex && <meta name="robots" content="noindex, follow" />}
   <link rel="icon" type="image/x-icon" href="/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
   <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
