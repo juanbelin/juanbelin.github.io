@@ -1,6 +1,8 @@
 const observer = new IntersectionObserver(entries => {
+  let visibleIndex = 0;
   entries.forEach(entry => {
     if (entry.isIntersecting) {
+      (entry.target as HTMLElement).style.setProperty('--reveal-delay', `${Math.min(visibleIndex++, 4) * 45}ms`);
       entry.target.classList.add('in');
       observer.unobserve(entry.target);
     }
