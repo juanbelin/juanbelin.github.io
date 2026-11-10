@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 const { entry } = Astro.props;
 const { Content, headings } = await render(entry);
 
-const meta: string[] = [entry.data.category];
+const meta: string[] = [];
 if (entry.data.tools.length > 0) meta.push(entry.data.tools.join(' · '));
 ---
 <ArticleLayout
