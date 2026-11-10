@@ -8,6 +8,16 @@ const next = gallery?.querySelector<HTMLButtonElement>('[data-gallery-next]');
 const images = [...document.querySelectorAll<HTMLImageElement>('.article-main .article-cover, [data-article-prose] img')];
 
 if (gallery && display && counter && caption && original && previous && next && images.length) {
+  const mobile = window.matchMedia('(max-width: 600px)');
+  const controls: HTMLElement[] = [];
+  const syncGalleryAvailability = () => {
+    controls.forEach(control => {
+      if (control instanceof HTMLButtonElement) control.disabled = mobile.matches;
+      if (mobile.matches) control.removeAttribute('aria-haspopup');
+      else control.setAttribute('aria-haspopup', 'dialog');
+    });
+    if (mobile.matches && gallery.open) gallery.close();
+  };
   let current = 0;
   let opener: HTMLElement | undefined;
   let previousOverflow = '';
@@ -34,8 +44,9 @@ if (gallery && display && counter && caption && original && previous && next && 
       enhance(button);
     } else enhance(trigger);
     function enhance(control: HTMLElement) {
-      control.setAttribute('aria-haspopup', 'dialog');
+      controls.push(control);
       control.addEventListener('click', event => {
+        if (mobile.matches) return;
         if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
         opener = control;
@@ -60,6 +71,8 @@ if (gallery && display && counter && caption && original && previous && next && 
     document.body.style.overflow = previousOverflow;
     opener?.focus({ preventScroll: true });
   });
+  mobile.addEventListener('change', syncGalleryAvailability);
+  syncGalleryAvailability();
   let start: { x: number; y: number } | undefined;
   gallery.addEventListener('pointerdown', event => {
     if (event.pointerType === 'touch') start = { x: event.clientX, y: event.clientY };

@@ -1389,6 +1389,7 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
 .gallery-previous[hidden], .gallery-next[hidden] { visibility: hidden; display: grid; }
 @media (max-width: 600px) {
   .cert-logo-cwes { width: 76px; height: 76px; }
+  .image-trigger:disabled { cursor: default; }
   .gallery-toolbar { padding: 12px; gap: 12px; font-size: 10px; }
   .gallery-stage { padding: 0 10px; gap: 8px; grid-template-columns: 36px minmax(0, 1fr) 36px; }
   .gallery-previous, .gallery-next { width: 36px; height: 44px; }
