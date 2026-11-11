@@ -867,7 +867,7 @@ body::after {
 .prose {
   max-width: 760px;
   margin: 0 auto;
-  font-size: 17px;
+  font-size: 16.4px;
   line-height: 1.75;
   color: var(--ink-2);
 }
