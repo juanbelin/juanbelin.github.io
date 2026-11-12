@@ -28,7 +28,7 @@ Injection is not a permanent change to the account. The injected Beacon depends 
 
 ## 3. Requirements and process selection
 
-The source example uses a high-integrity session to access another user's process. Actual permissions and process protections determine whether injection is possible. A high-integrity token alone does not guarantee access to every process.
+This example uses a high-integrity session to access another user's process. Actual permissions and process protections determine whether injection is possible. A high-integrity token alone does not guarantee access to every process.
 
 | Check | Purpose |
 |---|---|
@@ -40,7 +40,7 @@ The source example uses a high-integrity session to access another user's proces
 
 ## 4. Example workflow
 
-Run these commands in the **original Beacon**. `http` is the example listener name; replace it with a configured listener. PID `5248` is an example from the notes, not a reusable target identifier.
+Run these commands in the **original Beacon**. `http` is the example listener name; replace it with a configured listener. PID `5248` is illustrative; select the current target PID.
 
 ```shell
 # Record the original context
@@ -67,7 +67,7 @@ shell hostname
 shell whoami
 ```
 
-An account name alone does not establish administrative privileges or remote access. As described in the index notes, network authentication depends on the logon session and credentials associated with the effective token.
+An account name alone does not establish administrative privileges or remote access. Network authentication depends on the logon session and credentials associated with the effective token.
 
 ## 5. Troubleshooting and ending the session
 

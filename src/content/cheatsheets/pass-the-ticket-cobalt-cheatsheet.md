@@ -10,7 +10,7 @@ draft: false
 
 ## 1. Tickets, sessions and tokens
 
-Pass the Ticket uses an available Kerberos ticket for authentication as its client identity. The notes cover requesting or extracting TGTs and importing them into a selected session; ticket forging is outside this guide.
+Pass the Ticket uses an available Kerberos ticket for authentication as its client identity. The workflow requests or extracts a TGT, then imports it into a selected logon session.
 
 Each Windows logon session has a LUID and an associated credential cache. A token's Authentication ID connects it to that session. Importing a ticket changes a session's cache; selecting a token determines which session the current Beacon uses for the relevant operations.
 
@@ -68,7 +68,7 @@ execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe ptt /luid:<CREATE
 steal_token <CREATED_PID>
 ```
 
-The source notes also describe adding `/ticket:<BASE64_TICKET>` to `createnetonly` to combine creation and import; check support in the installed Rubeus version. `ptt` alone does not create a session.
+Add `/ticket:<BASE64_TICKET>` to `createnetonly` to combine creation and import; check support in the installed Rubeus version. `ptt` alone does not create a session.
 
 `FakePass` is a placeholder for creating the network-only context, not a discovered valid password. The imported ticket supplies Kerberos authentication. The local token identity can remain the original user even when the ticket client is `rsteel`.
 

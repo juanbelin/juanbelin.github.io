@@ -12,7 +12,7 @@ draft: false
 
 Browsers can save credentials for applications that require a username and password. Chromium-based browsers store entries in a SQLite database named `Login Data` within each profile.
 
-These notes describe DPAPI-based protection. The implementation depends on the browser and version: possessing the file does not guarantee that SharpChrome can decrypt its passwords.
+DPAPI-based protection ties credential recovery to the appropriate user context and key material. The implementation depends on the browser and version: possessing the file does not guarantee that SharpChrome can decrypt its passwords.
 
 | Item | Reference path |
 |---|---|
