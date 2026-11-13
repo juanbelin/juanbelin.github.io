@@ -2,7 +2,6 @@
 title: Builder HTB
 description: Builder HTB [Difuculty Medium]
 date: '2025-10-22'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

@@ -2,7 +2,6 @@
 title: Apuntes SQL Injection (Spanish)
 description: Apuntes de SQL Injection de S4vitar, Hack4u y Rinku.
 date: '2025-02-02'
-type: Tutorial
 categories:
   - Tutorial
 tags:

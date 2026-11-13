@@ -2,7 +2,6 @@
 title: Support HTB (English)
 description: Support HTB Machine [Difuculty easy]
 date: '2025-06-07'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

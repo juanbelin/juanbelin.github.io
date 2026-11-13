@@ -2,7 +2,6 @@
 title: Administrator HTB
 description: Administrator HTB [Difuculty medium]
 date: '2025-10-31'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

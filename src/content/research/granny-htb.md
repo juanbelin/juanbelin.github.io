@@ -2,7 +2,6 @@
 title: Granny HTB (English)
 description: Granny HackTheBox Machine [Difuculty easy]
 date: '2025-04-16'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

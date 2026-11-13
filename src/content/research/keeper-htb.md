@@ -2,7 +2,6 @@
 title: Keeper HTB (English)
 description: Granny HackTheBox Machine [Difuculty easy]
 date: '2025-04-17'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

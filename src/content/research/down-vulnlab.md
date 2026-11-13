@@ -2,7 +2,6 @@
 title: Down Vulnlab (English)
 description: Down Vulnhab [Difuculty easy]
 date: '2025-06-20'
-type: CTF · Vulnlab
 categories:
   - CTF
   - Vulnlab

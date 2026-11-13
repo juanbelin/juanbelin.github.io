@@ -2,7 +2,6 @@
 title: CPTS Review and Tips
 description: A review of my recient achiviement, the CPTS certification in addtion with some exam tips.
 date: '2026-02-27'
-type: Review
 categories:
   - Review
 tags:

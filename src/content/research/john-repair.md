@@ -2,7 +2,6 @@
 title: John The Reaper error solved
 description: John The reaper python2 error solved
 date: '2025-04-22'
-type: Tutorial
 categories:
   - Tutorial
 tags:

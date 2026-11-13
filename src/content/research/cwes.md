@@ -2,7 +2,6 @@
 title: CWES Review and Tips
 description: A review of my recient achiviement, the CWES certification in addtion with some exam tips.
 date: '2026-05-28'
-type: Review
 categories:
   - Review
 tags:

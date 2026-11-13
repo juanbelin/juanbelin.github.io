@@ -2,7 +2,6 @@
 title: Driver HTB (English)
 description: Driver HTB [Difuculty easy]
 date: '2025-09-23'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

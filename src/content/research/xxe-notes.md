@@ -2,7 +2,6 @@
 title: Apuntes XXE
 description: Apuntes XXE
 date: '2025-04-07'
-type: Tutorial
 categories:
   - Tutorial
 tags:

@@ -2,7 +2,6 @@
 title: Nexus HackMyVM (English)
 description: Nexus HackMyVM Machine [Difuculty easy]
 date: '2025-06-11'
-type: CTF · HackMyVm
 categories:
   - CTF
   - HackMyVm

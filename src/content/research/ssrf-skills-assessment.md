@@ -2,7 +2,6 @@
 title: SSRF Skills Assesment HTB Academy
 description: Solution of the SSRF Skills Assesment from HTB Academy
 date: '2026-03-18'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

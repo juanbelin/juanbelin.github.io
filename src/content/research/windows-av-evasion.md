@@ -2,7 +2,6 @@
 title: Windows AV Evasion (msfvenom edition)
 description: The easiest way to achieve a reverse shell bypassing Windows Defender
 date: '2025-09-03'
-type: Tutorial · Evasion
 categories:
   - Tutorial
   - Evasion

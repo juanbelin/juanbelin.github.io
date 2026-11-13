@@ -2,7 +2,6 @@
 title: Spookifier HTB Challenge (English)
 description: Challenge Spookifier HTB [Difuculty very easy]
 date: '2025-04-03'
-type: Challenge · HTB
 categories:
   - Challenge
   - HackTheBox

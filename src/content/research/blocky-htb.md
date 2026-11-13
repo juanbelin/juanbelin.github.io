@@ -2,7 +2,6 @@
 title: Bloky HTB (English)
 description: Bloky HTB Machine [Difuculty easy]
 date: '2025-04-04'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

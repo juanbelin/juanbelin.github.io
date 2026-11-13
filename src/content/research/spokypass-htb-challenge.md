@@ -2,7 +2,6 @@
 title: SpookyPass HTB Challenge (English)
 description: SpookyPass Challenge from HTB [Dificulty very asy]
 date: '2025-04-01'
-type: Challenge · HTB
 categories:
   - Challenge
   - HackTheBox

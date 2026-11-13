@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 const { entry } = Astro.props;
 const destination = new URL(`/research/${entry.id}/`, Astro.site).href;
-const image = new URL(`/og/research/${entry.id}.jpg`, Astro.site).href;
+const image = new URL(entry.data.image ?? site.photo, Astro.site).href;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -29,9 +29,6 @@ const image = new URL(`/og/research/${entry.id}.jpg`, Astro.site).href;
     <meta property="og:url" content={destination} />
     <meta property="og:image" content={image} />
     <meta property="og:image:alt" content={entry.data.title} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
     <meta property="article:published_time" content={entry.data.date.toISOString()} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={entry.data.title} />

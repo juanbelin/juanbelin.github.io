@@ -2,7 +2,6 @@
 title: Hidden Dockerlabs
 description: Hidden Mybb de Dockerlabs [Dificultad Media]
 date: '2025-04-21'
-type: CTF · Dockerlabs
 categories:
   - CTF
   - Dockerlabs

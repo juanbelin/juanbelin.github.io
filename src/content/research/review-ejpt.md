@@ -2,7 +2,6 @@
 title: eJPT Review
 description: A review about eJPT certification.
 date: '2025-04-15'
-type: Review
 categories:
   - Review
 tags:

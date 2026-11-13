@@ -2,7 +2,6 @@
 title: Grub rescue at every boot solved
 description: This tutorials will definitely help you if you're having grub rescue each time you boot your computer
 date: '2025-04-26'
-type: Tutorial
 categories:
   - Tutorial
 tags:

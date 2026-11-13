@@ -2,7 +2,6 @@
 title: Cicada HTB (English)
 description: Cicada HTB [Difuculty easy]
 date: '2025-09-25'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

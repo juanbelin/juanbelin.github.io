@@ -2,7 +2,6 @@
 title: Horizontall HTB
 description: Máquina Horizonrtall de HackTheBox [Dificultad fácil]
 date: '2025-03-30'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

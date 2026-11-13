@@ -2,7 +2,6 @@
 title: Reverse Dockerlabs
 description: Máquina Reverse de Dockerlabs [Dificultad media]
 date: '2025-04-03'
-type: CTF · Dockerlabs
 categories:
   - CTF
   - Dockerlabs

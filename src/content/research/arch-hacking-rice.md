@@ -2,7 +2,6 @@
 title: Arch Hacking Rice
 description: My new Arch rice , focus for hacking.
 date: '2025-04-09'
-type: Tutorial
 categories:
   - Tutorial
 tags:

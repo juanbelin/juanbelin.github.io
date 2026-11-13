@@ -2,7 +2,6 @@
 title: Precious HTB (English)
 description: Precious HTB [Difuculty easy]
 date: '2025-09-17'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

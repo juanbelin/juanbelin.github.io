@@ -2,7 +2,6 @@
 title: Hit The DNS
 description: Hit The DNS recon tool written in bash
 date: '2025-06-17'
-type: Tool
 categories:
   - Tool
 tags:

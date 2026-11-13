@@ -2,7 +2,6 @@
 title: Forest HTB (English)
 description: Forest HTB [Difuculty easy]
 date: '2025-08-02'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

@@ -2,7 +2,6 @@
 title: System HackMyVm (English)
 description: System Machine from HackMyVm [Dificult easy]
 date: '2025-04-01'
-type: CTF · HackMyVm
 categories:
   - CTF
   - HackMyVm

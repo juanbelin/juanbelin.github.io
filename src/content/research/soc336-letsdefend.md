@@ -2,7 +2,6 @@
 title: Let’s Defend SOC336
 description: "Let’s Defend:\_SOC336 — Windows OLE Zero-Click RCE Exploitation Detected (CVE-2025–21298)"
 date: '2025-04-07'
-type: Blue Team · LetsDefend
 categories:
   - Blue Team
   - LetsDefend

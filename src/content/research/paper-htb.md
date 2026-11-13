@@ -2,7 +2,6 @@
 title: Paper HTB (English)
 description: Paper HTB [Difuculty easy]
 date: '2025-09-10'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

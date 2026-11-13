@@ -2,7 +2,6 @@
 title: How to install BlackArch in USB with persistence!
 description: Best Guide, avoid problems
 date: '2025-03-03'
-type: Tutorial
 categories:
   - Tutorial
 tags:

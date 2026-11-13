@@ -2,7 +2,6 @@
 title: Apuntes Hacking WI-FI (Spanish)
 description: Apuntes de Hacking WI-FI
 date: '2025-02-08'
-type: Tutorial
 categories:
   - Tutorial
 tags:

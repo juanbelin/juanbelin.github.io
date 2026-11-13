@@ -2,7 +2,6 @@
 title: Mybb Dockerlabs
 description: Máquina Mybb de Dockerlabs [Dificultad Media]
 date: '2025-04-09'
-type: CTF · Dockerlabs
 categories:
   - CTF
   - Dockerlabs

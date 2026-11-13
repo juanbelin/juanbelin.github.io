@@ -2,7 +2,6 @@
 title: Active HTB (English)
 description: Active HTB [Difuculty easy]
 date: '2025-08-06'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

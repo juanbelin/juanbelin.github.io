@@ -21,7 +21,6 @@ const research = defineCollection({
     title: z.string(),
     description: z.string(),
     date: z.coerce.date(),
-    type: z.string().default('Article'),
     categories: z.array(z.string()).default([]),
     image: z.string().optional(),
     pin: z.boolean().default(false),
@@ -30,7 +29,10 @@ const research = defineCollection({
     video: z.string().url().optional(),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
-  }),
+  }).transform(data => ({
+    ...data,
+    type: data.categories.length ? data.categories.join(' · ') : 'Article',
+  })),
 });
 
 const projects = defineCollection({

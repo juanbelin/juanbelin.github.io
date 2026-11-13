@@ -2,7 +2,6 @@
 title: PingPong Dockerlabs
 description: Máquina PingPong de DockerLabs [Dificultad Media]
 date: '2025-03-29'
-type: CTF · Dockerlabs
 categories:
   - CTF
   - Dockerlabs

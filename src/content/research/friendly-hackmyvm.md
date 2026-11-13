@@ -2,7 +2,6 @@
 title: Friendly HackMyVM (English)
 description: Friendly HackMyVM Machine [Difuculty easy]
 date: '2025-04-12'
-type: CTF · HackMyVm
 categories:
   - CTF
   - HackMyVm

@@ -2,7 +2,6 @@
 title: Server Operators Group Abuse
 description: Server Operators Group abusing tactics to elevate your privilage all the way to SYSTEM
 date: '2026-02-08'
-type: tutorial
 categories:
   - tutorial
 tags:

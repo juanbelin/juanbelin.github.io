@@ -2,7 +2,6 @@
 title: Hospital HTB (English)
 description: Hospital HTB Machine [Difuculty medium]
 date: '2025-05-28'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox

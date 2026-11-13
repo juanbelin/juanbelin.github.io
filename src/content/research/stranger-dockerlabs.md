@@ -2,7 +2,6 @@
 title: Stranger Dockerlabs
 description: Hidden Stranger de Dockerlabs [Dificultad Media]
 date: '2025-05-02'
-type: CTF · Dockerlabs
 categories:
   - CTF
   - Dockerlabs

@@ -2,7 +2,6 @@
 title: Lock Vulnlab (English)
 description: Down Vulnhab [Difuculty easy]
 date: '2025-07-25'
-type: CTF · Vulnlab
 categories:
   - CTF
   - Vulnlab

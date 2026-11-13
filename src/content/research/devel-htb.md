@@ -2,7 +2,6 @@
 title: Devel HTB (English)
 description: Devel HTB Machine [Difuculty easy]
 date: '2025-04-10'
-type: CTF · HackTheBox
 categories:
   - CTF
   - HackTheBox
