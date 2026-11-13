@@ -54,7 +54,7 @@ Example initial maintenance on Ubuntu/Debian:
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo apt install unzip ca-certificates
+sudo apt install mail ca-certificates python3
 ```
 
 Expose only the services you need. The landing page usually needs HTTPS on TCP 443; TCP 80 can be used for redirects and certificate validation. The administration panel does not need to be exposed to the Internet. Public inbound SMTP is unnecessary if Gophish submits mail to a local or external service and the VPS will not receive email.
