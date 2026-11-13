@@ -45,7 +45,7 @@ const shares: { label: 'X' | 'LinkedIn' | 'Reddit'; href: string }[] = [
   { label: 'Reddit', href: `https://www.reddit.com/submit?url=${encodeURIComponent(permalink)}&title=${encodeURIComponent(title)}` },
 ];
 ---
-<BaseLayout title={`${title} — ${type}`} description={description} image={image} publishedTime={showDate ? date.toISOString() : undefined}>
+<BaseLayout title={title} description={description} image={image} publishedTime={showDate ? date.toISOString() : undefined}>
   <div class:list={['article-shell', { 'article-no-toc': headings.length === 0 }]}>
     <article class="article-main">
       <header class="article-head">
