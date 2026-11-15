@@ -17,7 +17,7 @@ const title = state.page > 1 ? `Research — Page ${state.page}` : 'Research';
 <BaseLayout path={researchPageHref(state.page)} title={title} description="CTF write-ups, security tutorials, certification reviews and technical notes.">
   <div style="padding-top: 88px;">
     <SectionBand num="03" label="Journal" title="Research & technical notes"
-      meta={`<b>${String(writeups.length).padStart(2, '0')}</b> posts<br>${categories.length} categories`} />
+      meta={`<b>${String(writeups.length).padStart(2, '0')}</b> posts<br>${categories.length} categories<br>${tags.length} tags`} />
   </div>
   <div class="container section-body" data-research-index data-site-name={site.name}>
     <p class="section-desc rv">CTF write-ups, security tutorials, certification reviews and technical notes from my cybersecurity journey.</p>

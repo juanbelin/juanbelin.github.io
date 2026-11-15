@@ -6,8 +6,9 @@ categories:
   - CTF
   - Dockerlabs
 tags:
-  - hacking
-  - medium
+  - file_upload
+  - password_bruteforce
+  - sudo_abuse
 image: /assets/img/Anexos/Máquina%20Hidden-4.png
 pin: false
 difficulty: Medium

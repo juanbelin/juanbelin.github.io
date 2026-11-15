@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - medium
+  - jenkins
+  - arbitrary_file_read
+  - credential_exposure
 image: /assets/img/Anexos/Máquina%20Builder.png
 pin: false
 difficulty: Medium

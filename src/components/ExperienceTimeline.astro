@@ -12,30 +12,45 @@ const formatDate = (date: string) => new Date(`${date}-01T00:00:00Z`)
 ---
 
 <ol class="experience-timeline" aria-label="Work experience timeline">
-  {ordered.map(entry => (
-    <li class="experience-item rv">
+  {ordered.map((entry, index) => (
+    <li class:list={['experience-item rv', { 'experience-item-current': !entry.end }]}>
       <div class="experience-period">
+        <span class="experience-date-range">
         <time datetime={entry.start}>{formatDate(entry.start)}</time>
         <span aria-hidden="true"> — </span>
         {entry.end ? <time datetime={entry.end}>{formatDate(entry.end)}</time> : <span>Present</span>}
+        </span>
+        {!entry.end && <span class="experience-current-label">Current</span>}
       </div>
-      <article class="experience-card">
+      <span class="experience-milestone" aria-hidden="true">{String(ordered.length - index).padStart(2, '0')}</span>
+      <article class:list={['experience-card', { 'experience-current': !entry.end }]}>
         <div class="experience-heading">
           {entry.logo && <img class="experience-logo" src={entry.logo} alt={`${entry.company} logo`} width="72" height="72" loading="lazy" />}
           <div class="experience-heading-text">
-          <h3>{entry.companyUrl
+          <h3>{entry.role}</h3>
+          <p class="experience-company">{entry.companyUrl
             ? <a href={entry.companyUrl} target="_blank" rel="noopener noreferrer">{entry.company}</a>
-            : entry.company}</h3>
-          <p class="experience-role">{entry.role}</p>
+            : entry.company}</p>
           {entry.location && <p class="experience-location">{entry.location}</p>}
           </div>
         </div>
-        <p>{entry.summary}</p>
+        <div class:list={['experience-content', { 'experience-with-media': entry.images?.length }]}>
+        <div class="experience-copy">
+        <p class="experience-summary">{entry.summary}</p>
         {entry.highlights.length > 0 && (
           <ul class="experience-highlights">
             {entry.highlights.map(highlight => <li>{highlight}</li>)}
           </ul>
         )}
+        {entry.details && entry.details.length > 0 && (
+          <details class="experience-details">
+            <summary>More details</summary>
+            <ul class="experience-highlights">
+              {entry.details.map(detail => <li>{detail}</li>)}
+            </ul>
+          </details>
+        )}
+        </div>
         {entry.images && entry.images.length > 0 && (
           <div class="experience-gallery">
             {entry.images.map(image => (
@@ -48,12 +63,24 @@ const formatDate = (date: string) => new Date(`${date}-01T00:00:00Z`)
             ))}
           </div>
         )}
+        </div>
+        {(entry.technologies?.length || entry.links?.length) && (
+          <footer class="experience-footer">
+            {entry.technologies && <ul class="experience-technologies" aria-label="Tools and skills">
+              {entry.technologies.map(technology => <li class="tag">{technology}</li>)}
+            </ul>}
+            {entry.links && <div class="experience-links">
+              {entry.links.map(link => <a href={link.href}>{link.label} <span aria-hidden="true">↗</span></a>)}
+            </div>}
+          </footer>
+        )}
       </article>
     </li>
   ))}
   {ordered.length === 0 && (
     <li class="experience-item rv">
       <div class="experience-period">Work history</div>
+      <span class="experience-milestone" aria-hidden="true">—</span>
       <article class="experience-card">
         <h3>Experience coming soon</h3>
         <p>Details about my professional roles and projects will be added here.</p>

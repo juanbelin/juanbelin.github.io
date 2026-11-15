@@ -18,13 +18,18 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', {
   {showCover && image && <div class="research-card-media"><img class="research-card-cover" src={image} alt="" width="480" height="360" loading="lazy" /></div>}
   <div class="research-card-body">
     <div class="research-card-meta">
-      <time datetime={date.toISOString()}>{fmt(date)}</time>
+      <time datetime={date.toISOString()}>
+        <!-- Font Awesome Free calendar, Classic Solid (CC BY 4.0, Fonticons, Inc.). -->
+        <svg class="fa-solid fa-calendar" width="10" height="12" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+          <path d="M128 0c17.7 0 32 14.3 32 32v32h128V32c0-17.7 14.3-32 32-32s32 14.3 32 32v32h48c26.5 0 48 21.5 48 48v48H0v-48c0-26.5 21.5-48 48-48h48V32c0-17.7 14.3-32 32-32zM0 192h448v272c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192z" />
+        </svg>
+        {fmt(date)}
+      </time>
 
       {readingTime && <><span class="research-card-separator" aria-hidden="true">·</span><span>{readingTime} min read</span></>}
       {pin && <span class="research-pinned" role="img" aria-label="Pinned post" title="Pinned post">
-        <!-- Font Awesome Free thumbtack, Classic Solid (CC BY 4.0, Fonticons, Inc.). -->
-        <svg class="fa-solid fa-thumbtack" width="13" height="17" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
-          <path d="M298.028 214.645 285.034 64H320c17.673 0 32-14.327 32-32S337.673 0 320 0H64C46.327 0 32 14.327 32 32s14.327 32 32 32h34.966L85.972 214.645C36.128 238.725 0 277.075 0 320c0 8.837 7.163 16 16 16h144v128c0 1.242.289 2.467.845 3.578l16 32c5.9 11.8 22.997 11.8 28.9 0l16-32A8.008 8.008 0 0 0 224 464V336h144c8.837 0 16-7.163 16-16 0-42.925-36.128-81.275-85.972-105.355z" />
+        <svg class="fa-sharp fa-solid fa-thumbtack-angle" width="14" height="14" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true">
+          <path transform="rotate(45 256 256)" d="M128 48h256v48h-32v144l64 64v48H280v112l-24 32-24-32V352H96v-48l64-64V96h-32z" />
         </svg>
       </span>}
     </div>

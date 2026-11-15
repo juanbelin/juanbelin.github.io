@@ -6,8 +6,10 @@ categories:
   - CTF
   - Dockerlabs
 tags:
-  - hacking
-  - medium
+  - reverse_engineering
+  - lfi
+  - log_poisoning
+  - sudo_abuse
 image: /assets/img/Anexos/Pasted%20image%2020250402092936.png
 pin: false
 difficulty: Medium

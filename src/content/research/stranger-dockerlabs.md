@@ -6,8 +6,9 @@ categories:
   - CTF
   - Dockerlabs
 tags:
-  - hacking
-  - medium
+  - password_bruteforce
+  - cryptography
+  - sudo_abuse
 image: /assets/img/Anexos/Máquina%20Stranger.png
 pin: false
 difficulty: Medium

@@ -6,8 +6,9 @@ categories:
   - CTF
   - Dockerlabs
 tags:
-  - hacking
-  - medium
+  - rce
+  - credential_reuse
+  - sudo_abuse
 image: /assets/img/Anexos/Pasted%20image%2020250409170413-1.png
 pin: false
 difficulty: Medium

@@ -5,7 +5,8 @@ date: '2025-04-09'
 categories:
   - Tutorial
 tags:
-  - linux
+  - arch_linux
+  - hyprland
 image: /assets/img/Anexos/rice_1.png
 pin: true
 legacySlug: Arch-Hacking-Rice

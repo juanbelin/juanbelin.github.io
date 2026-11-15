@@ -6,8 +6,10 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - ad
+  - kerberos
+  - kerberoasting
+  - gpp
 image: /assets/img/Anexos/Máquina%20Active.png
 pin: false
 difficulty: Easy

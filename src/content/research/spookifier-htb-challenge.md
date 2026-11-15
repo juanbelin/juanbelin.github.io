@@ -6,8 +6,7 @@ categories:
   - Challenge
   - HackTheBox
 tags:
-  - web
-  - very easy
+  - ssti
 image: https://tse1.mm.bing.net/th?id=OIG1.iKzTRYDeUwZgb8AvNvbH&pid=ImgGn
 pin: false
 difficulty: Very easy

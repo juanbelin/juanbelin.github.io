@@ -6,7 +6,9 @@ categories:
   - Tutorial
   - Evasion
 tags:
-  - hacking
+  - av_evasion
+  - meterpreter
+  - python
 image: /assets/img/Anexos/rev_shell_AV_evasion.gif
 pin: true
 legacySlug: Windows_AV_Evasion

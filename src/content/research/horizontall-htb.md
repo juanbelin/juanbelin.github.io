@@ -6,8 +6,8 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - rce
+  - port_forwarding
 image: /assets/img/Anexos/Pasted%20image%2020250330152608.png
 pin: false
 difficulty: Easy

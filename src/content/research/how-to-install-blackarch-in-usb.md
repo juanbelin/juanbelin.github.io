@@ -5,9 +5,10 @@ date: '2025-03-03'
 categories:
   - Tutorial
 tags:
-  - linux
+  - blackarch
+  - usb_installation
 image: https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2014/12/blackarch-linux.jpg?fit=1200%2C675&quality=70&strip=all&ssl=1
-pin: true
+pin: false
 legacySlug: How_to_install_BlackArch_in_USB
 ---
 

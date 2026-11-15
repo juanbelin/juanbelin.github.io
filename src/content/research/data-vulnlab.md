@@ -6,8 +6,9 @@ categories:
   - CTF
   - Vulnlab
 tags:
-  - hacking
-  - easy
+  - path_traversal
+  - docker
+  - container_escape
 image: /assets/img/Anexos/Máquina%20Data.png
 pin: false
 difficulty: Easy

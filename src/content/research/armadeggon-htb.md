@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - drupal
+  - rce
+  - sudo_abuse
 image: /assets/img/Anexos/Pasted%20image%2020250318104150-1.png
 pin: false
 difficulty: Easy

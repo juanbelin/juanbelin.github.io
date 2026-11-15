@@ -5,8 +5,8 @@ date: '2025-04-07'
 categories:
   - Tutorial
 tags:
-  - hacking
-  - notes
+  - xxe
+  - ssrf
 pin: false
 legacySlug: XXE-notes
 ---

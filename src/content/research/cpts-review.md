@@ -5,7 +5,7 @@ date: '2026-02-27'
 categories:
   - Review
 tags:
-  - CPTS
+  - cpts
 image: /assets/img/Anexos/CPTS2.png
 pin: true
 legacySlug: CPTS-Review

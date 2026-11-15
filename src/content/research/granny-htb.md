@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - webdav
+  - file_upload
+  - token_impersonation
 image: /assets/img/Anexos/Máquina%20Granny.png
 pin: false
 difficulty: Easy

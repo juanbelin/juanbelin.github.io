@@ -33,7 +33,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '.');
 const hasLinks = video || repo || demo;
 const headerMeta = [
   ...(ledger === '/research' ? [] : [{ label: type, kind: 'type' }]),
-  ...(showDate ? [{ label: fmt(date), kind: 'date' }] : []),
+  ...(showDate ? [{ label: `Posted ${fmt(date)}`, kind: 'date' }] : []),
   ...meta.map(label => ({ label, kind: /^\d+ min read$/.test(label) ? 'reading-time' : 'detail' })),
 ];
 const wordsLabel = wordCount === undefined ? undefined : `${wordCount.toLocaleString('en-GB')} words`;

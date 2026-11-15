@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - medium
+  - file_upload
+  - kernel_exploit
+  - rce
 image: /assets/img/Anexos/Máquina%20Hospital.png
 pin: false
 difficulty: Medium

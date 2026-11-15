@@ -6,8 +6,10 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - ad
+  - password_spraying
+  - sebackupprivilege
+  - pass_the_hash
 image: /assets/img/Anexos/Máquina%20Cicada.png
 pin: false
 difficulty: Easy

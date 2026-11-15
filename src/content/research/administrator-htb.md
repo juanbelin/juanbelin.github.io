@@ -6,8 +6,10 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - medium
+  - ad
+  - acl_abuse
+  - kerberos
+  - dcsync
 image: /assets/img/Anexos/Máquina%20Administrator.png
 pin: false
 difficulty: Medium

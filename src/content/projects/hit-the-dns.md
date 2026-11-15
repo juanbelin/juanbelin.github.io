@@ -11,7 +11,6 @@ stack:
 repo: https://github.com/juanbelin/Hit-The-Dns
 ---
 
-<h1 align="center"> Hit-The-Dns (Beta)</h1>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/juanbelin/Hit-The-Dns/main/assets/img/Logo.png" alt="Logo" width="300"/>
@@ -27,12 +26,14 @@ repo: https://github.com/juanbelin/Hit-The-Dns
 - [Usage](#usage)
 - [Comparison with Dnsenum](#hit-the-dns-with-dnsenum-comparation)
 - [License](#license)
+
 ## Installation
-```
+
+```shell
 wget https://raw.githubusercontent.com/juanbelin/Hit-The-Dns/refs/heads/main/hit-the-dns.sh
 ```
 
-```
+```shell
 chmod +x hit-the-dns.sh
 ```
 
@@ -40,7 +41,7 @@ chmod +x hit-the-dns.sh
 > [!NOTE]
 > This example was done using [Attacking DNS Lab from HTB Academy](https://academy.hackthebox.com/module/116/section/1512).
 ### DNS Fuzzing
-```
+```shell
 ./hit-the-dns -d inlanefreight.htb -i 10.129.203.6 -w ~/seclists/Discovery/DNS/subdomains-top1million-110000.txt
 ```
 
@@ -50,7 +51,7 @@ https://github.com/user-attachments/assets/fa2420e5-3267-4568-bfa3-fc597894c4ba
 ### DNS Fuzzing verbose mode
 `-v` or `--verbose` in order to view fuzzing attempts.
 
-```
+```shell
 ./hit-the-dns -d test.com -i 10.129.203.6 -w ~/seclists/Discovery/DNS/subdomains-top1million-110000.txt -v
 ```
 ### Checking dns.logs and following the next step
@@ -74,11 +75,11 @@ The **dns.logs** file will give you the next step in the recon (zone transfer at
 ![image](https://github.com/user-attachments/assets/568ac592-3c0f-4b06-bcbe-be5f4c952a96)
 ## Usage
 
-```
+```shell
 ./hit-the-dns -d domain.com -i 10.10.2.15 -w /path/to/wordlist.txt <-v>
 ```
 
-```
+```shell
 ./hit-the-dns.sh
  █████   █████  ███   █████
 ░░███   ░░███  ░░░   ░░███

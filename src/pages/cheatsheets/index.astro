@@ -27,9 +27,19 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '.');
   <div class="container section-body">
     <p class="section-desc rv">Quick reference guides for the tools and techniques I use most — pentest commands, attack paths, and Windows internals.</p>
 
-    {categories.map(cat => (
-      <div class="cheat-group rv">
-        <h3 class="cheat-group-title">{cat}</h3>
+    {categories.length > 0 && (
+      <nav class="cheat-category-nav" aria-label="Cheatsheet categories">
+        {categories.map((cat, index) => (
+          <a href={`#category-${index + 1}`}>
+            {cat}<span class="cheat-category-total">{byCategory[cat].length}</span>
+          </a>
+        ))}
+      </nav>
+    )}
+
+    {categories.map((cat, index) => (
+      <section class="cheat-group rv" id={`category-${index + 1}`} aria-labelledby={`category-title-${index + 1}`}>
+        <h3 class="cheat-group-title" id={`category-title-${index + 1}`}>{cat}</h3>
         <span class="cheat-group-count">{byCategory[cat].length} sheet{byCategory[cat].length === 1 ? '' : 's'}</span>
 
         <div class="research">
@@ -53,7 +63,7 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '.');
             </a>
           ))}
         </div>
-      </div>
+      </section>
     ))}
 
     {cheatsheets.length === 0 && (
@@ -61,3 +71,12 @@ const fmt = (d: Date) => d.toISOString().slice(0, 10).replace(/-/g, '.');
     )}
   </div>
 </BaseLayout>
+
+<style>
+  .cheat-category-nav { display: flex; gap: 10px; overflow-x: auto; padding: 4px 2px 14px; margin-bottom: 32px; }
+  .cheat-category-nav a { display: inline-flex; align-items: center; gap: 10px; flex-shrink: 0; padding: 10px 14px; border: 1px solid var(--ink-2); border-radius: 4px; color: var(--ink); font: 12px var(--font-mono); text-decoration: none; }
+  .cheat-category-nav a:hover, .cheat-category-nav a:focus-visible { color: var(--accent); border-color: var(--accent); }
+  .cheat-category-total { color: var(--ink-2); font-size: 11px; }
+  .cheat-group { scroll-margin-top: 110px; }
+  .cheat-group:target .cheat-group-title { color: var(--accent); }
+</style>

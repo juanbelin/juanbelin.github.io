@@ -12,7 +12,6 @@ stack:
 repo: https://github.com/juanbelin/Hyprland-arch-dotfiles
 ---
 
-# Hyprland Arch Linux Dotfiles
 
 **NOT COMPLETE YET**
 
@@ -36,6 +35,7 @@ These are the dotfiles for my personal Arch Linux "rice," configured with the Hy
 **Display Manager:** [SDDM](https://github.com/sddm/sddm) Theme: [sddm-astronaut-theme](https://github.com/Keyitdev/sddm-astronaut-theme)
 
 **BlackArch repo:** https://blackarch.org/downloads.html
+
 ## Video
 
 

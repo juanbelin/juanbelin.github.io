@@ -6,8 +6,8 @@ categories:
   - CTF
   - Dockerlabs
 tags:
-  - hacking
-  - medium
+  - command_injection
+  - sudo_abuse
 image: /assets/img/Anexos/Pasted%20image%2020250329195808-1.png
 pin: false
 difficulty: Medium

@@ -1,6 +1,6 @@
 ---
 title: Windows AV Evasion
-description: An educational Windows Defender evasion demonstration, documented in the project README.
+description: An educational Windows Defender evasion demonstration, documented in the project.
 date: '2026-11-01'
 status: public
 category: Red Team
@@ -11,7 +11,6 @@ stack:
 repo: https://github.com/juanbelin/Windows-AV-Evasion
 ---
 
-# Windows-AV-Evasion
 The easiest way to achieve a reverse shell bypassing Windows Defender (msfvenom edition)
 
 

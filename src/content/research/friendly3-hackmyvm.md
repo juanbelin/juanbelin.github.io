@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackMyVm
 tags:
-  - hacking
-  - easy
+  - password_bruteforce
+  - race_condition
+  - cron_abuse
 image: /assets/img/Anexos/Máquina%20Friendly%203-8.png
 pin: false
 difficulty: Easy

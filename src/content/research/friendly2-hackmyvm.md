@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackMyVm
 tags:
-  - hacking
-  - easy
+  - lfi
+  - path_hijacking
+  - sudo_abuse
 image: /assets/img/Anexos/Máquina%20Friendly%202-1.png
 pin: false
 difficulty: Easy

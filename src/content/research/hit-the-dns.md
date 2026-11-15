@@ -5,7 +5,8 @@ date: '2025-06-17'
 categories:
   - Tool
 tags:
-  - hacking
+  - dns
+  - subdomain_enumeration
 image: /assets/img/Anexos/Logo.png
 pin: true
 legacySlug: Hit-The-DNS

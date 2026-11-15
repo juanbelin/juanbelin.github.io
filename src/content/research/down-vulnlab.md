@@ -6,8 +6,9 @@ categories:
   - CTF
   - Vulnlab
 tags:
-  - hacking
-  - easy
+  - ssrf
+  - command_injection
+  - sudo_abuse
 image: /assets/img/Anexos/Vulnlab.png
 pin: false
 difficulty: Easy

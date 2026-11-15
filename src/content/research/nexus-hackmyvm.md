@@ -6,8 +6,8 @@ categories:
   - CTF
   - HackMyVm
 tags:
-  - hacking
-  - easy
+  - sqli
+  - sudo_abuse
 image: /assets/img/Anexos/Máquina%20Nexus-8.png
 pin: false
 difficulty: Easy

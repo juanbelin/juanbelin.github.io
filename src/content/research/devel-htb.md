@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - anonymous_ftp
+  - file_upload
+  - kernel_exploit
 image: /assets/img/Anexos/Pasted%20image%2020250410152509-1.png
 pin: false
 difficulty: Easy

@@ -12,11 +12,13 @@ const totalExperience = formatExperienceDuration(cybersecurityMonths(includedRol
     <SectionBand num="02" label="Career" title="Work experience" meta="Professional journey" />
   </div>
   <div class="container section-body">
+    <div class="experience-intro">
     <p class="section-desc rv">My professional journey — the teams I have worked with, my responsibilities and the projects I have contributed to.</p>
     <div class="experience-total" title="experience calendar">
       <span class="band-label">Professional experience</span>
       <strong data-cybersecurity-total data-roles={JSON.stringify(includedRoles)}>{totalExperience}</strong>
       <span class="experience-total-note">Cybersecurity &amp; IT</span>
+    </div>
     </div>
     <ExperienceTimeline entries={experience} />
   </div>

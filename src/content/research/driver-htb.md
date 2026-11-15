@@ -6,8 +6,8 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - ntlm_capture
+  - printer_exploitation
 image: /assets/img/Anexos/Máquina%20Driver-2.png
 pin: false
 difficulty: Easy

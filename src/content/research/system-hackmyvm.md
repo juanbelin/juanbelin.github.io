@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackMyVm
 tags:
-  - hacking
-  - easy
+  - xxe
+  - python_library_hijacking
+  - cron_abuse
 image: /assets/img/Anexos/Pasted%20image%2020250401125207.png
 pin: false
 difficulty: Easy

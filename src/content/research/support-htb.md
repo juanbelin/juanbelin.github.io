@@ -6,8 +6,10 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - ad
+  - acl_abuse
+  - kerberos
+  - rbcd
 image: /assets/img/Anexos/Máquina%20Support.png
 pin: false
 difficulty: Easy

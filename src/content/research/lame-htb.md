@@ -6,8 +6,8 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - samba
+  - rce
 image: /assets/img/Anexos/Pasted%20image%2020250410095539-1-1.png
 pin: false
 difficulty: Easy

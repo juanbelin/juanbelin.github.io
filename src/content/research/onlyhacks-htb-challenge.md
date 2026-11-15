@@ -6,8 +6,8 @@ categories:
   - Challenge
   - HackTheBox
 tags:
-  - web
-  - very easy
+  - xss
+  - session_hijacking
 image: https://cdn.invicti.com/app/uploads/2022/06/28121118/session-hijacking-768x403.webp
 pin: false
 difficulty: Very easy

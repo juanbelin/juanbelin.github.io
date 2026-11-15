@@ -7,6 +7,8 @@ categories:
   - LetsDefend
 tags:
   - soc
+  - incident_response
+  - phishing
 image: /assets/img/Anexos/Pasted%20image%2020250407101344-1.png
 pin: false
 legacySlug: SOC336-LetsDefend-

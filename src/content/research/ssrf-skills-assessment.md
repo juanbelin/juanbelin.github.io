@@ -6,7 +6,8 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
+  - ssrf
+  - ssti
 image: /assets/img/Anexos/SSRFHTB.jpg
 pin: false
 legacySlug: SSRF-Skills-Assessment

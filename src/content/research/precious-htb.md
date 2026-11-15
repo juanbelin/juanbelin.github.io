@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - command_injection
+  - insecure_deserialization
+  - sudo_abuse
 image: /assets/img/Anexos/Máquina%20Precious.png
 pin: false
 difficulty: Easy

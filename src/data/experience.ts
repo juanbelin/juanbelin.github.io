@@ -10,6 +10,9 @@ export interface Experience {
   location?: string;
   summary: string;
   highlights: string[];
+  details?: string[];
+  technologies?: string[];
+  links?: { label: string; href: string }[];
   images?: { src: string; alt: string; caption?: string }[];
 }
 
@@ -24,14 +27,20 @@ export const experience: Experience[] = [
     location: 'Madrid, Spain · Hybrid',
     summary: 'Delivering practical security awareness programs and realistic adversary simulations for private companies and public-sector organizations.',
     highlights: [
-      'Deliver hands-on awareness sessions, role-playing as the adversary in realistic red-team scenarios.',
-      'Design and execute controlled phishing campaigns with Gophish, KnowBe4 and Proofpoint to simulate social engineering attacks and measure user awareness.',
-      'Manage the full campaign infrastructure: Linux VPS instances, Gophish deployments, domains, DNS and environment reuse and reconfiguration.',
+      'Run hands-on awareness sessions and tailored phishing simulations for private companies and public-sector teams.',
+      'Build and maintain campaign infrastructure, from Linux VPS instances and Gophish deployments to domains and DNS.',
+      'Automate campaign workflows and translate results into technical and executive reports with actionable recommendations.',
+    ],
+    details: [
+      'Role-play as the adversary in realistic red-team awareness scenarios.',
+      'Design and execute controlled campaigns with Gophish, KnowBe4 and Proofpoint to measure user awareness.',
       'Create realistic phishing email templates and landing pages tailored to each client.',
-      'Prepare client proposals, track campaigns and produce technical and executive reports with actionable recommendations.',
+      'Prepare client proposals and reuse and reconfigure campaign environments.',
       'Develop scripts and automation for campaign deployment, adversary sessions, tracking and reporting.',
       'Work with clients to strengthen their awareness programs and human-layer defenses.',
     ],
+    technologies: ['Gophish', 'KnowBe4', 'Proofpoint', 'Linux', 'DNS', 'Automation'],
+    links: [{ label: 'Read my Gophish methodology', href: '/research/gophish-metodology/' }],
     images: [{ src: '/images/experience/session1_scrubbed.png', alt: 'Security awareness session at S2GRUPO', caption: 'Hands-on security awareness session.' }],
   },
   {
@@ -45,10 +54,12 @@ export const experience: Experience[] = [
     location: 'Madrid, Spain · Remote',
     summary: 'Developed automation tools and malware simulation capabilities to support ethical hacking operations and realistic attack scenarios.',
     highlights: [
-      'Reduced manual technical effort by developing custom automation tools and improving ethical hacking workflows.',
-      'Worked as a product developer on the Ransomware Simulator platform, integrating agentic AI and LLMs using Google Gemini and ADK to automate complex attack scenarios and improve threat modeling.',
-      'Developed malware using active and passive antivirus evasion techniques.',
+      'Built custom automation tools to reduce manual effort in ethical hacking workflows.',
+      'Integrated Google Gemini and ADK into the Ransomware Simulator platform to automate attack scenarios and support threat modeling.',
+      'Developed malware with active and passive antivirus evasion techniques.',
     ],
+    technologies: ['Google Gemini', 'ADK', 'Python', 'Bash', 'AV Evasion'],
+    links: [{ label: 'Explore my AV Evasion project', href: '/projects/windows-av-evasion/' }],
     images: [],
   },
   {
@@ -62,11 +73,11 @@ export const experience: Experience[] = [
     location: 'Berlin, Germany · On-site',
     summary: 'Supported the IT, development and hardware infrastructure used in a production environment.',
     highlights: [
-      'Worked on database management and C programming.',
-      'Used virtualization and development and creation tools, including Unity, Unreal Engine and rendering software.',
-      'Worked with networks, routers, Raspberry Pi devices, repeaters and cabling.',
-      'Set up production equipment, including computers, monitors, cameras, displays and cabling.',
+      'Supported database management, C programming and virtualized development environments.',
+      'Worked with networks, routers and Raspberry Pi devices to support production infrastructure.',
+      'Set up workstations, cameras, displays and cabling for production teams.',
     ],
+    technologies: ['C', 'Databases', 'Virtualization', 'Networking', 'Raspberry Pi'],
     images: [],
   },
 ];

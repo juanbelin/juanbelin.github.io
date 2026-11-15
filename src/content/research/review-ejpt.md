@@ -5,7 +5,7 @@ date: '2025-04-15'
 categories:
   - Review
 tags:
-  - eJPT
+  - ejpt
 image: /assets/img/Anexos/Review%20eJPT.png
 pin: false
 legacySlug: Review-eJPT

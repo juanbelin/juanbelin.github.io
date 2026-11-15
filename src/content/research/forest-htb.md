@@ -6,8 +6,10 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - ad
+  - as_rep_roasting
+  - acl_abuse
+  - dcsync
 image: /assets/img/Anexos/Máquina%20Forest.png
 pin: false
 difficulty: Easy

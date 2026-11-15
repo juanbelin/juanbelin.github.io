@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - default_credentials
+  - keepass
+  - memory_dump
 image: /assets/img/Anexos/Máquina%20Keeper-17.png
 pin: false
 difficulty: Easy

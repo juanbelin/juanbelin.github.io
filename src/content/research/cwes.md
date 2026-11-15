@@ -5,7 +5,7 @@ date: '2026-05-28'
 categories:
   - Review
 tags:
-  - CWES
+  - cwes
 image: /assets/img/Anexos/CWES.png
 pin: true
 legacySlug: CWES

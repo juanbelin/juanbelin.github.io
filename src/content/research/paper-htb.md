@@ -6,8 +6,9 @@ categories:
   - CTF
   - HackTheBox
 tags:
-  - hacking
-  - easy
+  - information_disclosure
+  - rce
+  - polkit
 image: /assets/img/Anexos/Máquina%20Paper.png
 pin: false
 difficulty: Easy

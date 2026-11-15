@@ -6,8 +6,9 @@ categories:
   - CTF
   - Vulnlab
 tags:
-  - hacking
-  - easy
+  - git_history
+  - credential_exposure
+  - msi_privilege_escalation
 image: /assets/img/Anexos/Máquina%20Lock.png
 pin: false
 difficulty: Easy

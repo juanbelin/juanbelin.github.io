@@ -6,8 +6,7 @@ categories:
   - Challenge
   - HackTheBox
 tags:
-  - reversing
-  - very easy
+  - reverse_engineering
 image: /assets/img/Anexos/Pasted%20image%2020250401091447.png
 pin: false
 difficulty: Very easy

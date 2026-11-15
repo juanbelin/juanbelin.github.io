@@ -6,6 +6,7 @@ categories:
   - Tutorial
 tags:
   - linux
+  - grub
 image: /assets/img/Anexos/Pasted%20image%2020250408103223-1.png
 pin: false
 legacySlug: Grub-rescue-at-every-boot

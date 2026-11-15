@@ -7,12 +7,13 @@ categories:
   - Phishing
 image: /assets/img/covers/gophish-dashboard.png
 tags:
+  - phishing
   - gophish
-  - VPS
+  - dns
 legacySlug: Gophish_Metodology
 ---
 
-The written examples are fictional. The screenshots come from a real environment and are awaiting review and redaction before publication. `example.org` is a domain reserved for documentation, and `203.0.113.10` is a documentation IP address: neither can be used to deploy this infrastructure. Placeholders enclosed in `<...>` must be replaced with your own values; they are never ready-to-use keys.
+The written examples are fictional. The screenshots come from a real environment but sensible information is censoured for obvious reasons. `example.org` is a domain reserved for documentation, and `203.0.113.10` is a documentation IP address: neither can be used to deploy this infrastructure. Placeholders enclosed in `<...>` must be replaced with your own values; they are never ready-to-use keys.
 
 ## 1. Define the Exercise Before Provisioning Infrastructure
 

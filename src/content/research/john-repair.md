@@ -5,7 +5,8 @@ date: '2025-04-22'
 categories:
   - Tutorial
 tags:
-  - tool
+  - john_the_ripper
+  - troubleshooting
 image: /assets/img/Anexos/John%20repair-2.png
 pin: false
 legacySlug: John-repair

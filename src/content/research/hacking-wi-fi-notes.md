@@ -5,8 +5,9 @@ date: '2025-02-08'
 categories:
   - Tutorial
 tags:
-  - hacking
-  - notes
+  - wifi
+  - wpa
+  - wpa2
 image: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-0O6b-BaoV_hj9IJHYMEpiHjVRbdDKmUIVQ&s
 pin: true
 legacySlug: Hacking_Wi-Fi_Notes

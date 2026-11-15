@@ -5,7 +5,9 @@ date: '2026-02-08'
 categories:
   - tutorial
 tags:
-  - hacking
+  - ad
+  - server_operators
+  - service_abuse
 image: /assets/img/Anexos/Server%20Operators%20Group%20Abuse.png
 pin: false
 legacySlug: Server-Operators-Group-Abuse
