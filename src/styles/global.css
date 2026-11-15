@@ -466,7 +466,7 @@ body::after {
 .experience-company a:hover { color: var(--ink); }
 .experience-current-label { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font: 10px var(--font-mono); text-transform: uppercase; letter-spacing: 1px; }
 .experience-current-label::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-.experience-content { display: grid; gap: 28px; align-items: start; }
+.experience-content { display: grid; grid-template-columns: minmax(0, 1fr); min-width: 0; gap: 28px; align-items: start; }
 .experience-copy { min-width: 0; }
 .experience-summary { color: var(--ink-2); line-height: 1.8; }
 .experience-details { margin-top: 20px; }
@@ -488,7 +488,7 @@ body::after {
 .experience-highlights { padding-left: 20px; margin-top: 20px; }
 .experience-highlights li + li { margin-top: 8px; }
 .experience-highlights li::marker { color: var(--accent); }
-.experience-gallery { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 24px; }
+.experience-gallery { display: flex; flex-wrap: wrap; min-width: 0; gap: 16px; margin-top: 24px; }
 .experience-gallery figure { width: var(--experience-image-width); max-width: 100%; }
 .experience-gallery img { display: block; width: 100%; height: auto; border: 1px solid var(--rule-2); }
 .experience-gallery figcaption { margin-top: 10px; color: var(--ink-2); font-size: 12px; }
@@ -502,7 +502,8 @@ body::after {
 .reports-repository p { color: var(--ink-2); margin: 12px 0 24px; }
 @media (max-width: 600px) {
   .experience-timeline { --timeline-gap: 12px; }
-  .experience-card { padding: 20px 16px; }
+  .experience-card { grid-column: 1 / -1; padding: 20px; }
+  .experience-company, .experience-location, .experience-links a { overflow-wrap: anywhere; }
   .cert-identity { gap: 10px; }
   .cert-logo { width: 44px; height: 44px; }
   .certs-table { min-width: 480px; }
@@ -1446,7 +1447,7 @@ input[type="submit"], input[type="button"], input[type="checkbox"], input[type="
 .prose details.callout > summary.callout-title { cursor: pointer; margin-bottom: 0; }
 .prose details.callout[open] > summary.callout-title { margin-bottom: 12px; }
 @media (max-width: 600px) {
-  .experience-heading { gap: 14px; }
+  .experience-heading { flex-direction: column; align-items: flex-start; gap: 14px; }
   .experience-logo { width: 56px; height: 56px; padding: 6px; }
   .prose .callout { padding: 16px 18px; }
 }
