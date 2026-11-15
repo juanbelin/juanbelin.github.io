@@ -20,8 +20,6 @@ AS-REP roasting targets the response portion encrypted with the account key; it 
 
 In Kerberoasting, service ticket material is protected with the service account key. Password recovery depends on password strength. Machine accounts and managed accounts typically have long random passwords, limiting practical cracking.
 
-Commands prefixed with `beacon>` run in Cobalt Strike. Hashcat runs on the analysis machine. Paths, `CONTOSO`, SPNs and LUIDs are examples. Values containing `[...snip...]` are incomplete and cannot be used as hashes or tickets.
-
 ## 2. AS-REP roasting
 
 Save the complete hash in `asrep.hash`. Mode 18200 matches the AS-REP etype 23 format used here.
@@ -137,8 +135,6 @@ The sample uses 10 hours of validity and a 7-day renewal window; these depend on
 
 ## 9. Quick checklist
 
-Choose the technique needed for the exercise. Run `execute-assembly` and BOF commands in Beacon; run Hashcat on the analysis machine. Replace `<...>` placeholders with complete values.
-
 ```text
 CONTEXT AND PREPARATION
 [ ] getuid → confirm the effective identity
@@ -175,6 +171,11 @@ TICKET LIFETIME AND RENEWAL
 
 ## Related references
 
+- [Unconstrained delegation](/cheatsheets/kerberos-unconstrained-delegation-cheatsheet/)
+- [Constrained delegation](/cheatsheets/kerberos-constrained-delegation-cheatsheet/)
+- [Service name substitution](/cheatsheets/kerberos-service-name-substitution-cheatsheet/)
+- [S4U2self computer takeover](/cheatsheets/kerberos-s4u2self-computer-takeover-cheatsheet/)
+- [Resource-based constrained delegation](/cheatsheets/kerberos-rbcd-cheatsheet/)
 - [Browser credentials](/cheatsheets/browser-credentials-cheatsheet/)
 - [Windows Credential Manager and DPAPI](/cheatsheets/windows-credential-manager-cheatsheet/)
 - [LSASS, SAM, LSA Secrets and cached credentials](/cheatsheets/os-credential-dumping-cheatsheet/)
