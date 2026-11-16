@@ -2,11 +2,15 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import SectionBand from '@/components/SectionBand.astro';
+import { cheatsheetCategories, cheatsheetOrder, noteOrder } from '@/data/cheatsheet-order';
 
 const cheatsheets = (await getCollection('cheatsheets', ({ data }) => !data.draft))
-  .sort((a, b) => b.data.updated.valueOf() - a.data.updated.valueOf());
+  .sort((a, b) => noteOrder(a.id, cheatsheetOrder) - noteOrder(b.id, cheatsheetOrder)
+    || a.data.title.localeCompare(b.data.title, 'en'));
 
-const categories = [...new Set(cheatsheets.map(c => c.data.category))].sort();
+const categories = [...new Set(cheatsheets.map(c => c.data.category))]
+  .sort((a, b) => noteOrder(a, cheatsheetCategories) - noteOrder(b, cheatsheetCategories)
+    || a.localeCompare(b, 'en'));
 
 const byCategory = Object.fromEntries(
   categories.map(cat => [cat, cheatsheets.filter(c => c.data.category === cat)])
