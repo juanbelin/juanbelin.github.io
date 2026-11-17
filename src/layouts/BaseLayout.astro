@@ -24,7 +24,7 @@ const {
   noindex = false,
 } = Astro.props;
 const title = path === '/' && !pageTitle
-  ? `${site.name} | Offensive Security Specialist`
+  ? `${site.name} — Offensive Security Specialist`
   : `${pageTitle ?? site.roleLong} — ${site.name}`;
 const ogImage = new URL(socialImage?.src ?? image, Astro.site);
 ---
