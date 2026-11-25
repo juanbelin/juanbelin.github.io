@@ -115,6 +115,12 @@ CLEANUP
 [ ] Remove exported private-key material when no longer needed; handle certificate revocation separately.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Abusing certificates for authentication | [T1649 — Steal or Forge Authentication Certificates](https://attack.mitre.org/techniques/T1649/) |
+
 ## Related references
 
 - [ESC3 enrollment agents](/cheatsheets/adcs-esc3-cheatsheet/)

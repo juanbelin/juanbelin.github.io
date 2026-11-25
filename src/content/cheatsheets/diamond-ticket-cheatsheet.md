@@ -126,6 +126,13 @@ CLEANUP
 [ ] Rubeus createnetonly path only: kill <CREATED_PID>.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Modifying a legitimate TGT; Diamond has no separate sub-technique here | [T1558 — Steal or Forge Kerberos Tickets](https://attack.mitre.org/techniques/T1558/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [DCSync](/cheatsheets/dcsync-cheatsheet/)

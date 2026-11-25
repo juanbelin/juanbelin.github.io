@@ -134,6 +134,14 @@ TOKEN STORE ALTERNATIVE
 [ ] token-store show → verify removal
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Selecting an existing process token | [T1134.001 — Token Impersonation/Theft](https://attack.mitre.org/techniques/T1134/001/) |
+| Starting a process with a selected token | [T1134.002 — Create Process with Token](https://attack.mitre.org/techniques/T1134/002/) |
+| Creating and selecting an alternate token | [T1134.003 — Make and Impersonate Token](https://attack.mitre.org/techniques/T1134/003/) |
+
 ## Related references
 
 - [Pass the Hash](/cheatsheets/pass-the-hash-cobalt-cheatsheet/)

@@ -59,6 +59,12 @@ Investigate replication from hosts that are not DCs. Event `4662`, with the rele
 
 Remove unjustified replication rights and treat extracted secrets as compromised. For `krbtgt`, recovery requires a coordinated key-reset procedure accounting for both current and previous keys; changing only the compromised administrator's password does not invalidate stolen `krbtgt` material.
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Retrieving account secrets through directory replication | [T1003.006 — DCSync](https://attack.mitre.org/techniques/T1003/006/) |
+
 ## Related references
 
 - [Golden Tickets](/cheatsheets/golden-ticket-cheatsheet/)

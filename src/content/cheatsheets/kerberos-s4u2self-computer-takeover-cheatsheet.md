@@ -147,6 +147,15 @@ CLEANUP
 [ ] If a monitor was started: jobs, then jobkill <MONITOR_JID>.
 ```
 
+## MITRE ATT&CK
+
+The links below describe the mapped steps, not a dedicated ATT&CK sub-technique named after this delegation configuration.
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| The prerequisite computer-TGT capture in this workflow | [T1558 — Steal or Forge Kerberos Tickets](https://attack.mitre.org/techniques/T1558/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Unconstrained delegation](/cheatsheets/kerberos-unconstrained-delegation-cheatsheet/)

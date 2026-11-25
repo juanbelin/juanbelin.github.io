@@ -194,6 +194,12 @@ beacon> rev2self
 beacon> kill <CREATED_PID>
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Token impersonation](/cheatsheets/token-impersonation-cobalt-cheatsheet/)

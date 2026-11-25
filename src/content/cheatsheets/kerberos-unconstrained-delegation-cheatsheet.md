@@ -155,6 +155,13 @@ CLEANUP
 [ ] Remove the exported .kirbi file when no longer needed.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Capturing another principal's delegated TGT | [T1558 — Steal or Forge Kerberos Tickets](https://attack.mitre.org/techniques/T1558/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Pass the Ticket](/cheatsheets/pass-the-ticket-cobalt-cheatsheet/)

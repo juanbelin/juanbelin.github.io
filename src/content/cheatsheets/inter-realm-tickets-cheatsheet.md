@@ -212,6 +212,13 @@ beacon> rev2self
 beacon> kill <CREATED_PID>
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Enumerating trust relationships | [T1482 — Domain Trust Discovery](https://attack.mitre.org/techniques/T1482/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Parent-child trusts](/cheatsheets/parent-child-trust-cheatsheet/)

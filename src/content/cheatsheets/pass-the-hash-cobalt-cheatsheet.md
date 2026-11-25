@@ -112,6 +112,12 @@ CLEANUP
 [ ] getuid → confirm the original context
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Authentication using acquired password hashes | [T1550.002 — Pass the Hash](https://attack.mitre.org/techniques/T1550/002/) |
+
 ## Related references
 
 - [Token impersonation](/cheatsheets/token-impersonation-cobalt-cheatsheet/)

@@ -12,7 +12,7 @@ const writeups = (await getCollection('research', ({ data }) => !data.draft))
 const categories = [...new Set(writeups.flatMap(w => w.data.categories))].sort();
 const tags = [...new Set(writeups.flatMap(w => w.data.tags))].sort();
 const state = researchPage(writeups.length, currentPage);
-const title = state.page > 1 ? `Research — Page ${state.page}` : 'Research — Juan Belinchón';
+const title = state.page > 1 ? `Research — Page ${state.page}` : 'Research';
 ---
 <BaseLayout path={researchPageHref(state.page)} title={title} description="CTF write-ups, security tutorials, certification reviews and technical notes.">
   <div style="padding-top: 88px;">

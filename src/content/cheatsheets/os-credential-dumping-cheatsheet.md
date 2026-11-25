@@ -155,6 +155,15 @@ OFFLINE ANALYSIS — CHOOSE THE MATCHING FORMAT
 ```
 
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| LSASS credential extraction | [T1003.001 — LSASS Memory](https://attack.mitre.org/techniques/T1003/001/) |
+| SAM database extraction | [T1003.002 — Security Account Manager](https://attack.mitre.org/techniques/T1003/002/) |
+| LSA secret extraction | [T1003.004 — LSA Secrets](https://attack.mitre.org/techniques/T1003/004/) |
+| Cached domain credential extraction | [T1003.005 — Cached Domain Credentials](https://attack.mitre.org/techniques/T1003/005/) |
+
 ## Related references
 
 - [Browser credentials](/cheatsheets/browser-credentials-cheatsheet/)

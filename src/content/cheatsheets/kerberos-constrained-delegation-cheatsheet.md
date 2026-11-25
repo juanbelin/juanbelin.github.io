@@ -158,6 +158,14 @@ CLEANUP
 [ ] Rubeus createnetonly path only: kill <CREATED_PID>.
 ```
 
+## MITRE ATT&CK
+
+The links below describe the mapped steps, not a dedicated ATT&CK sub-technique named after this delegation configuration.
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Service name substitution](/cheatsheets/kerberos-service-name-substitution-cheatsheet/)

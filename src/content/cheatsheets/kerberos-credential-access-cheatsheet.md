@@ -169,6 +169,14 @@ TICKET LIFETIME AND RENEWAL
 ```
 
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| AS-REP roasting | [T1558.004 — AS-REP Roasting](https://attack.mitre.org/techniques/T1558/004/) |
+| Service-ticket roasting | [T1558.003 — Kerberoasting](https://attack.mitre.org/techniques/T1558/003/) |
+| Ticket theft covered by the extraction workflow | [T1558 — Steal or Forge Kerberos Tickets](https://attack.mitre.org/techniques/T1558/) |
+
 ## Related references
 
 - [Unconstrained delegation](/cheatsheets/kerberos-unconstrained-delegation-cheatsheet/)

@@ -189,6 +189,15 @@ CLEANUP
 [ ] Re-read allowed principals and verify that existing delegation was preserved.
 ```
 
+## MITRE ATT&CK
+
+The links below describe the mapped steps, not a dedicated ATT&CK sub-technique named after this delegation configuration.
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Changing the computer account's delegation permissions | [T1098 — Account Manipulation](https://attack.mitre.org/techniques/T1098/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Constrained delegation](/cheatsheets/kerberos-constrained-delegation-cheatsheet/)

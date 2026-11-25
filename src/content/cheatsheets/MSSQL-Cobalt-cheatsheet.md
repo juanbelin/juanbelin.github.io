@@ -468,3 +468,10 @@ beacon> rev2self
 # Rubeus createnetonly path only: terminate its disposable process.
 beacon> kill <CREATED_PID>
 ```
+
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Operating-system command execution through xp_cmdshell | [T1059.003 — Windows Command Shell](https://attack.mitre.org/techniques/T1059/003/) |
+| Persistent access only when a stored procedure is installed and used for that purpose | [T1505.001 — SQL Stored Procedures](https://attack.mitre.org/techniques/T1505/001/) |

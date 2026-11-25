@@ -168,6 +168,12 @@ CLEANUP
 [ ] Restore original SMB service settings/state and remove only temporary firewall rules.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Abusing certificates for authentication | [T1649 — Steal or Forge Authentication Certificates](https://attack.mitre.org/techniques/T1649/) |
+
 ## Related references
 
 - [S4U2self computer takeover](/cheatsheets/kerberos-s4u2self-computer-takeover-cheatsheet/)

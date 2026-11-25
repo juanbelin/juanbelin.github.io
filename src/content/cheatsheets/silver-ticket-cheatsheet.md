@@ -139,6 +139,13 @@ CLEANUP
 [ ] Rubeus createnetonly path only: kill <CREATED_PID>.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Forging a service ticket | [T1558.002 — Silver Ticket](https://attack.mitre.org/techniques/T1558/002/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Golden Tickets](/cheatsheets/golden-ticket-cheatsheet/)

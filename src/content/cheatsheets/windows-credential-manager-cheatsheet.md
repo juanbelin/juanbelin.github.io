@@ -111,6 +111,12 @@ DECRYPTION — CHOOSE THE APPLICABLE METHOD
 ```
 
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Retrieving saved Windows credentials | [T1555.004 — Windows Credential Manager](https://attack.mitre.org/techniques/T1555/004/) |
+
 ## Related references
 
 - [Browser credentials](/cheatsheets/browser-credentials-cheatsheet/)

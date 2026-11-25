@@ -470,6 +470,14 @@ OPSEC REVIEW AND CONCLUSION
 [ ] Describe the result within the exact tested versions and configuration
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Injection behavior discussed in the guide | [T1055 — Process Injection](https://attack.mitre.org/techniques/T1055/) |
+| Changing the apparent parent process | [T1134.004 — Parent PID Spoofing](https://attack.mitre.org/techniques/T1134/004/) |
+| PowerShell execution examples | [T1059.001 — PowerShell](https://attack.mitre.org/techniques/T1059/001/) |
+
 ## Related references
 
 - [Process injection](/cheatsheets/process-injection-cobalt-cheatsheet/)

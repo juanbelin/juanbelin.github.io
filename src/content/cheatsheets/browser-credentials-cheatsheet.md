@@ -66,6 +66,12 @@ SAVED LOGINS
 ```
 
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Browser credential extraction | [T1555.003 — Credentials from Web Browsers](https://attack.mitre.org/techniques/T1555/003/) |
+
 ## Related references
 
 - [Windows Credential Manager and DPAPI](/cheatsheets/windows-credential-manager-cheatsheet/)

@@ -112,6 +112,12 @@ ENDING THE TEST
 [ ] Do not assume rev2self in the original Beacon removes the injected Beacon
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Executing code inside another process | [T1055 — Process Injection](https://attack.mitre.org/techniques/T1055/) |
+
 ## Related references
 
 - [Token impersonation](/cheatsheets/token-impersonation-cobalt-cheatsheet/)

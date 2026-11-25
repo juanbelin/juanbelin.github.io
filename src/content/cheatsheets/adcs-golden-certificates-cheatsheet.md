@@ -131,6 +131,12 @@ CLEANUP
 [ ] Treat CA signing-key recovery separately from local file and ticket cleanup.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Abusing certificates for authentication | [T1649 — Steal or Forge Authentication Certificates](https://attack.mitre.org/techniques/T1649/) |
+
 ## Related references
 
 - [Golden Tickets](/cheatsheets/golden-ticket-cheatsheet/)

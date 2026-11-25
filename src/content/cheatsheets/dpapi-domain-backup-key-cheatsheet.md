@@ -73,6 +73,15 @@ Correlate unusual access to DC backup-key material with reads of multiple users'
 
 Unlike an ordinary user password, the domain backup key is long-lived recovery material. Stop using and remove exported copies when the exercise ends, but do not mistake operator cleanup for invalidation of copies already obtained.
 
+## MITRE ATT&CK
+
+These entries describe the credential-recovery outcome, not a separate technique ID for the domain backup key itself.
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Recovering protected credential material | [T1555 — Credentials from Password Stores](https://attack.mitre.org/techniques/T1555/) |
+| Decrypting the saved credentials used in this guide | [T1555.004 — Windows Credential Manager](https://attack.mitre.org/techniques/T1555/004/) |
+
 ## Related references
 
 - [Windows Credential Manager](/cheatsheets/windows-credential-manager-cheatsheet/)

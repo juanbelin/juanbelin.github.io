@@ -205,6 +205,13 @@ beacon> rev2self
 beacon> kill <CREATED_PID>
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Discovering the trust and its direction | [T1482 — Domain Trust Discovery](https://attack.mitre.org/techniques/T1482/) |
+| Reusing the resulting Kerberos ticket | [T1550.003 — Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) |
+
 ## Related references
 
 - [Inter-realm tickets and trust fundamentals](/cheatsheets/inter-realm-tickets-cheatsheet/)

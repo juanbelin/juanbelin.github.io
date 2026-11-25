@@ -141,6 +141,12 @@ CLEANUP
 [ ] Restore any other changed attributes or ACLs from their own backups.
 ```
 
+## MITRE ATT&CK
+
+| Behavior in this guide | ATT&CK reference |
+|---|---|
+| Abusing certificates for authentication | [T1649 — Steal or Forge Authentication Certificates](https://attack.mitre.org/techniques/T1649/) |
+
 ## Related references
 
 - [ESC1 requester-controlled identity](/cheatsheets/adcs-esc1-cheatsheet/)
