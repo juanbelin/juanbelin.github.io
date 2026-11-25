@@ -1,6 +1,6 @@
 ---
 title: "Understanding TTPs and MITRE ATT&CK"
-description: "Tactics explain the objective, techniques describe the behavior, and procedures describe its implementation. Understanding MITRE ATT&CK helps connect red-team actions to evidence, distinguish activity from detection and response, and write an attack narrative that supports concrete defensive improvements."
+description: "An introduction to MITRE ATT&CK and TTPs: what the knowledge base contains, how tactics, techniques, sub-techniques and procedures relate, how to read the matrix, and why this shared vocabulary matters for red teaming, threat intelligence and defense."
 date: '2026-11-25'
 image: https://www.e-spincorp.com/wp-content/uploads/2020/05/cyber-attack-kill-chain.jpg
 categories:
@@ -14,112 +14,142 @@ tags:
   - reporting
 ---
 
-Running a tool and understanding an adversary behavior are different skills. A command shows one implementation; it does not, on its own, explain the objective, access required, what defenders could observe, or whether a control worked.
+Understanding an attack involves more than identifying the tool or vulnerability used. It also means explaining what the adversary wanted to achieve, which behavior helped achieve it, and how that behavior was carried out.
 
-Studying red teaming means learning to connect those layers. Tactics, techniques, and procedures provide a vocabulary for the behavior. An engagement narrative connects that behavior to evidence and to the organization's ability to prevent, detect, investigate, and respond.
+**TTPs** describe those different levels of activity. **MITRE ATT&CK** organizes adversary behaviors into a shared knowledge base so that operators, analysts, and defenders can discuss them consistently.
 
-## Tactics techniques and procedures describe different levels
+## What is MITRE ATT&CK
 
+MITRE ATT&CK stands for **Adversarial Tactics, Techniques, and Common Knowledge**. It is a publicly accessible knowledge base that describes adversary behavior using observations of real attacks and published research. It is developed and maintained by MITRE.
 
-| Level | Question | Example |
+Its purpose is to give security teams a common vocabulary for actions across an adversary's lifecycle. Instead of describing an incident only through a malware name, an IP address, or a particular exploit, teams can also describe the behaviors involved. The [official ATT&CK site](https://attack.mitre.org/) provides the matrix and the individual entries.
+
+ATT&CK is a reference for understanding and organizing behavior. It is not a scanner, a tool that executes attacks, or a numerical security rating. It does not establish that an organization is secure simply because several techniques have been tested.
+
+## What is a TTP
+
+**TTP** stands for **tactic, technique, and procedure**; **TTPs** is the plural. The three terms describe related aspects of adversary activity at different levels of detail.
+
+| Term | Main question | Level of description |
 |---|---|---|
-| Tactic | What objective is the adversary pursuing? | Credential Access |
-| Technique | What behavior serves that objective? | OS Credential Dumping |
-| Sub-technique | Which more specific behavior is involved? | DCSync |
-| Procedure | How is the behavior implemented in this instance? | A particular identity requests account secrets through the directory replication interface from a recorded source host |
+| Tactic | Why is the adversary taking this action? | The immediate objective |
+| Technique | How does the adversary pursue that objective? | A category of behavior |
+| Procedure | How is that behavior implemented in a particular instance? | The concrete implementation |
 
-A procedure is more than a command name. It can include the account, prerequisites, host, tool invocation, timing, target, output, and evidence of success. Different tools can implement similar behavior, and one tool can support several techniques.
+These terms are not interchangeable. A tactic is not a tool, a technique is not necessarily a vulnerability, and a procedure is not limited to a single command.
 
-MITRE describes ATT&CK as a knowledge base of adversary behavior. Its [FAQ](https://attack.mitre.org/resources/faq/) and [getting-started guidance](https://attack.mitre.org/resources/) are useful starting points. The matrix is a way to organize that knowledge; it is not a requirement to perform every technique or a linear sequence an attacker must follow.
+### Tactics describe the objective
 
-## Map the behavior rather than the tool name
+A tactic expresses the purpose behind an action. **Credential Access**, for example, concerns obtaining authentication material. **Discovery** concerns learning about the environment. **Lateral Movement** concerns reaching other systems within it.
 
+The tactic is the reason for the behavior, rather than its implementation. Obtaining credentials and using credentials are therefore different parts of the reasoning, even when they occur close together in an intrusion.
 
-Consider the distinction between using PowerShell, obtaining credential material, and reusing it:
+### Techniques describe the behavior
 
-| Observation | Candidate mapping | What the observation does not establish |
+A technique describes a way to pursue a tactical objective. **OS Credential Dumping** is a technique associated with obtaining credential material from operating-system resources.
+
+The technique remains meaningful across different tools. Two implementations can use different executables or APIs while still belonging to the same behavioral category. Conversely, a single tool can perform several techniques, so its name does not determine the mapping by itself.
+
+### Procedures describe the implementation
+
+A procedure captures the specific way a technique is performed. It can include the chosen tool, account, privileges, source system, target, configuration, and sequence of actions.
+
+This is the level where implementation differences become important. Two procedures may pursue the same objective through the same technique while leaving different artifacts or depending on different prerequisites. ATT&CK technique pages include **Procedure Examples** connecting documented activity to the broader category. The [ATT&CK FAQ](https://attack.mitre.org/resources/faq/) explains the terminology.
+
+## Where sub-techniques fit
+
+A **sub-technique** narrows a technique into a more specific behavioral category. It is not simply another name for a procedure.
+
+| Level | ATT&CK entry | Meaning |
 |---|---|---|
-| PowerShell executes a script | [T1059.001 PowerShell](https://attack.mitre.org/techniques/T1059/001/) | That the script dumped credentials or established persistence |
-| A principal requests account secrets through AD replication | [T1003.006 DCSync](https://attack.mitre.org/techniques/T1003/006/) | That those secrets were later used successfully |
-| An acquired Kerberos ticket is reused for authentication | [T1550.003 Pass the Ticket](https://attack.mitre.org/techniques/T1550/003/) | That the ticket was forged or that the account had administrator rights |
-| An account uses a remote SMB share | [T1021.002 SMB/Windows Admin Shares](https://attack.mitre.org/techniques/T1021/002/) when the behavior and context fit | That code executed on the destination |
+| Tactic | Credential Access | The objective is to obtain credential material |
+| Technique | [T1003 OS Credential Dumping](https://attack.mitre.org/techniques/T1003/) | The general category of operating-system credential extraction |
+| Sub-technique | [T1003.006 DCSync](https://attack.mitre.org/techniques/T1003/006/) | Extraction through abuse of directory replication |
+| Procedure | A documented implementation of DCSync | The particular tool, identity, systems and steps used |
 
-A `klist` output demonstrates a cache state. It does not reveal the entire acquisition history of every ticket. Similarly, a network logon is not sufficient by itself to conclude that Pass the Ticket occurred: normal Kerberos authentication can produce network logons too.
+DCSync names a specific behavior that can have multiple implementations. A command using one implementation is a procedure detail; it is not a new sub-technique merely because the command or tool differs.
 
-These distinctions matter in both directions. Operators should not overstate an attack outcome, and analysts should not attribute a specific technique from an artifact that has several plausible explanations.
+## How the ATT&CK matrix is organized
 
-## Define the objective and engagement model
+The matrix groups techniques under tactics. Its columns represent tactical objectives, while the entries within them represent techniques. Where available, techniques can be expanded into sub-techniques.
 
-Red teaming evaluates people, processes, and technology against a relevant adversarial objective. It is not a review of every reachable host, nor does obtaining an administrative account automatically explain whether the assessment met its purpose.
+The identifiers make references precise:
 
-Planning should establish the threat profile, the operational objective, and how initial access will be obtained. A threat profile describes intent, capabilities and relevant behaviors. It should reflect the organization rather than assuming that every assessment must emulate the most capable threat actor.
-
-The breach model also changes what the assessment measures. An assumed-breach engagement starts from supplied access and can focus on internal detection and response. It does not establish whether initial compromise would have succeeded. If initial access is part of the engagement, an agreed fallback can preserve time for evaluating later behaviors.
-
-Rules of engagement define the allowed systems and identities, constraints, stop conditions, contacts, timing, and treatment of evidence. Notification decisions should be explicit: who knows about the assessment can affect defender behavior and the interpretation of the results.
-
-## Procedures connect behavior to evidence
-
-A procedure describes the specific implementation of a technique. Useful details include the identity and privileges used, source host, target, timestamp, tool and arguments, prerequisites, and observed result.
-
-The source of each observation matters. An operator's command history records an action from the operator's perspective. An endpoint event or server audit provides another observation. Neither should silently stand in for the other.
-
-A tool returning success may establish only that a local operation completed. Importing a ticket, for example, establishes a cache change; successful access to a remote resource requires additional authentication and authorization evidence. The [Pass the Ticket cheatsheet](/cheatsheets/pass-the-ticket-cobalt-cheatsheet/) contains the implementation alternatives, while the ATT&CK mapping should describe the behavior they implement.
-
-Only map what the evidence supports. A tool capable of credential dumping is not proof that credentials were dumped, and accessing a share is not proof of remote code execution.
-
-## Measure visibility detection and response separately
-
-| Question | Relevant evidence |
+| Identifier form | What it identifies |
 |---|---|
-| Was the action performed? | Operator record and observed result |
-| Was telemetry collected? | Corresponding event present in the logging pipeline |
-| Was an alert generated? | Alert record, triggering evidence and timestamp |
-| Was the activity investigated? | Analyst or case activity |
-| Was a response applied? | Confirmed action against the identity, host or access path |
-| Did the response meet the objective? | Evidence that the action was prevented or interrupted as intended |
+| `TA0006` | A tactic, in this case Credential Access |
+| `T1003` | A technique, in this case OS Credential Dumping |
+| `T1003.006` | A sub-technique, in this case DCSync |
 
-A timestamp for analyst triage is not necessarily the detection timestamp. A collected event is not necessarily an alert, and an alert is not necessarily containment. Calculate response metrics only when the relevant start and end events are available.
+A technique can relate to more than one tactic when it can serve different objectives. The matrix should therefore be read as an organization of behaviors, not a mandatory route from the first column to the last.
 
-“The red team observed no response” and “the SOC detected nothing” are different statements. Defender feedback can reveal alerts, investigations, or actions that the operator could not see. The final assessment should reconcile both perspectives.
+The matrix also evolves as ATT&CK changes. Names, relationships, and available entries should be checked against the relevant release rather than assuming that an older screenshot is a permanent specification.
 
-## Use attack lifecycles for narrative and ATT&CK for behavior
+## Enterprise Mobile and ICS
+
+Different technology environments require different behavioral descriptions. ATT&CK provides matrices for:
+
+- [Enterprise](https://attack.mitre.org/matrices/enterprise/), covering enterprise systems and environments such as endpoints, identity services, networks, and cloud platforms.
+- [Mobile](https://attack.mitre.org/matrices/mobile/), focusing on mobile-device threats.
+- [ICS](https://attack.mitre.org/matrices/ics/), focusing on industrial control systems.
+
+The relevant matrix and platform matter. A technique described for one environment should not be assumed to apply unchanged to another.
+
+## What a technique page contains
+
+A technique page explains the behavior and links it to additional context. Depending on the entry, that includes supported platforms, related tactics, sub-techniques, procedure examples, mitigations, and defensive guidance.
+
+The description establishes what the technique means. Procedure examples show documented implementations; they are not a claim that every adversary uses the same steps. Defensive guidance helps teams consider relevant observations and controls, but it must still be interpreted for their own environment.
+
+Reading only the title can lead to incorrect mappings. The description, scope, and relationships help determine whether the observed behavior belongs to that entry.
+
+## How ATT&CK differs from CVE CWE and CVSS
+
+These references describe different things:
+
+| Reference | Focus |
+|---|---|
+| CVE | A publicly recorded vulnerability |
+| CWE | A class of weakness that can contribute to vulnerabilities |
+| CVSS | Technical vulnerability severity under a versioned scoring model |
+| ATT&CK | Adversary objectives and behaviors |
+
+An adversary can exploit a CVE as part of an attack, but many ATT&CK behaviors do not require a software vulnerability. Using stolen credentials or abusing legitimate functionality may be sufficient.
+
+This is why an ATT&CK technique should not receive a CVSS score merely because it appears in an assessment. A specific vulnerability finding can be scored; a behavioral category serves a different purpose. The [CVE CWE and CVSS post](/research/cve-cwe-cvss-from-finding-to-report/) explains those distinctions in more detail.
+
+## ATT&CK and the Cyber Kill Chain
+
+Attack-lifecycle models describe an intrusion's progression at a higher level. The Cyber Kill Chain, for instance, organizes activity into phases such as reconnaissance, delivery, exploitation, installation, command and control, and actions on objectives.
+
+ATT&CK provides more detailed behavioral categories. The two perspectives can complement each other: one helps organize a narrative, while the other helps explain the actions within it.
+
+Neither perspective requires every intrusion to follow an identical sequence. Discovery and credential use can recur; access attempts can fail; an adversary can change direction. A matrix should not force those events into a sequence unsupported by the actual activity.
+
+The cover image illustrates an attack lifecycle. It is a lifecycle diagram, not the ATT&CK matrix.
+
+![Cyber Attack Kill Chain, E-SPIN](https://www.e-spincorp.com/wp-content/uploads/2020/05/cyber-attack-kill-chain.jpg).
 
 
-The Cyber Kill Chain and other attack-lifecycle models help explain the progression of an intrusion. ATT&CK helps describe individual behaviors that may recur, overlap, or serve more than one objective.
+## Why TTPs matter to red and blue teams
 
-An assessment can loop through discovery and credential use several times, fail on one path, and switch to another. Forcing every observation into a neat one-pass sequence can hide that reasoning. Likewise, an assumed-breach exercise starts after some initial phases; those phases should be marked out of scope rather than reported as successfully tested.
+For red teams, TTPs help describe the behaviors selected to emulate a relevant threat. A tool is an implementation choice within that plan; the underlying objective and behavior explain why it belongs there.
 
-Reconnaissance and preparation can also produce observable evidence through mail controls, public-service monitoring, domain activity, or intelligence sources. “It happened outside the target host” does not mean there is nothing defenders can learn from it.
+For blue teams, the same vocabulary helps organize analysis and discuss what defensive controls can observe or interrupt. Threat-intelligence teams can use it to compare reported behavior across incidents without relying solely on changing filenames, hashes, or infrastructure.
 
-## Keep OPSEC tied to the environment
+Shared labels improve communication, but they do not replace evidence. An entry marked as tested does not prove that all its procedures are detected. Different implementations and environmental conditions can produce different observations.
 
-Operational security concerns how activity can be observed, interpreted, and interrupted. It is relative to the environment and defender capability. A different implementation can change process creation, file artifacts, or logging while leaving the underlying network behavior visible.
+## Common misunderstandings
 
-Importing a ticket through a BOF rather than an external executable does not eliminate subsequent Kerberos authentication or target access logs. An “OPSEC alternative” is an implementation choice to evaluate, not a universal stealth property.
+**A tool name is not a technique.** Its actual use determines the behavior being described.
 
-Record what an implementation changes and which observations remain available. This makes a discussion of detection more useful than declaring a tool inherently undetectable.
+**A sub-technique is not a procedure.** One is a more specific category; the other is a concrete implementation.
 
-## Write a narrative that supports improvement
+**The matrix is not a checklist of everything an attacker must do.** Actions depend on the objective, available access, and environment.
 
-An attack narrative should connect observations chronologically: the starting access, the actions taken, the boundaries crossed, their outcomes, and the response observed. Include relevant technical evidence without assuming the reader knows the operator's tools.
+**A colored cell is not proof of complete defensive coverage.** Coverage claims need a defined scope and evidence of what was tested.
 
-A list of CVEs and patches can document technical issues, but it does not explain the full path through people, processes and technology. Conversely, an ATT&CK technique list does not establish whether a vulnerability existed or a defensive control failed.
+**A matching technique does not identify an attacker by itself.** Many actors and legitimate administrators can use similar mechanisms; attribution requires additional context.
 
-Recommendations should follow the identified gap and specify how improvement can be verified. Missing telemetry, a rule that did not alert, delayed investigation, and ineffective containment require different responses. Discuss the findings with defenders before treating the operator's view as the complete explanation.
+The distinction I find most useful is to keep the levels separate: **the tactic explains the objective, the technique describes the behavior, and the procedure explains its implementation**. ATT&CK supplies the shared structure for discussing those behaviors.
 
-## Review the mapping
-
-Before treating an ATT&CK mapping as complete, I ask:
-
-- Does the evidence show the behavior, or only a tool capable of it?
-- Is the label a tactic, technique, sub-technique, or procedure description?
-- Does a sub-technique fit more precisely than its parent?
-- Which source supports the identity, action, target, and outcome?
-- Have operator records been separated from independently collected telemetry?
-- Are detection and containment claims supported by their corresponding events?
-- What evidence would demonstrate that the recommendation worked?
-
-A matrix cell helps communicate where an assessment looked. The narrative and evidence explain what it established.
-
-Cover image: [Cyber Attack Kill Chain, E-SPIN](https://www.e-spincorp.com/wp-content/uploads/2020/05/cyber-attack-kill-chain.jpg).
